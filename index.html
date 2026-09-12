@@ -23,6 +23,32 @@ figure img,figure video{max-width:100%;height:auto;display:block}
 #lightbox.on{display:flex}
 #lightbox img{width:100%;height:100%;max-width:100vw;max-height:100%;object-fit:contain;display:block;background:transparent}
 #lightbox span{font-family:'IBM Plex Mono',Menlo,Consolas,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#ECEDE8}
+
+@media (max-width: 700px) {
+  header > div:first-child { display: none !important; }
+  [data-mobile-hide] { display: none !important; }
+  [data-contact-grid] { grid-template-columns: minmax(0, 1fr) !important; }
+  [data-contact-grid] > *, [data-contact-grid] > div > * { grid-column: 1 / -1 !important; }
+  [data-contact-grid] > p { max-width: none !important; padding-top: 20px !important; }
+  header { justify-content: flex-end !important; }
+  [data-navtoggle] { display: block !important; }
+  nav[data-mainnav] { display: none !important; order: 3; flex: 1 1 100% !important; flex-direction: column !important; gap: 14px !important; padding: 12px 0 2px; }
+  nav[data-mainnav][data-open="1"] { display: flex !important; }
+  nav[data-mainnav] a { padding: 4px 0; font-size: 13px; }
+}
+@media (max-width: 520px) { [data-works-grid] { grid-template-columns: minmax(0, 1fr) !important; } }
+aside[data-dossier-aside] > details > summary { display: none; }
+aside[data-dossier-aside] > details > summary::-webkit-details-marker { display: none; }
+@media (max-width: 900px) {
+  aside[data-dossier-aside] {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    flex: 1 1 100% !important;
+    padding-top: 20px !important;
+  }
+  aside[data-dossier-aside] > details > summary { display: block; }
+}
 </style>
 </head>
 <body>
@@ -30,7 +56,8 @@ figure img,figure video{max-width:100%;height:auto;display:block}
 <section class="page" id="p-home" data-screen-label="Index">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--ink)">Index</a>
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
@@ -61,7 +88,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <span style="font-family: var(--disp); font-weight: 700; font-size: 30px; line-height: 0.9;">01</span>
           <span style="font-family: var(--mono2); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mute);">Recent works</span>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gutter)">
+        <div data-works-grid style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gutter)">
           <a href="#/calorieflow" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
             <div style="aspect-ratio:4/3;background:#C4E7DD;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
               <video src="assets/card-calorieflow.mp4" autoplay loop muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
@@ -186,7 +213,8 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
 <section class="page" id="p-works" data-screen-label="Works">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
       <a href="#/works" style="color:var(--ink)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
@@ -207,7 +235,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <span style="font-family:var(--disp);font-weight:700;font-size:30px;line-height:.9">01–08</span>
       <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">All works</span>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gutter)">
+    <div data-works-grid style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gutter)">
           <a href="#/calorieflow" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
             <div style="aspect-ratio:4/3;background:#C4E7DD;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
               <video src="assets/card-calorieflow.mp4" autoplay loop muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
@@ -323,7 +351,8 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
 <section class="page" id="p-jarvis" data-screen-label="JARVIS dossier" style="--dt:#2C7A4B;--dtPale:#D3E7D9;--dtInk:#123322">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
@@ -341,7 +370,8 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
   </div>
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+    <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display: flex; border: 1px solid var(--rule); gap: 10px; border-width: 0px"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">UX/UI audit and interactive prototype</dd>
@@ -367,6 +397,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <li><a href="#j06" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">06</b>What I'd do differently</a></li>
         </ol>
       </div>
+      </div></details>
     </aside>
 
     <main style="flex:1 1 520px;min-width:0;padding-top:32px;display:flex;flex-direction:column">
@@ -486,7 +517,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
 <section class="page" id="p-adeo" data-screen-label="ADEO dossier" style="--dt:#0F6E7C;--dtPale:#CFE6EA;--dtInk:#0A3B43">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
@@ -504,7 +536,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
   </div>
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+    <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer, discovery through delivery</dd>
@@ -533,6 +566,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <li><a href="#a07" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">07</b>MIM. Model information management</a></li>
         </ol>
       </div>
+      </div></details>
     </aside>
 
     <main style="flex:1 1 520px;min-width:0;padding-top:32px;display:flex;flex-direction:column">
@@ -813,7 +847,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
 <section class="page" id="p-suez" data-screen-label="SUEZ dossier" style="--dt:#1D4E62;--dtPale:#D8E4E8;--dtInk:#0E2B36">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
@@ -831,7 +866,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
   </div>
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+    <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer (freelance) — redesign of major functional areas: user journeys, UX, UI, parts of the design system and UI kit, clickable prototypes, and design follow-through during development</dd>
@@ -862,6 +898,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <li><a href="#sz-s08" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">08</b>Outcome</a></li>
         </ol>
       </div>
+      </div></details>
     </aside>
 
     <main style="flex:1 1 520px;min-width:0;padding-top:32px;display:flex;flex-direction:column">
@@ -1012,7 +1049,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
 <section class="page" id="p-ubitik" data-screen-label="UBITIK dossier" style="--dt:#2F3BC4;--dtPale:#DCDFF7;--dtInk:#191F72">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
@@ -1030,7 +1068,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
   </div>
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+    <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer — the entire experience designed from a written brief, with no existing screens or design legacy to build on: information architecture, all flows, and the interface system from zero</dd>
@@ -1061,6 +1100,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <li><a href="#u08" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">08</b>Outcome</a></li>
         </ol>
       </div>
+      </div></details>
     </aside>
 
     <main style="flex:1 1 520px;min-width:0;padding-top:32px;display:flex;flex-direction:column">
@@ -1199,7 +1239,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
 <section class="page" id="p-allpokemon" data-screen-label="AllPokemon dossier" style="--dt:#B4232B;--dtPale:#F1DADB;--dtInk:#5A1013">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
@@ -1217,7 +1258,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
   </div>
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+    <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">My Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Full-stack developer, UX researcher, and project manager</dd>
@@ -1248,6 +1290,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <li><a href="#k11" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">11</b>Management</a></li>
         </ol>
       </div>
+      </div></details>
     </aside>
 
     <main style="flex:1 1 520px;min-width:0;padding-top:32px;display:flex;flex-direction:column">
@@ -1483,7 +1526,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
 <section class="page" id="p-asapp" data-screen-label="ASAPP dossier" style="--dt:#C2542A;--dtPale:#F6E2D6;--dtInk:#5C2411">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
@@ -1501,7 +1545,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
   </div>
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+    <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Delivered</dt><dd style="margin:0 0 12px;color:var(--ink)">wireframes, UI, an interactive prototype, a design system and graphic supports</dd>
@@ -1524,6 +1569,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <li><a href="#n03" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">02</b>Screens</a></li>
         </ol>
       </div>
+      </div></details>
     </aside>
 
     <main style="flex:1 1 520px;min-width:0;padding-top:32px;display:flex;flex-direction:column">
@@ -1595,7 +1641,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
 <section class="page" id="p-contact" data-screen-label="Contact">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
@@ -1604,16 +1651,16 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Paris, FR &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">2026</b></div>
   </header>
 
-  <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:0 var(--gutter);padding:0 var(--edge) 96px">
+  <div data-contact-grid style="display:grid;grid-template-columns:repeat(12,1fr);gap:0 var(--gutter);padding:0 var(--edge) 96px">
 
     <div style="grid-column:1 / -1;display:grid;grid-template-columns:subgrid;border-bottom:1px solid var(--ink)">
-      <span style="grid-column:1 / 3;padding:28px 0 0;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">05 / Contact</span>
+      <span data-mobile-hide style="grid-column:1 / 3;padding:28px 0 0;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">05 / Contact</span>
       <h1 style="grid-column:3 / 12;margin:0;padding:24px 0 34px;font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.86;letter-spacing:-.01em;font-size:clamp(52px,11vw,180px)">Write<br>to me</h1>
     </div>
 
     <p style="grid-column:3 / 8;margin:0;padding:26px 0 0;color:var(--ink2);max-width:46ch">Open to senior product design roles, full-time or freelance. If you send the role, the team size and what the product actually does, you get an answer the same day.</p>
 
-    <div style="grid-column:9 / -1;padding:26px 0 0;font-family:var(--mono2);font-size:12px;color:var(--mute);display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-content:start">
+    <div data-mobile-hide style="grid-column:9 / -1;padding:26px 0 0;font-family:var(--mono2);font-size:12px;color:var(--mute);display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-content:start">
       <span>Reply</span><b style="font-weight:500;color:var(--ink2)">Within 24h, weekdays</b>
       <span>Timezone</span><b style="font-weight:500;color:var(--ink2)">CET, Paris</b>
       <span>Languages</span><b style="font-weight:500;color:var(--ink2)">EN · FR · RU</b>
@@ -1664,7 +1711,8 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
 <section class="page" id="p-about" data-screen-label="About">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--ink)">About</a>
@@ -1820,7 +1868,8 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
 <section class="page" id="p-calorieflow" data-screen-label="CalorieFlow dossier" style="--dt:#0F5C55;--dtPale:#C4E7DD;--dtInk:#0A3F3A">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
@@ -1838,7 +1887,8 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
   </div>
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+    <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display: flex; border: 1px solid var(--rule); gap: 10px; border-width: 0px"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex: 1; height: 22px; color: #F0EDE9; background-color: #F0EDE9; border-width: 1px; border-style: solid; border-color: #D9D6D1"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product designer &amp; builder, solo</dd>
@@ -1871,6 +1921,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
           <li><a href="#cf-s06" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">06</b>What's next</a></li>
         </ol>
       </div>
+      </div></details>
     </aside>
 
     <main style="flex:1 1 520px;min-width:0;padding-top:32px;display:flex;flex-direction:column">
@@ -2056,7 +2107,8 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
 <section class="page" id="p-openfeedback" data-screen-label="Open Feedback dossier" style="--dt:#83679C;--dtPale:#E3DFF9;--dtInk:#3D2C50">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
-    <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
@@ -2074,7 +2126,8 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
   </div>
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+    <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display: flex; border: 1px solid var(--rule); border-width: 0px; gap: 10px"><span style="flex: 1; height: 22px; background-color: #83679C"></span><span style="flex: 1; height: 22px; background-color: #DFDEE1"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer &amp; Product Owner</dd>
@@ -2105,6 +2158,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
           <li><a href="#o06" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">06</b>Ownership &amp; data</a></li>
         </ol>
       </div>
+      </div></details>
     </aside>
 
     <main style="flex:1 1 520px;min-width:0;padding-top:32px;display:flex;flex-direction:column">
@@ -2317,6 +2371,26 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
   });
   overlay.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLightbox(); });
+
+  // ---- mobile nav toggle ----
+  document.addEventListener('click', function(e){
+    var t = e.target.closest ? e.target.closest('[data-navtoggle]') : null;
+    if (t) {
+      var nav = t.parentElement.querySelector('nav[data-mainnav]');
+      if (nav) nav.setAttribute('data-open', nav.getAttribute('data-open') === '1' ? '0' : '1');
+      return;
+    }
+    var link = e.target.closest ? e.target.closest('nav[data-mainnav] a') : null;
+    if (link) link.closest('nav[data-mainnav]').setAttribute('data-open', '0');
+  });
+
+  // ---- collapse dossier sidebar into a <details> on narrow viewports ----
+  function foldDossierAside(){
+    var narrow = window.matchMedia('(max-width: 900px)').matches;
+    document.querySelectorAll('aside[data-dossier-aside] > details').forEach(function(d){ d.open = !narrow; });
+  }
+  foldDossierAside();
+  window.addEventListener('resize', foldDossierAside);
 
   // ---- loop videos cleanly: restart just before the final frame ----
   document.querySelectorAll('video[autoplay]').forEach(function(v){
