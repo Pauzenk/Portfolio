@@ -18,6 +18,7 @@ a:hover{color:#1B1D1C}
 .page.on{display:block}
 .hov-border:hover{border-color:var(--ink)}
 .hov-pale:hover{background:#DFDEE1}
+figure img,figure video{max-width:100%;height:auto;display:block}
 #lightbox{position:fixed;inset:0;z-index:9000;background:rgba(27,29,28,.92);display:none;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:8px;cursor:zoom-out}
 #lightbox.on{display:flex}
 #lightbox img{width:100%;height:100%;max-width:100vw;max-height:100%;object-fit:contain;display:block;background:transparent}
@@ -375,7 +376,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">Desktop frame, dark UI</span>
         </div>
         <figure style="margin:0">
-          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Main operator screen, agent mid-task. Desktop frame, dark UI.</div>
+          <img src="assets/jarvis-card.png" alt="Main operator screen, agent mid-task. Desktop frame, dark UI.">
           <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">[IMAGE 1, chat: main operator screen, agent mid-task. Desktop frame, dark UI.]</figcaption>
         </figure>
       </div>
@@ -400,7 +401,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <p style="margin:0;color:var(--ink2);max-width:58ch">An agent that acts on a live accounting database is not a chatbot. The user has to see what it is about to do, stop it, and understand what happened after. That is the whole interface.</p>
           <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">[ДОПОЛНИТЬ: 2-4 предложения. Что показал аудит: что было не так с интерфейсом до тебя. Один конкретный пример лучше общих слов.]</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Before and after of the agent chat screen: original message-log interface versus the redes</div>
+            <img src="assets/jarvis-before-after.png" alt="Before and after of the agent chat screen.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 2: before/after of the screen changed most — chat log to task view.]</figcaption>
           </figure>
         </div>
@@ -415,7 +416,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <p style="margin:0;color:var(--ink2);max-width:58ch">The reference scenario ends with “show me before sending”. An agent that pulls June sales from 1C, builds a report and emails the director must stop at the last step and wait.</p>
           <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">The irreversible step gets its own card, marked IRREVERSIBLE, and it carries everything needed to say yes without opening 1C. The recipient and the amount at the top. Then "Checked before sending — 3 of 3 matched": the amount reconciled against the document lines, the counterparty against contract #45 with its tax ID, the document status read off the 1C screen — each check with the value it found, so the operator is verifying data, not trusting a sentence. Below that, in red, the consequence in plain words: the document goes to the counterparty and the agent will not be able to recall it. Confirmation is a 1.5-second hold, not a click — the fill has to reach the end, so a reflex tap cannot send an invoice.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Agent task view: the agent lowered its own autonomy, a confirmation card showing counterpa</div>
+            <img src="assets/jarvis-confirmation.png" alt="Agent task view with a send confirmation card.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 3: the confirmation state, annotated.]</figcaption>
           </figure>
         </div>
@@ -430,15 +431,15 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <p style="margin:0;color:var(--ink2);max-width:58ch">The agent lowers its own autonomy when the interface behaves unexpectedly, but it can never restore it by itself. Only the operator can. So the level has to be visible at all times, and the reason for a drop has to be readable, not buried in logs.</p>
           <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">The level sits in the header at all times — AUTONOMY L1, asks on every step, lowered by the agent — so the operator never has to go looking for it. When the agent drops the level, it says so in the thread as a marked event: L2 → L1, what went wrong (the posting dialog opened twice at step 5), and what it will do until that is resolved. Raising it back is a human action: Restore level L2.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Agent autonomy settings screen: current level L1, the three selectable levels, and a level</div>
+            <img src="assets/jarvis-autonomy-settings.png" alt="Agent autonomy settings screen with the three selectable levels.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 4: autonomy indicator in two states, normal and downgraded.]</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Chat view: the agent lowered its own autonomy from L2 to L1 after the posting dialog opene</div>
+            <img src="assets/jarvis-level-lowered.png" alt="Chat view: the agent lowered its own autonomy from L2 to L1.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 5: the drop announced in the thread — L2 → L1, with the reason and a restore action only the operator can take.]</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Agent autonomy settings: current level L1, why the level was lowered with the raw observat</div>
+            <img src="assets/jarvis-autonomy.png" alt="Agent autonomy settings: current level and why it was lowered.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 6: the settings screen — why the level was lowered, in the agent's own observation, and the three levels it can sit at.]</figcaption>
           </figure>
         </div>
@@ -452,7 +453,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">The system rolls back to a checkpoint: a failure at step 8 of 10 undoes what steps 1 to 7 wrote into 1C and the file system. Technically solid, and invisible unless the interface says so. The user needs one screen answering: what broke, what was undone, what is still there, what now.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Rollback screen: what broke at step 5, what was rolled back, what is still in place, and w</div>
+            <img src="assets/jarvis-rollback.png" alt="Rollback screen after a failed run.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 7: recovery screen after a failed run — what broke, what was undone, what survived, what now.]</figcaption>
           </figure>
         </div>
@@ -541,7 +542,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">PMDM · Product Digital Platform</span>
         </div>
         <figure style="margin:0">
-          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">PMDM (product master data management) — Product Digital Platform, ADEO Services.</div>
+          <img src="assets/adeo-cover.png" alt="PMDM — Product Digital Platform, ADEO Services.">
         </figure>
       </div>
 
@@ -570,7 +571,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:500;color:var(--ink)">3. Product Distribution &amp; Syndication (SP)</b> Transforming and distributing product data efficiently across channels and partner ecosystems.</p>
           <p style="margin:0;color:var(--ink2);max-width:58ch">Together these initiatives formed an end-to-end workflow:</p>
           <figure style="margin:0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">System architecture overview: data sources — internal systems, external providers, files a</div>
+            <img src="assets/adeo-architecture.png" alt="System architecture overview: data sources through to distribution.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Create (MIM) → Validate (MIM) → Monitor (PLD) → Distribute (SP), anonymised.</figcaption>
           </figure>
         </div>
@@ -594,7 +595,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Contributing to design quality through reviews and shared practices</span></li>
           </ul>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Product data platform overview: data sources through Product Data Syndication, Model Infor</div>
+            <img src="assets/adeo-platform-overview.png" alt="Product data platform overview.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">One product-data workflow: syndication → governance → monitoring, and what it moved.</figcaption>
           </figure>
         </div>
@@ -667,7 +668,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Faster decision-making</span></li>
           </ul>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Product listing dashboard: Fix Problems with required actions and counts, Catalog Signals </div>
+            <img src="assets/adeo-pld-dashboard.png" alt="Product listing dashboard with problems and signals.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">PLD V2: problems that need action separated from signals that only inform.</figcaption>
           </figure>
         </div>
@@ -727,19 +728,19 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           </ul>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px var(--gutter)">
             <figure style="margin:0">
-              <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Product listing, send data and file history: upload your data with a drag-and-drop file zo</div>
+              <img src="assets/adeo-sp-1-upload.png" alt="Product listing upload: drag-and-drop file zone.">
               <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">01 — Upload: three columns, not a hundred-field workbook.</figcaption>
             </figure>
             <figure style="margin:0">
-              <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Requirements and template panel: products with or without GTIN, a starter template preview</div>
+              <img src="assets/adeo-sp-2-template.png" alt="Requirements and template panel.">
               <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">02 — Requirements stated before the upload, not after the error.</figcaption>
             </figure>
             <figure style="margin:0">
-              <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Adeo data tab: current situation in figures — products to complete, to correct, waiting fo</div>
+              <img src="assets/adeo-sp-3-export.png" alt="Current situation in figures — products to complete or correct.">
               <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">03 — What is left to complete or correct, in counts you can act on.</figcaption>
             </figure>
             <figure style="margin:0">
-              <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Product attribute editor for a solar and rechargeable lamp: attribute groups with missing </div>
+              <img src="assets/adeo-sp-4-attributes.png" alt="Product attribute editor with missing-attribute groups.">
               <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">04 — Review, not entry: groups flag what is missing or in error.</figcaption>
             </figure>
           </div>
@@ -792,7 +793,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Clearer ownership and visibility</span></li>
           </ul>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Request detail screen: requested values accepted or refused one by one, refused values kep</div>
+            <img src="assets/adeo-mim-validation.png" alt="Request detail screen: values accepted or refused one by one.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Entry-level validation: each value accepted or refused on its own, with the approval timeline and the reason kept beside it.</figcaption>
           </figure>
         </div>
@@ -870,12 +871,12 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">Cover</span>
         </div>
         <figure style="margin:0">
-          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">SUEZ project cover: digital solutions for a more sustainable water future — redesigning SU</div>
+          <img src="assets/suez-hero.png" alt="SUEZ project cover.">
           <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">Monitor in real time, analyse with clarity, act for greater impact.</figcaption>
         </figure>
         <p style="margin:0;color:var(--ink2);max-width:58ch">Redesigning SUEZ's water-monitoring platforms — from the internal supervision tool to the client dashboards — turning a tangled legacy system into ergonomic, role-appropriate interfaces.</p>
         <figure style="flex:1 1 340px;min-width:280px;margin:0">
-          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">SUEZ water monitoring platform: water data — smart meters, consumption, leaks and faults —</div>
+          <img src="assets/suez-platform-overview.png" alt="SUEZ water monitoring platform overview.">
           <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Data in, three experiences out — shared patterns, different densities.</figcaption>
         </figure>
       </div>
@@ -889,7 +890,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <p style="margin:0;color:var(--ink2);max-width:58ch">SUEZ operates smart water meters across France — thousands of connected devices reporting consumption, leaks and technical faults. The data served three very different audiences: internal operations teams supervising the meter fleet, professional clients managing multi-site consumption, and individual households watching a single meter.</p>
           <p style="margin:0;color:var(--ink2);max-width:58ch">The existing system had grown into a hard-to-navigate legacy: dense, inconsistent, and built around the data rather than the people reading it. An operator hunting for a faulty meter, a facility manager comparing sites, and a homeowner worried about a leak were all served the same tangled logic.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Legacy monitoring tool, daily alerts list: nine alert-type counters in a row — tampering, </div>
+            <img src="assets/suez-legacy-alerts.png" alt="Legacy monitoring tool, daily alerts list.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The legacy alerts screen: nine counters, no hierarchy, and a table to read them in.</figcaption>
           </figure>
         </div>
@@ -913,7 +914,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">The core design decision was to treat the three audiences as three distinct products sharing one design language — rather than one interface with permissions.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">The three spaces side by side: household dashboard with a leak gauge, the dark supervision</div>
+            <img src="assets/suez-three-spaces.png" alt="The three spaces side by side.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Particulier, supervision, professionnel — same components, three densities.</figcaption>
           </figure>
         </div>
@@ -928,7 +929,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Built for operators who live in the tool</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">A cartographic view of the meter fleet with color-coded statuses, per-emitter detail sheets, alarm synthesis (leaks, water returns, frozen meters, battery, connectivity), and diagnostic lists with bulk actions — an operator can select dozens of emitters and mark them as treated in one confirmed action. Density is a feature here, not a bug: the design optimizes for scanning thousands of devices.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Supervision cartography: a map of central France with clustered meter counts per area, eac</div>
+            <img src="assets/suez-supervision-map.png" alt="Supervision cartography of meter clusters.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Supervision map: fleet state read geographically — healthy, degraded, failing, per cluster.</figcaption>
           </figure>
         </div>
@@ -943,11 +944,11 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Built for accountability across sites</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">Multi-site clients get a dashboard of consumption by meter and by usage, a per-meter synthesis table with trends, and configurable alerts (leak / overconsumption) with thresholds and notification channels. The design assumes a professional reading in m³, comparing sites and reporting to someone.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Espace professionnel dashboard: meter count and meters in alert, monthly breakdown by mete</div>
+            <img src="assets/suez-pro-dashboard.png" alt="Espace professionnel dashboard.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Dashboard: how many meters, how many in alert, then the breakdown.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Alerts screen: alerts triggered this week and the history, then alert subscriptions — leak</div>
+            <img src="assets/suez-pro-alerts.png" alt="Alerts screen with subscriptions.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Alerts: what fired, and the subscriptions that made it fire — configurable per site.</figcaption>
           </figure>
         </div>
@@ -962,7 +963,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Built for a homeowner who checks once a week</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">The same data, radically simplified: daily consumption in liters, a comparison gauge against similar households, one meter, plain-language questions to profile the home, and the same leak alerts — because a night-time continuous flow means something very different when it's your house.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Espace particulier meter dashboard: daily and monthly consumption, a plain-language note t</div>
+            <img src="assets/suez-household.png" alt="Espace particulier meter dashboard.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Household: litres per day, a sentence instead of a benchmark, and a gauge that says whether to call someone.</figcaption>
           </figure>
         </div>
@@ -1069,7 +1070,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">UBITIK · iOS &amp; Android · white-label B2B2C</span>
         </div>
         <figure style="margin:0">
-          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">My Project Companion — the client app for home builders.</div>
+          <img src="assets/ubitik-cover.webp" alt="My Project Companion — the client app for home builders.">
         </figure>
         <p style="margin:14px 0 0;color:var(--ink2);max-width:58ch">End-to-end product design of a B2B2C mobile app connecting families building a home with their constructeur — designed from a brief in 2020, still live and adopted by home builders across France.</p>
       </div>
@@ -1103,7 +1104,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">The key structural decision was to organize the product around the home's lifecycle rather than a feature list. Each phase of the client's journey maps to a dedicated space in the app.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">One product, the whole life of the home: four phases on a timeline — construction with a f</div>
+            <img src="assets/ubitik-lifecycle.png" alt="One product, the whole life of the home — four phases on a timeline.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Each phase of the client journey maps to a dedicated space in the app.</figcaption>
           </figure>
         </div>
@@ -1118,7 +1119,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Visibility over anxiety</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">A typed activity feed (documents, e-signatures, site photos, completed milestones) so the client always knows what happened and what's next. A structured roadmap of the build — VRD, finitions, livraison, raccordement — that turns an opaque industrial process into a readable progress map. And deadline-driven reminders for the client's own obligations (open the water meter, contact the mairie), because delays are often on the client side: the app manages both directions of responsibility.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">During construction — visibility over anxiety: three phone screens showing a typed activit</div>
+            <img src="assets/ubitik-construction.png" alt="During construction — a typed activity feed and build roadmap.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Typed activity feed · structured build roadmap · deadline-driven reminders.</figcaption>
           </figure>
         </div>
@@ -1133,7 +1134,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">The snag list, structured</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">Defect reporting with photos, intervention deadlines, status tracking (en cours / non traité / résolu) and a message thread per issue — replacing the classic paper snag list.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">At delivery — the snag list, structured: a réserves and SAV list with per-issue statuses a</div>
+            <img src="assets/ubitik-snaglist.png" alt="At delivery — the snag list, structured.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Defect reporting with statuses, intervention deadlines and a thread per issue.</figcaption>
           </figure>
         </div>
@@ -1148,7 +1149,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Useful after the sale</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">A library of manuals for installed equipment, and seasonal maintenance advice with per-task notification opt-ins.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Living in the home — useful after the sale: seasonal maintenance advice for gutters, roof,</div>
+            <img src="assets/ubitik-living.png" alt="Living in the home — seasonal maintenance advice.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Equipment manuals and seasonal maintenance, with per-task notification opt-ins.</figcaption>
           </figure>
         </div>
@@ -1256,7 +1257,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">AllPokemon · loop</span>
         </div>
         <figure style="margin:0">
-          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">AllPokemon cover loop.</div>
+          <img src="assets/allpokemon-cover.webp" alt="AllPokemon cover.">
         </figure>
       </div>
 
@@ -1345,7 +1346,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Analytics for allpokemon.info over twelve months: 3.2k unique visitors, 3.7k visits, 16k p</div>
+            <img src="assets/allpokemon-traffic.png" alt="Analytics for allpokemon.info over twelve months.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Twelve months of allpokemon.info: 3.2k unique visitors, 4.29 views per visit, 5m 44s on site.</figcaption>
           </figure>
           <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;max-width:58ch">
@@ -1382,7 +1383,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Version 1: Basic Pokémon Team builder</h3>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <video src="assets/allpokemon-v2.mp4" autoplay loop muted playsinline controls preload="auto" aria-label="Team creation walkthrough, from screen recordings."></video>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Team creation, V1 — from screen recordings.</figcaption>
           </figure>
           <p style="margin:0;color:var(--ink2);max-width:58ch">Team creation</p>
@@ -1390,7 +1391,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:500;color:var(--ink)">Key features</b>: Pokémon image, name, type, and basic strengths/weaknesses</p>
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Version 2: Enhanced Team Builder</h3>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">V2 team builder: PokePaste import with search, expanded Pokémon cards showing type, streng</div>
+            <img src="assets/allpokemon-v2-builder.png" alt="V2 team builder with PokePaste import.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">V2: PokePaste import, full stat and move detail per Pokémon, and a team story to share.</figcaption>
           </figure>
           <p style="margin:0;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)">Key Improvements</p>
@@ -1400,7 +1401,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           </ul>
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Version 3: AI-Assisted Team Creation</h3>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">V3 team builder with an AI remix panel: experience level, game style and team composition </div>
+            <img src="assets/allpokemon-v3-ai.png" alt="V3 team builder with an AI remix panel.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">V3: the AI takes experience level, game style and composition as parameters, then remixes the team.</figcaption>
           </figure>
           <p style="margin:0;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)">Key Improvements</p>
@@ -1419,19 +1420,19 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Replace a Pokémon in the team to improve strategy — the AI icon regenerates the best fit, </div>
+            <img src="assets/allpokemon-ui-replace.png" alt="Replace a Pokémon in the team to improve strategy.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Landing section: swap a Pokémon, and the card explains its job on the team.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Pokedex landing: explore all Pokémon — search to add to your team, with generations and ty</div>
+            <img src="assets/allpokemon-ui-pokedex.png" alt="Pokedex landing: explore all Pokémon.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Pokedex menu: search first, browse by generation or type second.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Shaymin-Sky detail page on a grass-green ground: types, strong and weak against, base stat</div>
+            <img src="assets/allpokemon-ui-detail.png" alt="Shaymin-Sky detail page on a grass-green ground.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Pokémon page — the background colour follows the type.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Published team page for Sinnoh Team1 by Collin: share and copy-to-Showdown actions beside </div>
+            <img src="assets/allpokemon-ui-team.png" alt="Published team page for Sinnoh Team1 by Collin.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Published team page: shareable, and copyable straight into Showdown.</figcaption>
           </figure>
         </div>
@@ -1444,11 +1445,11 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Figma variables panel: a spacing system of space-xl through space-0 mapped per breakpoint,</div>
+            <img src="assets/allpokemon-tokens.png" alt="Figma variables panel: spacing system per breakpoint.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Spacing tokens resolved per breakpoint — big screen, normal, tablet.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Figma variables in mode-color view: brand surfaces, icon colour and a web boolean across o</div>
+            <img src="assets/allpokemon-color-modes.png" alt="Figma variables in mode-color view.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Colour modes and booleans — every Pokémon type carries its own background variable.</figcaption>
           </figure>
         </div>
@@ -1462,7 +1463,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">Notion tasks creation and monitoring</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Notion board for the Pokemon Project: not started, in progress and ready for dev columns, </div>
+            <img src="assets/allpokemon-tasks.png" alt="Notion board for the Pokemon Project.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Notion board: tasks grouped by area, with priority and owner.</figcaption>
           </figure>
         </div>
@@ -1532,7 +1533,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">Hold to activate · guards on the way · job completed</span>
         </div>
         <figure style="margin:0">
-          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">ASAPP screens: hold to activate the emergency call, guards on the way, job completed.</div>
+          <img src="assets/asapp-cover.webp" alt="ASAPP screens: hold to activate the emergency call.">
         </figure>
       </div>
 
@@ -1556,25 +1557,25 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <p style="margin:0;color:var(--ink2);max-width:58ch">Workshops first, to settle the concept, the brand direction and the name. Then experience maps, wireframes and a high-fidelity interactive prototype ready for dev.</p>
           <p style="margin:0;color:var(--ink2);max-width:58ch">The hard part was one app for three user types — company managers, company staff and licensed security guards. Each has to be guided, and none can feel lost or anxious while asking for help or answering a call.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Onboarding on three phones: profile info with SIA licence details, and a choose-your-accou</div>
+            <img src="assets/asapp-account-types.png" alt="Onboarding on three phones with account type choice.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The fork sits at account creation — manager, staff or guard, chosen once.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">User flow diagram: load and login screens, account creation, the main button screen with m</div>
+            <img src="assets/asapp-user-flow.png" alt="User flow diagram from login to emergency call.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">User flow: a three-second press sends the call to the nearest available officers.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Security officer flow diagram: the Asapp call, job confirmed, map navigation, intervention</div>
+            <img src="assets/asapp-security-flow.png" alt="Security officer flow diagram.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Security flow: pick up the call, navigate, intervene with SIA-supported techniques, get paid.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Guard-side screens: an incoming mission with distance and hourly rate to accept or decline</div>
+            <img src="assets/asapp-guard-mission.png" alt="Guard-side screens with an incoming mission.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Accept, navigate, arrive — distance and rate stated before the guard commits.</figcaption>
           </figure>
           <p style="margin:0;color:var(--ink2);max-width:58ch">During an intervention the client's phone records audio and the operative's records audio and video. Both upload to the server and are released only if local authorities request them.</p>
           <p style="margin:0;color:var(--ink2);max-width:58ch">A business owner or team manager adds their team members under the company account, so everyone stays alerted through unexpected events and rush hours.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Manager-side sheets: team member list with an add-a-member slot, guards in action with on-</div>
+            <img src="assets/asapp-team-alert.png" alt="Manager-side sheets with team and guard status.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Manager side: the team, the guards on site, and what the community is being told.</figcaption>
           </figure>
         </div>
@@ -1687,7 +1688,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
     <div style="display:flex;flex-wrap:wrap;gap:44px var(--gutter)">
       <div style="flex:0 1 240px;min-width:200px">
         <div style="aspect-ratio:4/5;border:1px solid var(--ink);background:var(--paper2);position:relative;overflow:hidden">
-          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Irina Zubareva, portrait, black and white.</div>
+          <img src="assets/portrait-bw.png" alt="Irina Zubareva, portrait, black and white.">
         </div>
       </div>
       <div style="flex:1 1 380px;display:flex;flex-direction:column;gap:14px;min-width:0">
@@ -2118,7 +2119,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
             <p style="margin:0;color:var(--ink2);max-width:58ch">I created the product and led the tech team to launch it: design strategy, team collaboration, and delivery.</p>
           </div>
           <figure style="flex:1 1 420px;min-width:0;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <video src="assets/openfeedback-01.mp4" autoplay loop muted playsinline controls preload="auto" aria-label="Landing page header."></video>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Landing page header.</figcaption>
           </figure>
         </div>
@@ -2175,11 +2176,11 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
             <p style="margin:0;color:var(--ink2);max-width:58ch">The hard part was the data itself. Credibility is many criteria at once, so the screens had to make a dense dataset legible at a glance and drillable when it mattered.</p>
           </div>
           <figure style="flex:1 1 420px;min-width:0;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <video src="assets/openfeedback-04b.mp4" autoplay loop muted playsinline controls preload="auto" aria-label="Search and Media pages."></video>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Search and Media pages.</figcaption>
           </figure>
           <figure style="flex:1 1 420px;min-width:0;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <video src="assets/openfeedback-inline.mp4" autoplay loop muted playsinline controls preload="auto" aria-label="Editors Dashboard."></video>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Editors Dashboard.</figcaption>
           </figure>
         </div>
@@ -2200,19 +2201,19 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
             <p style="margin:0;color:var(--ink2);max-width:58ch">All of it lived in Notion as a single shared reference, so design decisions and their rationale stayed next to the people implementing them.</p>
           </div>
           <figure style="flex:1 1 420px;min-width:0;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <video src="assets/openfeedback-05.mp4" autoplay loop muted playsinline controls preload="auto" aria-label="One design-system, documented where the team already worked."></video>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">One DS system, documented where the team already worked.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Type scale: display, titles, body, buttons, links — each with its role and exact values.</div>
+            <img src="assets/of-ds-type.webp" alt="Type scale: display, titles, body, buttons, links.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Type scale: display, titles, body, buttons, links — each with its role and exact values.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Figma library: colour styles, grid breakpoints, atoms to organisms.</div>
+            <img src="assets/of-ds-figma.webp" alt="Figma library: colour styles, grid breakpoints, atoms to organisms.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Figma library: components, colour styles, grid breakpoints, atoms to organisms.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Card component in every state: collapsed, expanded with data, menu open, verdict edit.</div>
+            <img src="assets/of-ds-cards.webp" alt="Card component in every state.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Card component in every state: collapsed, expanded with data, menu open, verdict edit.</figcaption>
           </figure>
         </div>
@@ -2236,23 +2237,23 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
             <dt style="color:var(--mute)">Data model</dt><dd style="margin:0;color:var(--ink)">Defined with the backend</dd>
           </dl>
           <figure style="flex:1 1 420px;min-width:0;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <video src="assets/openfeedback-06a.mp4" autoplay loop muted playsinline controls preload="auto" aria-label="Kanban table."></video>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Kanban table</figcaption>
           </figure>
           <figure style="flex:1 1 420px;min-width:0;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <video src="assets/openfeedback-06b.mp4" autoplay loop muted playsinline controls preload="auto" aria-label="Objectives."></video>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Objectives</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Data model: what a fact-checker adds by hand, and what the system attributes automatically</div>
+            <img src="assets/of-data-model.webp" alt="Data model: hand-entered vs. system-attributed fields.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Data model: what a fact-checker adds by hand, and what the system attributes automatically.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Narrative detection: claims clustered, passed through an LLM, returned to the frontend.</div>
+            <img src="assets/of-narrative-flow.webp" alt="Narrative detection data flow schema.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Data flow schema, narrative detection: claims clustered, passed through an LLM, returned to the frontend.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Credibility scoring in three steps: collect existing ratings, standardise, average per dom</div>
+            <img src="assets/of-scoring.webp" alt="Credibility scoring in three steps.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Credibility scoring in three steps: collect existing ratings, standardise, average per domain.</figcaption>
           </figure>
           <figure style="flex:1 1 420px;min-width:0;margin:0">
