@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zubareva Archive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=Caveat:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Caveat:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
 <style>
 body{margin:0;background:#ECEDE8;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
@@ -17,7 +17,11 @@ a:hover{color:#1B1D1C}
 .page{display:none}
 .page.on{display:block}
 .hov-border:hover{border-color:var(--ink)}
-.hov-pale:hover{background:var(--dtPale)}
+.hov-pale:hover{background:#DFDEE1}
+#lightbox{position:fixed;inset:0;z-index:9000;background:rgba(27,29,28,.92);display:none;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:8px;cursor:zoom-out}
+#lightbox.on{display:flex}
+#lightbox img{width:100%;height:100%;max-width:100vw;max-height:100%;object-fit:contain;display:block;background:transparent}
+#lightbox span{font-family:'IBM Plex Mono',Menlo,Consolas,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#ECEDE8}
 </style>
 </head>
 <body>
@@ -27,7 +31,7 @@ a:hover{color:#1B1D1C}
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--ink)">Index</a>
-      <a href="#/works" style="color:var(--mute)">Work</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
@@ -36,9 +40,11 @@ a:hover{color:#1B1D1C}
 
   <main style="display:flex;flex-direction:column;gap:56px;padding:40px var(--edge) 72px">
     <div>
-      <h1 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.95;letter-spacing:-.005em;text-wrap:balance;font-size:clamp(44px,7.4vw,112px);margin:0;max-width:16ch">Product design as a <em style="font-style:normal;color:#9A1F23">structured record</em>, not a pitch.</h1>
+      <h1 style="font-family: var(--disp); font-weight: 700; text-transform: uppercase; line-height: .95; letter-spacing: -.005em; text-wrap: balance; font-size: clamp(44px,7.4vw,112px); margin: 0; max-width: 16ch; color: #1D1B1B">I DESIGN PRODUCTS
+WHERE THE
+WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw, 112px); letter-spacing: -0.005em; text-wrap-mode: initial; font-family: var(--disp);">IS THE PRODUCT.</span></h1>
       <div style="display:flex;flex-wrap:wrap;gap:22px var(--gutter);margin-top:22px">
-        <p style="flex:1 1 380px;margin:0;max-width:52ch;color:var(--ink2)">This is an index. Each entry is a shipped or in-progress product, filed with its role, timeline and status, and opened as a numbered dossier rather than a scroll story.</p><div style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute)">
+        <div style="flex:1 1 380px;margin:0;max-width:52ch;color:var(--ink2)"><div>An index of what I've built. Each entry opens as a dossier: role, timeline, status,&nbsp;<span style="color: var(--ink2); font-family: var(--body);">and the decisions that shaped the product.</span></div></div><div style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute)">
         <span>Title</span><b style="font-weight:500;color:var(--ink2)">Senior Product Designer</b>
         <span>Field</span><b style="font-weight:500;color:var(--ink2)">B2B SaaS · complex workflows, data and AI</b>
         <span>Years</span><b style="font-weight:500;color:var(--ink2)">10+ · engineering background</b>
@@ -57,7 +63,7 @@ a:hover{color:#1B1D1C}
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gutter)">
           <a href="#/calorieflow" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
             <div style="aspect-ratio:4/3;background:#C4E7DD;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
-              <video src="assets/card-calorieflow.mp4" autoplay="" loop="" muted="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+              <video src="assets/card-calorieflow.mp4" autoplay loop muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
             </div>
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
@@ -70,15 +76,15 @@ a:hover{color:#1B1D1C}
           </a>
 
           <a href="#/openfeedback" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
-            <div style="aspect-ratio:4/3;background:#ECDCC1;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
-              <video src="assets/card-openfeedback.mp4" autoplay="" loop="" muted="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+            <div style="aspect-ratio:4/3;background:#E3DFF9;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
+              <video src="assets/card-openfeedback.mp4" autoplay loop muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
             </div>
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">Open Feedback</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#7A5214">02 / Platform</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#83679C">02 / Platform</span>
               </div>
-              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; product owner &nbsp;·&nbsp; 2021 – 2024 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#7A5214">Shipped</i></div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; product owner &nbsp;·&nbsp; 2021 – 2024 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#83679C">Shipped</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">A credibility-analysis platform for journalists, scientists and fact-checkers to tell reliable sources from misinformation, at scale.</p>
             </div>
           </a>
@@ -119,7 +125,7 @@ a:hover{color:#1B1D1C}
           <span style="font-family: var(--mono2); font-size: 11px; text-transform: uppercase; letter-spacing: .12em; display: none">Filing conventions</span><a href="#/works" style="align-self:flex-start;margin-top:4px;display:inline-flex;gap:10px;align-items:center;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:3px"><span style="font-family: var(--disp); font-size: 16px;"><span style="color: rgb(63, 66, 63); font-family: &quot;IBM Plex Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 15px; letter-spacing: normal; text-transform: none;">Check all works&nbsp;</span>→</span></a>
         </div>
         
-        <p style="margin:0;color:var(--ink2);max-width:48ch">Nothing on this page carries a project colour except the project itself.</p>
+        <p style="margin:0;color:var(--ink2);max-width:48ch">I design and ship in the same loop: flows in Figma, prototypes in code, builds with LLMs. Most dossiers here include what broke and what I'd redo.</p>
       </aside>
     </div><div style="display:flex;flex-wrap:wrap;gap:56px var(--gutter)">
       <div style="flex:1 1 260px;display:flex;flex-direction:column;gap:14px;min-width:0">
@@ -141,14 +147,14 @@ a:hover{color:#1B1D1C}
           <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">Contents</span>
         </div>
         <ol style="list-style:none;margin:0;padding:0;font-family:var(--mono2);font-size:12px">
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">01</span><a href="#/openfeedback">Open Feedback — dossier, 6 sections</a><span style="color:var(--mute)">shipped</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">02</span><a href="#/calorieflow">CalorieFlow — screens + 6 sections</a><span style="color:var(--mute)">live</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">03</span><a href="#/jarvis">JARVIS² — dossier, 6 sections</a><span style="color:var(--mute)">prototype</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">04</span><a href="#/adeo">ADEO — dossier, 7 sections</a><span style="color:var(--mute)">4 BUs</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">05</span><a href="#/suez">SUEZ — dossier, 8 sections</a><span style="color:var(--mute)">shipped</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">06</span><a href="#/ubitik">My Project Companion — dossier, 8 sections</a><span style="color:var(--mute)">still live</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">07</span><a href="#/allpokemon">AllPokemon — dossier, 11 sections</a><span style="color:var(--mute)">0 → 100 MAU</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">08</span><a href="#/asapp">ASAPP — panic button app</a><span style="color:var(--mute)">England</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">01</span><a href="#/openfeedback">Open Feedback — disinformation database for the European Commission</a><span style="color:var(--mute)">shipped</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">02</span><a href="#/calorieflow">CalorieFlow — AI calorie tracker, designed and built solo, 40+ users</a><span style="color:var(--mute)">live</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">03</span><a href="#/jarvis">JARVIS² — operator interface for a local RPA agent on legacy ERP</a><span style="color:var(--mute)">prototype</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">04</span><a href="#/adeo">ADEO — product data platforms, time-to-market 45 → 15 days</a><span style="color:var(--mute)">shipped</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">05</span><a href="#/suez">SUEZ — water monitoring, three role-based interfaces</a><span style="color:var(--mute)">shipped</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">06</span><a href="#/ubitik">My Project Companion — white-label app, 9 languages</a><span style="color:var(--mute)">live</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">07</span><a href="#/allpokemon">AllPokemon — AI team-building platform that grew from a browser into an AI team builder, 0 → 100 MAU</a><span style="color:var(--mute)">live</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">08</span><a href="#/asapp">ASAPP — panic button security app for commercial users in England: wireframes, UI, prototype, design system</a><span style="color:var(--mute)">live</span></li>
         </ol>
       </div>
 
@@ -159,9 +165,11 @@ a:hover{color:#1B1D1C}
         </div>
         <dl style="display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0;font-family:var(--mono2);font-size:12px">
           <dt style="color:var(--mute)">Mail</dt><dd style="margin:0;color:var(--ink);word-break:break-word"><a href="mailto:zubareva.gbhg@gmail.com" style="text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--rule)">zubareva.gbhg@gmail.com</a></dd>
+          <dt style="color:var(--mute)">Phone</dt><dd style="margin:0;color:var(--ink)"><a href="tel:+33769426740" style="text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--rule)">07 69 42 67 40</a></dd>
           <dt style="color:var(--mute)">Base</dt><dd style="margin:0;color:var(--ink)">Paris, France</dd>
           <dt style="color:var(--mute)">Open to</dt><dd style="margin:0;color:var(--ink)">Senior product design roles, AI product work</dd>
         </dl>
+
       </div>
     </div>    
 
@@ -179,11 +187,11 @@ a:hover{color:#1B1D1C}
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
-      <a href="#/works" style="color:var(--ink)">Work</a>
+      <a href="#/works" style="color:var(--ink)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
-    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Works &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">08 slots</b></div>
+    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)"><b style="font-weight:500;color:var(--ink2)">8 projects</b></div>
   </header>
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
     <div style="flex:0 1 200px;font-family:var(--mono2);font-size:12px;color:var(--mute)"><a href="#/">← Back to index</a></div>
@@ -201,7 +209,7 @@ a:hover{color:#1B1D1C}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gutter)">
           <a href="#/calorieflow" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
             <div style="aspect-ratio:4/3;background:#C4E7DD;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
-              <video src="assets/card-calorieflow.mp4" autoplay="" loop="" muted="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+              <video src="assets/card-calorieflow.mp4" autoplay loop muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
             </div>
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
@@ -213,15 +221,15 @@ a:hover{color:#1B1D1C}
             </div>
           </a>
           <a href="#/openfeedback" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
-            <div style="aspect-ratio:4/3;background:#ECDCC1;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
-              <video src="assets/card-openfeedback.mp4" autoplay="" loop="" muted="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+            <div style="aspect-ratio:4/3;background:#E3DFF9;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
+              <video src="assets/card-openfeedback.mp4" autoplay loop muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
             </div>
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">Open Feedback</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#7A5214">02 / Platform</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#83679C">02 / Platform</span>
               </div>
-              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; product owner &nbsp;·&nbsp; 2021 – 2024 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#7A5214">Shipped</i></div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; product owner &nbsp;·&nbsp; 2021 – 2024 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#83679C">Shipped</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">A credibility-analysis platform for journalists, scientists and fact-checkers to tell reliable sources from misinformation, at scale.</p>
             </div>
           </a>
@@ -316,7 +324,7 @@ a:hover{color:#1B1D1C}
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
-      <a href="#/works" style="color:var(--mute)">Work</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
@@ -331,9 +339,9 @@ a:hover{color:#1B1D1C}
     </div>
   </div>
 
-  <div style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:0 var(--edge) 80px">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;display:flex;flex-direction:column;gap:22px">
-      <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
+    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <div style="display: flex; border: 1px solid var(--rule); gap: 10px; border-width: 0px"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">UX/UI audit and interactive prototype</dd>
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Client</dt><dd style="margin:0 0 12px;color:var(--ink)">JARVIS² (Smart RPA Agent)</dd>
@@ -363,12 +371,12 @@ a:hover{color:#1B1D1C}
     <main style="flex:1 1 520px;min-width:0;padding-top:32px;display:flex;flex-direction:column">
       <div style="border-top:1px solid var(--ink);padding-top:22px;margin-bottom:6px">
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px">
-          <h2 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:22px;margin:0;color:var(--ink)">Hero</h2>
+          <h2 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:22px;margin:0;color:var(--ink)">CHAT</h2>
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">Desktop frame, dark UI</span>
         </div>
         <figure style="margin:0">
-          <img src="assets/jarvis-cover.png" alt="Main operator screen, agent mid-task. Desktop frame, dark UI." style="display:block;width:100%;height:auto;border:1px solid var(--rule);background:#0E1211">
-          <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">[IMAGE 1, hero: main operator screen, agent mid-task. Desktop frame, dark UI.]</figcaption>
+          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Main operator screen, agent mid-task. Desktop frame, dark UI.</div>
+          <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">[IMAGE 1, chat: main operator screen, agent mid-task. Desktop frame, dark UI.]</figcaption>
         </figure>
       </div>
 
@@ -391,9 +399,9 @@ a:hover{color:#1B1D1C}
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">An agent that acts on a live accounting database is not a chatbot. The user has to see what it is about to do, stop it, and understand what happened after. That is the whole interface.</p>
           <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">[ДОПОЛНИТЬ: 2-4 предложения. Что показал аудит: что было не так с интерфейсом до тебя. Один конкретный пример лучше общих слов.]</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:flex-end;padding:14px"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 2: before/after of the screen you changed most.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Before and after of the agent chat screen: original message-log interface versus the redes</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 2: before/after of the screen changed most — chat log to task view.]</figcaption>
           </figure>
         </div>
       </section>
@@ -405,9 +413,9 @@ a:hover{color:#1B1D1C}
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">The reference scenario ends with “show me before sending”. An agent that pulls June sales from 1C, builds a report and emails the director must stop at the last step and wait.</p>
-          <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">[ДОПОЛНИТЬ: как ты это решила. Что именно видит человек в момент подтверждения: превью письма, список изменений, оценка риска шага?]</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:flex-end;padding:14px"></div>
+          <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">The irreversible step gets its own card, marked IRREVERSIBLE, and it carries everything needed to say yes without opening 1C. The recipient and the amount at the top. Then "Checked before sending — 3 of 3 matched": the amount reconciled against the document lines, the counterparty against contract #45 with its tax ID, the document status read off the 1C screen — each check with the value it found, so the operator is verifying data, not trusting a sentence. Below that, in red, the consequence in plain words: the document goes to the counterparty and the agent will not be able to recall it. Confirmation is a 1.5-second hold, not a click — the fill has to reach the end, so a reflex tap cannot send an invoice.</p>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Agent task view: the agent lowered its own autonomy, a confirmation card showing counterpa</div>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 3: the confirmation state, annotated.]</figcaption>
           </figure>
         </div>
@@ -420,10 +428,18 @@ a:hover{color:#1B1D1C}
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">The agent lowers its own autonomy when the interface behaves unexpectedly, but it can never restore it by itself. Only the operator can. So the level has to be visible at all times, and the reason for a drop has to be readable, not buried in logs.</p>
-          <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">[ДОПОЛНИТЬ: как показан уровень автономии и причина понижения.]</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:flex-end;padding:14px"></div>
+          <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">The level sits in the header at all times — AUTONOMY L1, asks on every step, lowered by the agent — so the operator never has to go looking for it. When the agent drops the level, it says so in the thread as a marked event: L2 → L1, what went wrong (the posting dialog opened twice at step 5), and what it will do until that is resolved. Raising it back is a human action: Restore level L2.</p>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Agent autonomy settings screen: current level L1, the three selectable levels, and a level</div>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 4: autonomy indicator in two states, normal and downgraded.]</figcaption>
+          </figure>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Chat view: the agent lowered its own autonomy from L2 to L1 after the posting dialog opene</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 5: the drop announced in the thread — L2 → L1, with the reason and a restore action only the operator can take.]</figcaption>
+          </figure>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Agent autonomy settings: current level L1, why the level was lowered with the raw observat</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 6: the settings screen — why the level was lowered, in the agent's own observation, and the three levels it can sit at.]</figcaption>
           </figure>
         </div>
       </section>
@@ -435,9 +451,9 @@ a:hover{color:#1B1D1C}
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">The system rolls back to a checkpoint: a failure at step 8 of 10 undoes what steps 1 to 7 wrote into 1C and the file system. Technically solid, and invisible unless the interface says so. The user needs one screen answering: what broke, what was undone, what is still there, what now.</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:flex-end;padding:14px"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 5: recovery screen after a failed run.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Rollback screen: what broke at step 5, what was rolled back, what is still in place, and w</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 7: recovery screen after a failed run — what broke, what was undone, what survived, what now.]</figcaption>
           </figure>
         </div>
       </section>
@@ -448,7 +464,10 @@ a:hover{color:#1B1D1C}
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">What I'd do differently</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
-          <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">[ДОПОЛНИТЬ: одна честная мысль. Что бы ты сделала иначе или чего не хватило в этом проекте.]</p>
+          <div style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch"><div><div role="group" aria-label="Code" tabindex="0"><pre style="color: rgb(20, 24, 31); background: transparent; font-family: var(--font-mono);"><code style="background: transparent; font-family: var(--font-mono); white-space: pre-wrap;">When I fixed the numbers in Reports, I overcorrected: I put the arithmetic on 
+screen and told the user which number to care about. Honest data does not need 
+a caption explaining how to feel about it. Make it add up, show it, stop.</code></pre></div></div>
+<p dir="ltr"></p></div>
         </div>
       </section>
 
@@ -468,7 +487,7 @@ a:hover{color:#1B1D1C}
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
-      <a href="#/works" style="color:var(--mute)">Work</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
@@ -483,8 +502,8 @@ a:hover{color:#1B1D1C}
     </div>
   </div>
 
-  <div style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:0 var(--edge) 80px">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;display:flex;flex-direction:column;gap:22px">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
+    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer, discovery through delivery</dd>
@@ -522,7 +541,7 @@ a:hover{color:#1B1D1C}
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">PMDM · Product Digital Platform</span>
         </div>
         <figure style="margin:0">
-          <img src="assets/adeo-cover.png" alt="PMDM (product master data management) — Product Digital Platform, ADEO Services." style="display:block;width:100%;height:auto;border:1px solid var(--rule)">
+          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">PMDM (product master data management) — Product Digital Platform, ADEO Services.</div>
         </figure>
       </div>
 
@@ -550,9 +569,10 @@ a:hover{color:#1B1D1C}
           <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:500;color:var(--ink)">2. Product Visibility &amp; Decision-Making (PLD V2)</b> Transformed a reporting dashboard into an operational decision platform. Providing operational visibility into product quality, lifecycle states, risks and issues requiring action.</p>
           <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:500;color:var(--ink)">3. Product Distribution &amp; Syndication (SP)</b> Transforming and distributing product data efficiently across channels and partner ecosystems.</p>
           <p style="margin:0;color:var(--ink2);max-width:58ch">Together these initiatives formed an end-to-end workflow:</p>
-          <div style="border:1px solid var(--dt);background:var(--dtPale);color:var(--dtInk);font-family:var(--mono2);font-size:12px;padding:14px;display:flex;flex-direction:column;max-width:520px">
-            <div style="padding:9px 0"><b style="font-weight:500">Create (MIM) → Validate (MIM) → Monitor (PLD) → Distribute (SP)</b></div>
-          </div>
+          <figure style="margin:0;max-width:640px">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">System architecture overview: data sources — internal systems, external providers, files a</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Create (MIM) → Validate (MIM) → Monitor (PLD) → Distribute (SP), anonymised.</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -573,9 +593,9 @@ a:hover{color:#1B1D1C}
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Supporting prioritization and decision-making</span></li>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Contributing to design quality through reviews and shared practices</span></li>
           </ul>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: platform overview visual from the case.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Product data platform overview: data sources through Product Data Syndication, Model Infor</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">One product-data workflow: syndication → governance → monitoring, and what it moved.</figcaption>
           </figure>
         </div>
       </section>
@@ -594,8 +614,8 @@ a:hover{color:#1B1D1C}
 
       <section id="a05" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
         <div style="flex:0 0 140px">
-          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">05</span>
-          <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">PLD. Product Listing Dashboard V2</span>
+          <span style="font-family: var(--disp); font-weight: 700; font-size: 64px; line-height: 0.9; color: var(--dt);">05</span>
+          <span style="display: block; margin-top: 8px; font-family: var(--mono2); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mute); max-width: 14ch;">PLD. Product Listing Dashboard</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Turning Product Monitoring Into Actionable Decision-Making</h3>
@@ -646,9 +666,9 @@ a:hover{color:#1B1D1C}
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Better prioritization</span></li>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Faster decision-making</span></li>
           </ul>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: PLD V2 dashboard screens from the case.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Product listing dashboard: Fix Problems with required actions and counts, Catalog Signals </div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">PLD V2: problems that need action separated from signals that only inform.</figcaption>
           </figure>
         </div>
       </section>
@@ -705,10 +725,24 @@ a:hover{color:#1B1D1C}
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Reduced manual workload</span></li>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Improved consistency across <b style="font-weight:500;color:var(--ink)">4 Business Units</b></span></li>
           </ul>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: syndication platform enrichment and review screens.]</figcaption>
-          </figure>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px var(--gutter)">
+            <figure style="margin:0">
+              <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Product listing, send data and file history: upload your data with a drag-and-drop file zo</div>
+              <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">01 — Upload: three columns, not a hundred-field workbook.</figcaption>
+            </figure>
+            <figure style="margin:0">
+              <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Requirements and template panel: products with or without GTIN, a starter template preview</div>
+              <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">02 — Requirements stated before the upload, not after the error.</figcaption>
+            </figure>
+            <figure style="margin:0">
+              <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Adeo data tab: current situation in figures — products to complete, to correct, waiting fo</div>
+              <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">03 — What is left to complete or correct, in counts you can act on.</figcaption>
+            </figure>
+            <figure style="margin:0">
+              <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Product attribute editor for a solar and rechargeable lamp: attribute groups with missing </div>
+              <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">04 — Review, not entry: groups flag what is missing or in error.</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -757,9 +791,9 @@ a:hover{color:#1B1D1C}
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Less unnecessary rework</span></li>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Clearer ownership and visibility</span></li>
           </ul>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: MIM validation workflow screens.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Request detail screen: requested values accepted or refused one by one, refused values kep</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Entry-level validation: each value accepted or refused on its own, with the approval timeline and the reason kept beside it.</figcaption>
           </figure>
         </div>
       </section>
@@ -780,7 +814,7 @@ a:hover{color:#1B1D1C}
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
-      <a href="#/works" style="color:var(--mute)">Work</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
@@ -795,8 +829,8 @@ a:hover{color:#1B1D1C}
     </div>
   </div>
 
-  <div style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:0 var(--edge) 80px">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;display:flex;flex-direction:column;gap:22px">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
+    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer (freelance) — redesign of major functional areas: user journeys, UX, UI, parts of the design system and UI kit, clickable prototypes, and design follow-through during development</dd>
@@ -836,12 +870,13 @@ a:hover{color:#1B1D1C}
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">Cover</span>
         </div>
         <figure style="margin:0">
-          <img src="assets/suez-cover.avif" alt="SUEZ" style="display:block;width:100%;height:auto;border:1px solid var(--rule)">
+          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">SUEZ project cover: digital solutions for a more sustainable water future — redesigning SU</div>
+          <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">Monitor in real time, analyse with clarity, act for greater impact.</figcaption>
         </figure>
         <p style="margin:0;color:var(--ink2);max-width:58ch">Redesigning SUEZ's water-monitoring platforms — from the internal supervision tool to the client dashboards — turning a tangled legacy system into ergonomic, role-appropriate interfaces.</p>
-        <figure style="margin:4px 0 0;max-width:640px">
-          <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-          <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: platform overview from the case.]</figcaption>
+        <figure style="flex:1 1 340px;min-width:280px;margin:0">
+          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">SUEZ water monitoring platform: water data — smart meters, consumption, leaks and faults —</div>
+          <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Data in, three experiences out — shared patterns, different densities.</figcaption>
         </figure>
       </div>
 
@@ -853,9 +888,9 @@ a:hover{color:#1B1D1C}
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">SUEZ operates smart water meters across France — thousands of connected devices reporting consumption, leaks and technical faults. The data served three very different audiences: internal operations teams supervising the meter fleet, professional clients managing multi-site consumption, and individual households watching a single meter.</p>
           <p style="margin:0;color:var(--ink2);max-width:58ch">The existing system had grown into a hard-to-navigate legacy: dense, inconsistent, and built around the data rather than the people reading it. An operator hunting for a faulty meter, a facility manager comparing sites, and a homeowner worried about a leak were all served the same tangled logic.</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: the legacy system before the redesign.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Legacy monitoring tool, daily alerts list: nine alert-type counters in a row — tampering, </div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The legacy alerts screen: nine counters, no hierarchy, and a table to read them in.</figcaption>
           </figure>
         </div>
       </section>
@@ -877,9 +912,9 @@ a:hover{color:#1B1D1C}
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">The core design decision was to treat the three audiences as three distinct products sharing one design language — rather than one interface with permissions.</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: the three spaces side by side.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">The three spaces side by side: household dashboard with a leak gauge, the dark supervision</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Particulier, supervision, professionnel — same components, three densities.</figcaption>
           </figure>
         </div>
       </section>
@@ -892,9 +927,9 @@ a:hover{color:#1B1D1C}
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Built for operators who live in the tool</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">A cartographic view of the meter fleet with color-coded statuses, per-emitter detail sheets, alarm synthesis (leaks, water returns, frozen meters, battery, connectivity), and diagnostic lists with bulk actions — an operator can select dozens of emitters and mark them as treated in one confirmed action. Density is a feature here, not a bug: the design optimizes for scanning thousands of devices.</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: supervision map and diagnostic lists.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Supervision cartography: a map of central France with clustered meter counts per area, eac</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Supervision map: fleet state read geographically — healthy, degraded, failing, per cluster.</figcaption>
           </figure>
         </div>
       </section>
@@ -907,9 +942,13 @@ a:hover{color:#1B1D1C}
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Built for accountability across sites</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">Multi-site clients get a dashboard of consumption by meter and by usage, a per-meter synthesis table with trends, and configurable alerts (leak / overconsumption) with thresholds and notification channels. The design assumes a professional reading in m³, comparing sites and reporting to someone.</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: professional dashboard and alert configuration.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Espace professionnel dashboard: meter count and meters in alert, monthly breakdown by mete</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Dashboard: how many meters, how many in alert, then the breakdown.</figcaption>
+          </figure>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Alerts screen: alerts triggered this week and the history, then alert subscriptions — leak</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Alerts: what fired, and the subscriptions that made it fire — configurable per site.</figcaption>
           </figure>
         </div>
       </section>
@@ -922,9 +961,9 @@ a:hover{color:#1B1D1C}
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Built for a homeowner who checks once a week</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">The same data, radically simplified: daily consumption in liters, a comparison gauge against similar households, one meter, plain-language questions to profile the home, and the same leak alerts — because a night-time continuous flow means something very different when it's your house.</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: household space, daily consumption and comparison gauge.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Espace particulier meter dashboard: daily and monthly consumption, a plain-language note t</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Household: litres per day, a sentence instead of a benchmark, and a gauge that says whether to call someone.</figcaption>
           </figure>
         </div>
       </section>
@@ -974,7 +1013,7 @@ a:hover{color:#1B1D1C}
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
-      <a href="#/works" style="color:var(--mute)">Work</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
@@ -989,8 +1028,8 @@ a:hover{color:#1B1D1C}
     </div>
   </div>
 
-  <div style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:0 var(--edge) 80px">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;display:flex;flex-direction:column;gap:22px">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
+    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer — the entire experience designed from a written brief, with no existing screens or design legacy to build on: information architecture, all flows, and the interface system from zero</dd>
@@ -1030,7 +1069,7 @@ a:hover{color:#1B1D1C}
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">UBITIK · iOS &amp; Android · white-label B2B2C</span>
         </div>
         <figure style="margin:0">
-          <img src="assets/ubitik-cover.webp" alt="My Project Companion — the client app for home builders." style="display:block;width:100%;height:auto;border:1px solid var(--rule)">
+          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">My Project Companion — the client app for home builders.</div>
         </figure>
         <p style="margin:14px 0 0;color:var(--ink2);max-width:58ch">End-to-end product design of a B2B2C mobile app connecting families building a home with their constructeur — designed from a brief in 2020, still live and adopted by home builders across France.</p>
       </div>
@@ -1063,9 +1102,9 @@ a:hover{color:#1B1D1C}
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">The key structural decision was to organize the product around the home's lifecycle rather than a feature list. Each phase of the client's journey maps to a dedicated space in the app.</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: the lifecycle spaces of the app.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">One product, the whole life of the home: four phases on a timeline — construction with a f</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Each phase of the client journey maps to a dedicated space in the app.</figcaption>
           </figure>
         </div>
       </section>
@@ -1078,9 +1117,9 @@ a:hover{color:#1B1D1C}
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Visibility over anxiety</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">A typed activity feed (documents, e-signatures, site photos, completed milestones) so the client always knows what happened and what's next. A structured roadmap of the build — VRD, finitions, livraison, raccordement — that turns an opaque industrial process into a readable progress map. And deadline-driven reminders for the client's own obligations (open the water meter, contact the mairie), because delays are often on the client side: the app manages both directions of responsibility.</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: activity feed and construction roadmap.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">During construction — visibility over anxiety: three phone screens showing a typed activit</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Typed activity feed · structured build roadmap · deadline-driven reminders.</figcaption>
           </figure>
         </div>
       </section>
@@ -1093,9 +1132,9 @@ a:hover{color:#1B1D1C}
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">The snag list, structured</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">Defect reporting with photos, intervention deadlines, status tracking (en cours / non traité / résolu) and a message thread per issue — replacing the classic paper snag list.</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: defect reporting and status tracking.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">At delivery — the snag list, structured: a réserves and SAV list with per-issue statuses a</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Defect reporting with statuses, intervention deadlines and a thread per issue.</figcaption>
           </figure>
         </div>
       </section>
@@ -1108,9 +1147,9 @@ a:hover{color:#1B1D1C}
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Useful after the sale</h3>
           <p style="margin:0;color:var(--ink2);max-width:58ch">A library of manuals for installed equipment, and seasonal maintenance advice with per-task notification opt-ins.</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: manuals library and maintenance advice.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Living in the home — useful after the sale: seasonal maintenance advice for gutters, roof,</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Equipment manuals and seasonal maintenance, with per-task notification opt-ins.</figcaption>
           </figure>
         </div>
       </section>
@@ -1161,7 +1200,7 @@ a:hover{color:#1B1D1C}
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
-      <a href="#/works" style="color:var(--mute)">Work</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
@@ -1176,8 +1215,8 @@ a:hover{color:#1B1D1C}
     </div>
   </div>
 
-  <div style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:0 var(--edge) 80px">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;display:flex;flex-direction:column;gap:22px">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
+    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">My Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Full-stack developer, UX researcher, and project manager</dd>
@@ -1217,7 +1256,7 @@ a:hover{color:#1B1D1C}
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">AllPokemon · loop</span>
         </div>
         <figure style="margin:0">
-          <img src="assets/allpokemon-cover.webp" alt="AllPokemon cover loop." style="display:block;width:100%;height:auto;border:1px solid var(--rule);background:#F1F1F3">
+          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">AllPokemon cover loop.</div>
         </figure>
       </div>
 
@@ -1305,9 +1344,9 @@ a:hover{color:#1B1D1C}
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">Results and impact</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: Traffic analytics for allpokemon]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Analytics for allpokemon.info over twelve months: 3.2k unique visitors, 3.7k visits, 16k p</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Twelve months of allpokemon.info: 3.2k unique visitors, 4.29 views per visit, 5m 44s on site.</figcaption>
           </figure>
           <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;max-width:58ch">
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Grew from 0 to 100 monthly active users in 3 months</span></li>
@@ -1341,22 +1380,18 @@ a:hover{color:#1B1D1C}
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">Project evolution</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: project evolution overview]</figcaption>
-          </figure>
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Version 1: Basic Pokémon Team builder</h3>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[VIDEO: Team creation, V1]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Team creation, V1 — from screen recordings.</figcaption>
           </figure>
           <p style="margin:0;color:var(--ink2);max-width:58ch">Team creation</p>
           <p style="margin:0;color:var(--ink2);max-width:58ch">Simple design focusing on essential information</p>
           <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:500;color:var(--ink)">Key features</b>: Pokémon image, name, type, and basic strengths/weaknesses</p>
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Version 2: Enhanced Team Builder</h3>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: V2. image is taken from screen recordings]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">V2 team builder: PokePaste import with search, expanded Pokémon cards showing type, streng</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">V2: PokePaste import, full stat and move detail per Pokémon, and a team story to share.</figcaption>
           </figure>
           <p style="margin:0;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)">Key Improvements</p>
           <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;max-width:58ch">
@@ -1364,9 +1399,9 @@ a:hover{color:#1B1D1C}
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Added search for items &amp; moves</span></li>
           </ul>
           <h3 style="margin:6px 0 0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05">Version 3: AI-Assisted Team Creation</h3>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: V3. Integrated AI-builder and better UX/UI]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">V3 team builder with an AI remix panel: experience level, game style and team composition </div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">V3: the AI takes experience level, game style and composition as parameters, then remixes the team.</figcaption>
           </figure>
           <p style="margin:0;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)">Key Improvements</p>
           <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;max-width:58ch">
@@ -1383,21 +1418,21 @@ a:hover{color:#1B1D1C}
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">UI examples</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: Landing page section]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Replace a Pokémon in the team to improve strategy — the AI icon regenerates the best fit, </div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Landing section: swap a Pokémon, and the card explains its job on the team.</figcaption>
           </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: Poxedex menu]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Pokedex landing: explore all Pokémon — search to add to your team, with generations and ty</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Pokedex menu: search first, browse by generation or type second.</figcaption>
           </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: Pokemon page, BG color is according to the pokemon type]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Shaymin-Sky detail page on a grass-green ground: types, strong and weak against, base stat</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Pokémon page — the background colour follows the type.</figcaption>
           </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: Published team page - prototype]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Published team page for Sinnoh Team1 by Collin: share and copy-to-Showdown actions beside </div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Published team page: shareable, and copyable straight into Showdown.</figcaption>
           </figure>
         </div>
       </section>
@@ -1408,13 +1443,13 @@ a:hover{color:#1B1D1C}
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">Figma tokens and booleans</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: Tokens spacing]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Figma variables panel: a spacing system of space-xl through space-0 mapped per breakpoint,</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Spacing tokens resolved per breakpoint — big screen, normal, tablet.</figcaption>
           </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: Tokens colors and booleans]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Figma variables in mode-color view: brand surfaces, icon colour and a web boolean across o</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Colour modes and booleans — every Pokémon type carries its own background variable.</figcaption>
           </figure>
         </div>
       </section>
@@ -1426,9 +1461,9 @@ a:hover{color:#1B1D1C}
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">Notion tasks creation and monitoring</p>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE: Notion board]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Notion board for the Pokemon Project: not started, in progress and ready for dev columns, </div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Notion board: tasks grouped by area, with priority and owner.</figcaption>
           </figure>
         </div>
       </section>
@@ -1449,7 +1484,7 @@ a:hover{color:#1B1D1C}
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
-      <a href="#/works" style="color:var(--mute)">Work</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
@@ -1464,8 +1499,8 @@ a:hover{color:#1B1D1C}
     </div>
   </div>
 
-  <div style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:0 var(--edge) 80px">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;display:flex;flex-direction:column;gap:22px">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
+    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Delivered</dt><dd style="margin:0 0 12px;color:var(--ink)">wireframes, UI, an interactive prototype, a design system and graphic supports</dd>
@@ -1497,7 +1532,7 @@ a:hover{color:#1B1D1C}
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">Hold to activate · guards on the way · job completed</span>
         </div>
         <figure style="margin:0">
-          <img src="assets/asapp-cover.webp" alt="ASAPP screens: hold to activate the emergency call, guards on the way, job completed." style="display:block;width:100%;height:auto;border:1px solid var(--rule);background:#FDF9F4">
+          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">ASAPP screens: hold to activate the emergency call, guards on the way, job completed.</div>
         </figure>
       </div>
 
@@ -1517,41 +1552,30 @@ a:hover{color:#1B1D1C}
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">Screens</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 1 from the case.]</figcaption>
+          <h3 style="margin:0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:22px;line-height:1.1">Three user types challenge</h3>
+          <p style="margin:0;color:var(--ink2);max-width:58ch">Workshops first, to settle the concept, the brand direction and the name. Then experience maps, wireframes and a high-fidelity interactive prototype ready for dev.</p>
+          <p style="margin:0;color:var(--ink2);max-width:58ch">The hard part was one app for three user types — company managers, company staff and licensed security guards. Each has to be guided, and none can feel lost or anxious while asking for help or answering a call.</p>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Onboarding on three phones: profile info with SIA licence details, and a choose-your-accou</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The fork sits at account creation — manager, staff or guard, chosen once.</figcaption>
           </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 2 from the case.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">User flow diagram: load and login screens, account creation, the main button screen with m</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">User flow: a three-second press sends the call to the nearest available officers.</figcaption>
           </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 4 from the case.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Security officer flow diagram: the Asapp call, job confirmed, map navigation, intervention</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Security flow: pick up the call, navigate, intervene with SIA-supported techniques, get paid.</figcaption>
           </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 5 from the case.]</figcaption>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Guard-side screens: an incoming mission with distance and hourly rate to accept or decline</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Accept, navigate, arrive — distance and rate stated before the guard commits.</figcaption>
           </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 6 from the case.]</figcaption>
-          </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 7 from the case.]</figcaption>
-          </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 8 from the case.]</figcaption>
-          </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 9 from the case.]</figcaption>
-          </figure>
-          <figure style="margin:4px 0 0;max-width:640px">
-            <div style="aspect-ratio:16/10;border:1px dashed var(--dt);background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px)"></div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 10 from the case.]</figcaption>
+          <p style="margin:0;color:var(--ink2);max-width:58ch">During an intervention the client's phone records audio and the operative's records audio and video. Both upload to the server and are released only if local authorities request them.</p>
+          <p style="margin:0;color:var(--ink2);max-width:58ch">A business owner or team manager adds their team members under the company account, so everyone stays alerted through unexpected events and rush hours.</p>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Manager-side sheets: team member list with an add-a-member slot, guards in action with on-</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Manager side: the team, the guards on site, and what the community is being told.</figcaption>
           </figure>
         </div>
       </section>
@@ -1572,7 +1596,7 @@ a:hover{color:#1B1D1C}
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
-      <a href="#/works" style="color:var(--mute)">Work</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--ink)">Contact</a>
     </nav>
@@ -1586,7 +1610,7 @@ a:hover{color:#1B1D1C}
       <h1 style="grid-column:3 / 12;margin:0;padding:24px 0 34px;font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.86;letter-spacing:-.01em;font-size:clamp(52px,11vw,180px)">Write<br>to me</h1>
     </div>
 
-    <p style="grid-column:3 / 8;margin:0;padding:26px 0 0;color:var(--ink2);max-width:46ch">Freelance and full-time both work. If you write with the context — product, stage, what is already built — you get a useful answer the same day.</p>
+    <p style="grid-column:3 / 8;margin:0;padding:26px 0 0;color:var(--ink2);max-width:46ch">Open to senior product design roles, full-time or freelance. If you send the role, the team size and what the product actually does, you get an answer the same day.</p>
 
     <div style="grid-column:9 / -1;padding:26px 0 0;font-family:var(--mono2);font-size:12px;color:var(--mute);display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-content:start">
       <span>Reply</span><b style="font-weight:500;color:var(--ink2)">Within 24h, weekdays</b>
@@ -1601,7 +1625,7 @@ a:hover{color:#1B1D1C}
         </div>
         <div style="display:grid;grid-template-columns:minmax(84px,14%) 1fr;gap:14px;align-items:baseline;padding:16px 0;border-top:1px solid var(--ruleSoft)">
           <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">Phone</span>
-          <span style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(20px,2.4vw,34px);line-height:1.05;word-break:break-word"><a href="tel:+33769426740" style="text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--rule)">+33 7 69 42 67 40</a></span>
+          <span style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(20px,2.4vw,34px);line-height:1.05;word-break:break-word"><a href="tel:+33769426740" style="text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--rule)">07 69 42 67 40</a></span>
         </div>
         <div style="display:grid;grid-template-columns:minmax(84px,14%) 1fr;gap:14px;align-items:baseline;padding:16px 0;border-top:1px solid var(--ruleSoft)">
           <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">LinkedIn</span>
@@ -1641,7 +1665,7 @@ a:hover{color:#1B1D1C}
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
-      <a href="#/works" style="color:var(--mute)">Work</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--ink)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
@@ -1650,7 +1674,8 @@ a:hover{color:#1B1D1C}
 
   <main style="display:flex;flex-direction:column;gap:64px;padding:48px var(--edge) 72px">
     <div style="display:flex;flex-wrap:wrap;gap:32px var(--gutter);align-items:flex-end">
-      <h1 style="flex:1 1 460px;font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.95;font-size:clamp(40px,5.6vw,84px);margin:0;max-width:18ch;text-wrap:balance">I design products where the workflow <em style="font-style: normal; color: #9A1F23">is</em> the product.</h1>
+      <h1 style="font-family: var(--disp); font-weight: 700; text-transform: uppercase; line-height: .95; letter-spacing: -.005em; text-wrap: balance; font-size: clamp(40px,5.6vw,84px); margin: 0; max-width: 16ch; color: #1D1B1B">ENGINEER FIRST.
+DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw, 112px); letter-spacing: -0.005em; text-wrap-mode: initial; font-family: var(--disp);"></span></h1>
       <div style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute)">
         <span>Title</span><b style="font-weight:500;color:var(--ink2)">Senior Product Designer</b>
         <span>Field</span><b style="font-weight:500;color:var(--ink2)">B2B SaaS · complex workflows, data and AI</b>
@@ -1662,8 +1687,7 @@ a:hover{color:#1B1D1C}
     <div style="display:flex;flex-wrap:wrap;gap:44px var(--gutter)">
       <div style="flex:0 1 240px;min-width:200px">
         <div style="aspect-ratio:4/5;border:1px solid var(--ink);background:var(--paper2);position:relative;overflow:hidden">
-          <div style="position:absolute;inset:12px;border:1px dashed var(--rule)"></div>
-          <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:12px;font-family:var(--mono2);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)"><span>Portrait</span><span>4 : 5 · b/w</span></div>
+          <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Irina Zubareva, portrait, black and white.</div>
         </div>
       </div>
       <div style="flex:1 1 380px;display:flex;flex-direction:column;gap:14px;min-width:0">
@@ -1692,7 +1716,7 @@ a:hover{color:#1B1D1C}
         </div>
         <dl style="display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0;font-family:var(--mono2);font-size:12px">
           <dt style="color:var(--mute)">Mail</dt><dd style="margin:0;color:var(--ink);word-break:break-word"><a href="mailto:zubareva.gbhg@gmail.com" style="text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--rule)">zubareva.gbhg@gmail.com</a></dd>
-          <dt style="color:var(--mute)">Phone</dt><dd style="margin:0;color:var(--ink)"><a href="tel:+33769426740" style="text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--rule)">+33 7 69 42 67 40</a></dd>
+          <dt style="color:var(--mute)">Phone</dt><dd style="margin:0;color:var(--ink)"><a href="tel:+33769426740" style="text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--rule)">07 69 42 67 40</a></dd>
           <dt style="color:var(--mute)">LinkedIn</dt><dd style="margin:0;color:var(--ink);word-break:break-word"><a href="https://linkedin.com/in/irina-zubareva-27546113b" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--rule)">irina-zubareva-27546113b</a></dd>
           <dt style="color:var(--mute)">Portfolio</dt><dd style="margin:0;color:var(--ink);word-break:break-word"><a href="https://contra.com/zubarevagbhg_pdg7vons" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--rule)">contra.com/zubarevagbhg</a></dd>
         </dl>
@@ -1797,7 +1821,7 @@ a:hover{color:#1B1D1C}
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
-      <a href="#/works" style="color:var(--mute)">Work</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
@@ -1805,16 +1829,16 @@ a:hover{color:#1B1D1C}
   </header>
 
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
-    <div style="flex:0 1 200px;font-family:var(--mono2);font-size:12px;color:var(--mute)"><a href="#/">← Back to index</a></div>
+    <div style="flex:0 1 200px;font-family:var(--mono2);font-size:12px;color:var(--mute)"><a href="#/works">← Back to works</a></div>
     <div style="flex:1 1 480px;min-width:0">
       <h1 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(56px,9vw,132px);line-height:.88;margin:0;letter-spacing:-.01em">CalorieFlow</h1>
       <div style="margin-top:10px;font-family:var(--mono2);font-size:12px;color:var(--mute)">AI-powered nutrition &amp; weight management &nbsp;·&nbsp; designed and shipped &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">Live PWA</b> &nbsp;·&nbsp; <a href="https://caloriesflow.replit.app" target="_blank" rel="noopener" style="color:var(--dt);text-decoration:underline;text-underline-offset:2px">caloriesflow.replit.app</a></div>
     </div>
   </div>
 
-  <div style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:0 var(--edge) 80px">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;display:flex;flex-direction:column;gap:22px">
-      <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
+    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <div style="display: flex; border: 1px solid var(--rule); gap: 10px; border-width: 0px"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex: 1; height: 22px; color: #F0EDE9; background-color: #F0EDE9; border-width: 1px; border-style: solid; border-color: #D9D6D1"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product designer &amp; builder, solo</dd>
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Timeline</dt><dd style="margin:0 0 12px;color:var(--ink)">May 2026 – ongoing</dd>
@@ -1855,7 +1879,7 @@ a:hover{color:#1B1D1C}
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">From the live app</span>
         </div>
         <figure style="margin:0">
-          <img src="assets/cf-screens.webp" alt="Three CalorieFlow screens: dashboard, log a meal, weight projection." style="display:block;width:100%;height:auto;border:1px solid var(--rule);background:var(--paper)">
+          <img src="assets/cf-screens.webp" alt="Three CalorieFlow screens: dashboard, log a meal, weight projection.">
           <figcaption style="font-family:var(--mono2);font-size:10.5px;color:var(--mute);margin-top:9px;letter-spacing:.04em;text-transform:uppercase">01 Dashboard · 02 Log a meal · 03 Weight projection — track / understand / progress</figcaption>
         </figure>
         <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid var(--rule);background:var(--paper2);padding:11px 14px;font-family:var(--mono2);font-size:12px;margin-top:12px;max-width:360px"><span>Lunch · +140 kcal</span><span style="border:1px solid var(--ink);padding:4px 11px;font-size:11px">Undo</span></div>
@@ -1873,7 +1897,7 @@ a:hover{color:#1B1D1C}
             <p style="margin:0;color:var(--ink2)">The whole product was built by directing an AI coding agent against strict specs, with the design decisions kept on my side of the table. It is live now as a progressive web app with 40+ daily users.</p>
           </div>
           <figure style="margin:4px 0 0;max-width:560px">
-            <video src="assets/cf-hero.mp4" autoplay="" loop="" muted="" playsinline="" controls="" preload="auto" style="display:block;width:100%;height:auto;max-height:74vh;object-fit:contain;border:1px solid var(--dt);background:var(--dtPale)"></video>
+            <video src="assets/cf-hero.mp4" autoplay loop muted playsinline controls preload="auto" aria-label="CalorieFlow walkthrough of the core loop: type a meal, review the estimate, log it."></video>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">A walk through the live app: plain-text meal in, estimate reviewed, logged.</figcaption>
           </figure>
         </div>
@@ -1889,8 +1913,8 @@ a:hover{color:#1B1D1C}
             <p style="margin:0;color:var(--ink2)">Every estimate carries its assumption in plain sight. “1 medium, ~110g” is not hidden in a tooltip. It sits under the number, and tapping it opens the edit before anything is saved. Calories and macros are both editable there.</p>
             <p style="margin:0;color:var(--ink2)">After logging, the card confirms exactly what changed — the meal it went to and the calorie delta, like “Added to Lunch · +350 kcal” — with a five-second undo beside it. Correcting a guess should cost less than making one.</p>
           </div>
-          <figure style="margin:4px 0 0">
-            <img src="assets/cf-undo.png" alt="CalorieFlow estimate card with editable calories and macros." style="display:block;width:auto;max-width:min(100%,560px);height:auto;max-height:74vh;object-fit:contain;border:1px solid var(--dt);background:var(--dtPale)">
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <img src="assets/cf-undo.png" alt="CalorieFlow estimate card with editable calories and macros.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The estimate card in the live app: the assumption spelled out, every value editable before Log this meal.</figcaption>
           </figure>
         </div>
@@ -1910,8 +1934,8 @@ a:hover{color:#1B1D1C}
             <p style="margin:0;color:var(--ink2)">Goals that fall out of a safe range get an inline warning: a floor at 1,200 kcal for loss, and a mirrored cap for gain mode.</p>
             <p style="margin:0;color:var(--ink2)">The warning explains, it does not block. People know things about their own bodies that the app does not, so the app says what it sees and leaves the decision where it belongs.</p>
           </div>
-          <figure style="margin:4px 0 0">
-            <img src="assets/cf-guardrails.png" alt="CalorieFlow body metrics screen with an out-of-range goal flagged inline." style="display:block;width:auto;max-width:min(100%,560px);height:auto;max-height:74vh;object-fit:contain;border:1px solid var(--dt);background:var(--dtPale)">
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <img src="assets/cf-guardrails.png" alt="CalorieFlow body metrics screen with an out-of-range goal flagged inline.">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The guardrail in place: an out-of-range goal is flagged inline in amber, and the setting still saves.</figcaption>
           </figure>
         </div>
@@ -2028,12 +2052,12 @@ a:hover{color:#1B1D1C}
   </div>
 </section>
 
-<section class="page" id="p-openfeedback" data-screen-label="Open Feedback dossier" style="--dt:#7A5214;--dtPale:#ECDCC1;--dtInk:#4A3308">
+<section class="page" id="p-openfeedback" data-screen-label="Open Feedback dossier" style="--dt:#83679C;--dtPale:#E3DFF9;--dtInk:#3D2C50">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
     <nav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
       <a href="#/" style="color:var(--mute)">Index</a>
-      <a href="#/works" style="color:var(--mute)">Work</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
@@ -2041,16 +2065,16 @@ a:hover{color:#1B1D1C}
   </header>
 
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
-    <div style="flex:0 1 200px;font-family:var(--mono2);font-size:12px;color:var(--mute)"><a href="#/">← Back to index</a></div>
+    <div style="flex:0 1 200px;font-family:var(--mono2);font-size:12px;color:var(--mute)"><a href="#/works">← Back to works</a></div>
     <div style="flex:1 1 480px;min-width:0">
       <h1 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(56px,9vw,132px);line-height:.88;margin:0;letter-spacing:-.01em">Open Feedback</h1>
       <div style="margin-top:10px;font-family:var(--mono2);font-size:12px;color:var(--mute)">Credibility-analysis platform &nbsp;·&nbsp; product design &amp; ownership &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">Shipped · 500+ scientists</b></div>
     </div>
   </div>
 
-  <div style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:0 var(--edge) 80px">
-    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;display:flex;flex-direction:column;gap:22px">
-      <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
+    <aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <div style="display: flex; border: 1px solid var(--rule); border-width: 0px; gap: 10px"><span style="flex: 1; height: 22px; background-color: #83679C"></span><span style="flex: 1; height: 22px; background-color: #DFDEE1"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer &amp; Product Owner</dd>
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Timeline</dt><dd style="margin:0 0 12px;color:var(--ink)">2021 – 2024</dd>
@@ -2089,17 +2113,13 @@ a:hover{color:#1B1D1C}
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">What it is</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-wrap:wrap;gap:var(--gutter)">
-          <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <div style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:14px">
             <p style="margin:0;color:var(--ink2);max-width:58ch">Open Feedback is a platform for people who check facts for a living — journalists, scientists, fact-checkers — to analyse credibility data at scale and tell the difference between truth and misinformation.</p>
             <p style="margin:0;color:var(--ink2);max-width:58ch">I created the product and led the tech team to launch it: design strategy, team collaboration, and delivery.</p>
           </div>
-          <figure style="flex:1 1 240px;min-width:0;margin:0">
-            <div style="border:1px solid var(--dt);background:var(--dtPale);color:var(--dtInk);font-family:var(--mono2);font-size:11.5px;padding:14px;display:flex;flex-direction:column">
-              <div style="padding:9px 0;border-bottom:1px dashed var(--dt)"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">For</b>Journalists · scientists · fact-checkers</div>
-              <div style="padding:9px 0;border-bottom:1px dashed var(--dt)"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Does</b>Analyse credibility data at scale</div>
-              <div style="padding:9px 0"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">So that</b>Reliable sources separate from misinformation</div>
-            </div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">One workflow, from raw source data to a credibility read.</figcaption>
+          <figure style="flex:1 1 420px;min-width:0;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Landing page header.</figcaption>
           </figure>
         </div>
       </section>
@@ -2115,7 +2135,7 @@ a:hover{color:#1B1D1C}
             <p style="margin:0;color:var(--ink2);max-width:58ch">The job was to turn that into a structured system: identify reliable sources, surface misinformation, and support the decision at the end of it.</p>
           </div>
           <figure style="flex:1 1 240px;min-width:0;margin:0">
-            <div style="border:1px solid var(--dt);background:var(--dtPale);color:var(--dtInk);font-family:var(--mono2);font-size:12px;padding:12px;display:grid;grid-template-columns:auto 1fr;gap:10px"><span style="color:var(--dt)">!</span><span>No dedicated tool. Manual verification across fragmented sources, no shared structure.</span></div>
+            <div style="border: 1px solid var(--dt); color: var(--dtInk); font-family: var(--mono2); font-size: 12px; padding: 12px; display: grid; grid-template-columns: auto 1fr; gap: 10px; background-color: #DFDEE1"><span style="color:var(--dt)">!</span><span>No dedicated tool. Manual verification across fragmented sources, no shared structure.</span></div>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The starting condition the platform had to replace.</figcaption>
           </figure>
         </div>
@@ -2150,21 +2170,17 @@ a:hover{color:#1B1D1C}
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">The interface</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-wrap:wrap;gap:var(--gutter)">
-          <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <div style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:14px">
             <p style="margin:0;color:var(--ink2);max-width:58ch">Three main surfaces: the Search and Media pages for finding and reading sources, and an Editors Dashboard for the people managing the analysis.</p>
             <p style="margin:0;color:var(--ink2);max-width:58ch">The hard part was the data itself. Credibility is many criteria at once, so the screens had to make a dense dataset legible at a glance and drillable when it mattered.</p>
           </div>
-          <figure style="flex:1 1 240px;min-width:0;margin:0">
-            <div style="background:var(--dtPale);border:1px solid var(--dt);padding:14px;font-family:var(--mono2);font-size:12px;color:var(--dtInk);display:flex;flex-direction:column;gap:8px">
-              <div style="display:flex;justify-content:space-between;color:var(--dt)"><span>SOURCE · media outlet</span><span>REVIEW</span></div>
-              <div style="font-family:var(--disp);font-weight:700;font-size:44px;line-height:.9;color:var(--dtInk)">0.78<small style="font-family:var(--mono2);font-size:12px;font-weight:400;margin-left:6px">cred.</small></div>
-              <div style="border-top:1px dashed var(--dt);padding-top:8px;display:flex;justify-content:space-between;gap:10px"><span>transparency · evidence · <u style="text-decoration:underline dotted;text-underline-offset:3px">corrections</u></span><span>details</span></div>
-              <div style="display:flex;gap:8px;margin-top:4px">
-                <span style="flex:1;text-align:center;padding:7px 0;border:1px solid var(--dt)">flag</span>
-                <span style="flex:1;text-align:center;padding:7px 0;border:1px solid var(--dt);background:var(--dt);color:var(--dtPale)">publish</span>
-              </div>
-            </div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Search and Media pages, Editors Dashboard. Values are illustrative.</figcaption>
+          <figure style="flex:1 1 420px;min-width:0;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Search and Media pages.</figcaption>
+          </figure>
+          <figure style="flex:1 1 420px;min-width:0;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Editors Dashboard.</figcaption>
           </figure>
         </div>
       </section>
@@ -2179,19 +2195,25 @@ a:hover{color:#1B1D1C}
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">Design system &amp; documentation</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-wrap:wrap;gap:var(--gutter)">
-          <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <div style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:14px">
             <p style="margin:0;color:var(--ink2);max-width:58ch">The interface ran on a proper system: a type scale with defined roles, spacing tokens, a fixed set of breakpoints, and a component library the developers built against.</p>
             <p style="margin:0;color:var(--ink2);max-width:58ch">All of it lived in Notion as a single shared reference, so design decisions and their rationale stayed next to the people implementing them.</p>
           </div>
-          <figure style="flex:1 1 240px;min-width:0;margin:0">
-            <div style="border:1px solid var(--dt);background:var(--dtPale);color:var(--dtInk);font-family:var(--mono2);font-size:11.5px;padding:14px;display:flex;flex-direction:column">
-              <div style="padding:9px 0;border-bottom:1px dashed var(--dt)"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Type</b>Scale + roles</div>
-              <div style="padding:9px 0;border-bottom:1px dashed var(--dt)"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Spacing</b>Tokens</div>
-              <div style="padding:9px 0;border-bottom:1px dashed var(--dt)"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Breakpoints</b>Defined set</div>
-              <div style="padding:9px 0;border-bottom:1px dashed var(--dt)"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Components</b>Shared library</div>
-              <div style="padding:9px 0"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Docs</b>Design system in Notion</div>
-            </div>
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">One system, documented where the team already worked.</figcaption>
+          <figure style="flex:1 1 420px;min-width:0;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">One DS system, documented where the team already worked.</figcaption>
+          </figure>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Type scale: display, titles, body, buttons, links — each with its role and exact values.</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Type scale: display, titles, body, buttons, links — each with its role and exact values.</figcaption>
+          </figure>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Figma library: colour styles, grid breakpoints, atoms to organisms.</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Figma library: components, colour styles, grid breakpoints, atoms to organisms.</figcaption>
+          </figure>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Card component in every state: collapsed, expanded with data, menu open, verdict edit.</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Card component in every state: collapsed, expanded with data, menu open, verdict edit.</figcaption>
           </figure>
         </div>
       </section>
@@ -2213,6 +2235,30 @@ a:hover{color:#1B1D1C}
             <dt style="color:var(--mute)">Data flow</dt><dd style="margin:0;color:var(--ink)">Diagram + schema</dd>
             <dt style="color:var(--mute)">Data model</dt><dd style="margin:0;color:var(--ink)">Defined with the backend</dd>
           </dl>
+          <figure style="flex:1 1 420px;min-width:0;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Kanban table</figcaption>
+          </figure>
+          <figure style="flex:1 1 420px;min-width:0;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Video</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Objectives</figcaption>
+          </figure>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Data model: what a fact-checker adds by hand, and what the system attributes automatically</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Data model: what a fact-checker adds by hand, and what the system attributes automatically.</figcaption>
+          </figure>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Narrative detection: claims clustered, passed through an LLM, returned to the frontend.</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Data flow schema, narrative detection: claims clustered, passed through an LLM, returned to the frontend.</figcaption>
+          </figure>
+          <figure style="flex:1 1 340px;min-width:280px;margin:0">
+            <div style="aspect-ratio:16/10;border:1px dashed #B9B9B2;background:repeating-linear-gradient(135deg,#E3E5DF 0 8px,#ECEDE8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A82;text-align:center;padding:12px">Credibility scoring in three steps: collect existing ratings, standardise, average per dom</div>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Credibility scoring in three steps: collect existing ratings, standardise, average per domain.</figcaption>
+          </figure>
+          <figure style="flex:1 1 420px;min-width:0;margin:0">
+            
+            
+          </figure>
         </div>
       </section>
 
@@ -2220,7 +2266,7 @@ a:hover{color:#1B1D1C}
         <p style="font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.95;font-size:clamp(34px,5vw,72px);margin:0;max-width:24ch;text-wrap:balance">Manual checking → a platform for 500+ scientists. <em style="font-style:normal;color:var(--dt)">And a European Commission tender won.</em></p>
       </div>
 
-      <a href="#/jarvis" style="display:flex;flex-wrap:wrap;align-items:center;gap:16px var(--gutter);padding:30px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--ink);text-decoration:none;color:var(--ink)" class="hov-pale">
+      <a href="#/jarvis" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px var(--gutter); padding: 30px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--ink); text-decoration: none; color: var(--ink)" class="hov-pale">
         <span style="flex:0 0 140px;font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">→</span>
         <span style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:6px">
           <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">Next entry</span>
@@ -2231,11 +2277,12 @@ a:hover{color:#1B1D1C}
   </div>
 </section>
 
+<div id="lightbox"><img id="lightbox-img" alt="Enlarged view"><span>Click anywhere to close</span></div>
+
 </div>
 
 <script>
 (function(){
-  var routes = ['home','works','jarvis','adeo','suez','ubitik','allpokemon','asapp','contact','about','calorieflow','openfeedback'];
   var slugToId = {'':'home','home':'home','works':'works','jarvis':'jarvis','adeo':'adeo','suez':'suez','ubitik':'ubitik','allpokemon':'allpokemon','asapp':'asapp','contact':'contact','about':'about','calorieflow':'calorieflow','openfeedback':'openfeedback'};
   var titles = {
     home:'Zubareva Archive', works:'Work — Zubareva Archive', jarvis:'JARVIS\u00b2 — Zubareva Archive',
@@ -2255,6 +2302,27 @@ a:hover{color:#1B1D1C}
   window.addEventListener('hashchange', route);
   if (!location.hash || location.hash === '#') { location.hash = '#/home'; }
   route();
+
+  // ---- lightbox: click any figure image to view it full-screen ----
+  var overlay = document.getElementById('lightbox');
+  var overlayImg = document.getElementById('lightbox-img');
+  function openLightbox(src){ overlayImg.setAttribute('src', src); overlay.classList.add('on'); }
+  function closeLightbox(){ overlay.classList.remove('on'); overlayImg.removeAttribute('src'); }
+  document.addEventListener('click', function(e){
+    var img = e.target && e.target.tagName === 'IMG' ? e.target : null;
+    if (!img || !img.closest('figure')) return;
+    e.preventDefault();
+    openLightbox(img.getAttribute('src'));
+  });
+  overlay.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLightbox(); });
+
+  // ---- loop videos cleanly: restart just before the final frame ----
+  document.querySelectorAll('video[autoplay]').forEach(function(v){
+    v.addEventListener('timeupdate', function(){
+      if (v.duration && v.currentTime > v.duration - 0.35) { v.currentTime = 0; v.play().catch(function(){}); }
+    });
+  });
 })();
 </script>
 </body>
