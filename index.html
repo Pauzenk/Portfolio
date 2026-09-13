@@ -175,8 +175,8 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">Contents</span>
         </div>
         <ol style="list-style:none;margin:0;padding:0;font-family:var(--mono2);font-size:12px">
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">01</span><a href="#/openfeedback">Open Feedback — disinformation database for the European Commission</a><span style="color:var(--mute)">shipped</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">02</span><a href="#/calorieflow">CalorieFlow — AI calorie tracker, designed and built solo, 40+ users</a><span style="color:var(--mute)">live</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">01</span><a href="#/calorieflow">CalorieFlow — AI calorie tracker, designed and built solo, 40+ users</a><span style="color:var(--mute)">live</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">02</span><a href="#/openfeedback">Open Feedback — disinformation database for the European Commission</a><span style="color:var(--mute)">shipped</span></li>
           <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">03</span><a href="#/jarvis">JARVIS² — operator interface for a local RPA agent on legacy ERP</a><span style="color:var(--mute)">prototype</span></li>
           <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">04</span><a href="#/adeo">ADEO — product data platforms, time-to-market 45 → 15 days</a><span style="color:var(--mute)">shipped</span></li>
           <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">05</span><a href="#/suez">SUEZ — water monitoring, three role-based interfaces</a><span style="color:var(--mute)">shipped</span></li>
@@ -344,7 +344,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
   </main>
 
   <footer style="border-top:1px solid var(--ink);padding:18px var(--edge);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono2);font-size:12px;color:var(--mute)">
-    <span>Irina Zubareva — Structured Archive, POC v0.1</span><span>08 entries · 08 filed</span>
+    <span>Irina Zubareva — Structured Archive</span><span>08 entries · 08 filed</span>
   </footer>
 </section>
 
@@ -407,8 +407,8 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">Desktop frame, dark UI</span>
         </div>
         <figure style="margin:0">
-          <img src="assets/jarvis-card.png" alt="Main operator screen, agent mid-task. Desktop frame, dark UI.">
-          <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">[IMAGE 1, chat: main operator screen, agent mid-task. Desktop frame, dark UI.]</figcaption>
+          <img src="assets/jarvis-card.png" alt="Main operator screen, agent mid-task, desktop dark-UI frame.">
+          <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">The operator console mid-task: environment, autonomy level and stop control pinned to the top, the step ledger below.</figcaption>
         </figure>
       </div>
 
@@ -430,10 +430,10 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">An agent that acts on a live accounting database is not a chatbot. The user has to see what it is about to do, stop it, and understand what happened after. That is the whole interface.</p>
-          <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">[ДОПОЛНИТЬ: 2-4 предложения. Что показал аудит: что было не так с интерфейсом до тебя. Один конкретный пример лучше общих слов.]</p>
+          <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">The first version told the user everything except the things that mattered. Every one of the eight steps got its own chat message, so the screen read as a log; the same tap that opened a document also sent an invoice to a counterparty, with no distinction between the two; and the reports screen led with a success rate, a streak counter and a health bar for the agent. What it never showed was which database the agent was working in, how autonomous it currently was, or what had been rolled back after a failure. The redesign moved all of that to the surface and pushed the celebration out.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
             <img src="assets/jarvis-before-after.png" alt="Before and after of the agent chat screen.">
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 2: before/after of the screen changed most — chat log to task view.]</figcaption>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Before and after: a chat log with a message per step, rebuilt as a task view with past steps collapsed and risk labelled.</figcaption>
           </figure>
         </div>
       </section>
@@ -448,7 +448,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">The irreversible step gets its own card, marked IRREVERSIBLE, and it carries everything needed to say yes without opening 1C. The recipient and the amount at the top. Then "Checked before sending — 3 of 3 matched": the amount reconciled against the document lines, the counterparty against contract #45 with its tax ID, the document status read off the 1C screen — each check with the value it found, so the operator is verifying data, not trusting a sentence. Below that, in red, the consequence in plain words: the document goes to the counterparty and the agent will not be able to recall it. Confirmation is a 1.5-second hold, not a click — the fill has to reach the end, so a reflex tap cannot send an invoice.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
             <img src="assets/jarvis-confirmation.png" alt="Agent task view with a send confirmation card.">
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 3: the confirmation state, annotated.]</figcaption>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The irreversible step: recipient, amount, three checks with the values they found, and a hold to send.</figcaption>
           </figure>
         </div>
       </section>
@@ -463,15 +463,15 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">The level sits in the header at all times — AUTONOMY L1, asks on every step, lowered by the agent — so the operator never has to go looking for it. When the agent drops the level, it says so in the thread as a marked event: L2 → L1, what went wrong (the posting dialog opened twice at step 5), and what it will do until that is resolved. Raising it back is a human action: Restore level L2.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
             <img src="assets/jarvis-autonomy-settings.png" alt="Agent autonomy settings screen with the three selectable levels.">
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 4: autonomy indicator in two states, normal and downgraded.]</figcaption>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Three levels, and one rule stated under them — the agent can only lower its own level.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
             <img src="assets/jarvis-level-lowered.png" alt="Chat view: the agent lowered its own autonomy from L2 to L1.">
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 5: the drop announced in the thread — L2 → L1, with the reason and a restore action only the operator can take.]</figcaption>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The drop announced where the work is happening: L2 → L1, what the agent saw, and what it will do until that is resolved.</figcaption>
           </figure>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
             <img src="assets/jarvis-autonomy.png" alt="Agent autonomy settings: current level and why it was lowered.">
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 6: the settings screen — why the level was lowered, in the agent's own observation, and the three levels it can sit at.]</figcaption>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The same event in settings, with the restore action that only the operator can take.</figcaption>
           </figure>
         </div>
       </section>
@@ -485,7 +485,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <p style="margin:0;color:var(--ink2);max-width:58ch">The system rolls back to a checkpoint: a failure at step 8 of 10 undoes what steps 1 to 7 wrote into 1C and the file system. Technically solid, and invisible unless the interface says so. The user needs one screen answering: what broke, what was undone, what is still there, what now.</p>
           <figure style="flex:1 1 340px;min-width:280px;margin:0">
             <img src="assets/jarvis-rollback.png" alt="Rollback screen after a failed run.">
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">[IMAGE 7: recovery screen after a failed run — what broke, what was undone, what survived, what now.]</figcaption>
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">After a failed step: what broke, what was rolled back, what is still in place.</figcaption>
           </figure>
         </div>
       </section>
@@ -496,10 +496,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">What I'd do differently</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
-          <div style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch"><div><div role="group" aria-label="Code" tabindex="0"><pre style="color: rgb(20, 24, 31); background: transparent; font-family: var(--font-mono);"><code style="background: transparent; font-family: var(--font-mono); white-space: pre-wrap;">When I fixed the numbers in Reports, I overcorrected: I put the arithmetic on 
-screen and told the user which number to care about. Honest data does not need 
-a caption explaining how to feel about it. Make it add up, show it, stop.</code></pre></div></div>
-<p dir="ltr"></p></div>
+          <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">I designed screens before I understood which states actually matter. The confirmation card looks convincing because all three checks pass. The interesting state is two out of three: something did not match, and the accountant has to decide anyway. Next time I would start from the states where the system is unsure, not from the happy path.</p>
         </div>
       </section>
 
@@ -531,7 +528,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
     <div style="flex:0 1 200px;font-family:var(--mono2);font-size:12px;color:var(--mute)"><a href="#/works">← Back to works</a></div>
     <div style="flex:1 1 480px;min-width:0">
       <h1 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(56px,9vw,132px);line-height:.88;margin:0;letter-spacing:-.01em">ADEO</h1>
-      <div style="margin-top:12px;font-family:var(--mono2);font-size:12px;color:var(--mute)">Product Digital Platform (ADEO) &nbsp;·&nbsp; PMDM, product master data management &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">Posted Apr 21, 2026</b></div>
+      <div style="margin-top:12px;font-family:var(--mono2);font-size:12px;color:var(--mute)">Product Digital Platform (ADEO) &nbsp;·&nbsp; PMDM, product master data management &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">Sep 2024 – Mar 2026</b></div>
     </div>
   </div>
 
@@ -541,6 +538,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer, discovery through delivery</dd>
+        <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Timeline</dt><dd style="margin:0 0 12px;color:var(--ink)">Sep 2024 – Mar 2026</dd>
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Client</dt><dd style="margin:0 0 12px;color:var(--ink)">ADEO Services</dd>
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Scope</dt><dd style="margin:0 0 12px;color:var(--ink)">MIM · PLD V2 · SP, across 4 Business Units</dd>
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Tags</dt>
@@ -560,10 +558,9 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
           <li><a href="#a01" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">01</b>Intro</a></li>
           <li><a href="#a02" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">02</b>Platform architecture</a></li>
           <li><a href="#a03" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">03</b>My role</a></li>
-          <li><a href="#a04" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">04</b>Note</a></li>
-          <li><a href="#a05" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">05</b>PLD. Product Listing Dashboard V2</a></li>
-          <li><a href="#a06" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">06</b>SP. Syndication platform</a></li>
-          <li><a href="#a07" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">07</b>MIM. Model information management</a></li>
+          <li><a href="#a04" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">04</b>PLD. Product Listing Dashboard V2</a></li>
+          <li><a href="#a05" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">05</b>SP. Syndication platform</a></li>
+          <li><a href="#a06" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">06</b>MIM. Model information management</a></li>
         </ol>
       </div>
       </div></details>
@@ -637,19 +634,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
 
       <section id="a04" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
         <div style="flex:0 0 140px">
-          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">04</span>
-          <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">Note</span>
-        </div>
-        <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
-          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:500;color:var(--ink)">Case 1:</b> <em style="color:var(--ink2)">“I help teams make better decisions.”</em> → Product listing dashboard</p>
-          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:500;color:var(--ink)">Case 2:</b> <em style="color:var(--ink2)">“I scale complex systems with AI.”</em> → Syndication Platform</p>
-          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:500;color:var(--ink)">Case 3:</b> <em style="color:var(--ink2)">“I remove operational bottlenecks.”</em> → Model information management</p>
-        </div>
-      </section>
-
-      <section id="a05" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
-        <div style="flex:0 0 140px">
-          <span style="font-family: var(--disp); font-weight: 700; font-size: 64px; line-height: 0.9; color: var(--dt);">05</span>
+          <span style="font-family: var(--disp); font-weight: 700; font-size: 64px; line-height: 0.9; color: var(--dt);">04</span>
           <span style="display: block; margin-top: 8px; font-family: var(--mono2); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mute); max-width: 14ch;">PLD. Product Listing Dashboard</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
@@ -712,9 +697,9 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
         <p style="font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.95;font-size:clamp(34px,5vw,72px);margin:0;max-width:24ch;text-wrap:balance">The existing experience provided visibility <em style="font-style:normal;color:var(--dt)">but not action.</em></p>
       </div>
 
-      <section id="a06" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
+      <section id="a05" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
         <div style="flex:0 0 140px">
-          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">06</span>
+          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">05</span>
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">SP. Syndication platform</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
@@ -781,9 +766,9 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
         </div>
       </section>
 
-      <section id="a07" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
+      <section id="a06" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
         <div style="flex:0 0 140px">
-          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">07</span>
+          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">06</span>
           <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">MIM. Model information management</span>
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
@@ -1253,7 +1238,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
     <div style="flex:0 1 200px;font-family:var(--mono2);font-size:12px;color:var(--mute)"><a href="#/works">← Back to works</a></div>
     <div style="flex:1 1 480px;min-width:0">
       <h1 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(44px,7vw,104px);line-height:.88;margin:0;letter-spacing:-.01em">Product design for a Conversion Rates oriented Platform</h1>
-      <div style="margin-top:12px;font-family:var(--mono2);font-size:12px;color:var(--mute)">AllPokemon &nbsp;·&nbsp; Full-stack developer, UX researcher, and project manager &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">Posted Dec 7, 2023</b></div>
+      <div style="margin-top:12px;font-family:var(--mono2);font-size:12px;color:var(--mute)">AllPokemon &nbsp;·&nbsp; Full-stack developer, UX researcher, and project manager &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">2023</b></div>
     </div>
   </div>
 
@@ -1410,11 +1395,10 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Users and market research</span></li>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Application design</span></li>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>UI kit, breakpoint variables and grid variables</span></li>
-            <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Half of the project builded on Framer</span></li>
+            <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Half of the project built in Framer</span></li>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Prototypes for Bubble integration of the second part</span></li>
             <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Users screen recordings and data monitoring</span></li>
           </ul>
-          <p style="margin:0;color:var(--ink2);max-width:58ch">User-Centered Design andl UX research methods:</p>
         </div>
       </section>
 
@@ -1540,7 +1524,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
     <div style="flex:0 1 200px;font-family:var(--mono2);font-size:12px;color:var(--mute)"><a href="#/works">← Back to works</a></div>
     <div style="flex:1 1 480px;min-width:0">
       <h1 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(48px,7.4vw,116px);line-height:.88;margin:0;letter-spacing:-.01em">ASAPP: Panic button app for business security</h1>
-      <div style="margin-top:12px;font-family:var(--mono2);font-size:12px;color:var(--mute)">Product Designer · Design Systems Specialist · Figma &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">Posted Jan 20, 2024</b></div>
+      <div style="margin-top:12px;font-family:var(--mono2);font-size:12px;color:var(--mute)">Product Designer · Design Systems Specialist · Figma &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">2024</b></div>
     </div>
   </div>
 
@@ -1551,7 +1535,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Delivered</dt><dd style="margin:0 0 12px;color:var(--ink)">wireframes, UI, an interactive prototype, a design system and graphic supports</dd>
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Users</dt><dd style="margin:0 0 12px;color:var(--ink)">Commercial Users in England</dd>
-        <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Posted</dt><dd style="margin:0 0 12px;color:var(--ink)">Jan 20, 2024</dd>
+        <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Year</dt><dd style="margin:0 0 12px;color:var(--ink)">2024</dd>
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Tags</dt>
         <dd style="margin:0;color:var(--ink)">
           <ul style="display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0;padding:0;list-style:none">
@@ -1658,7 +1642,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
       <h1 style="grid-column:3 / 12;margin:0;padding:24px 0 34px;font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.86;letter-spacing:-.01em;font-size:clamp(52px,11vw,180px)">Write<br>to me</h1>
     </div>
 
-    <p style="grid-column:3 / 8;margin:0;padding:26px 0 0;color:var(--ink2);max-width:46ch">Open to senior product design roles, full-time or freelance. If you send the role, the team size and what the product actually does, you get an answer the same day.</p>
+    <p style="grid-column:3 / 8;margin:0;padding:26px 0 0;color:var(--ink2);max-width:46ch">Open to senior product design roles, full-time or freelance. If you send the role, the team size and what the product actually does, and you'll hear back within a day.</p>
 
     <div data-mobile-hide style="grid-column:9 / -1;padding:26px 0 0;font-family:var(--mono2);font-size:12px;color:var(--mute);display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-content:start">
       <span>Reply</span><b style="font-weight:500;color:var(--ink2)">Within 24h, weekdays</b>
@@ -1681,7 +1665,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
         </div>
         <div style="display:grid;grid-template-columns:minmax(84px,14%) 1fr;gap:14px;align-items:baseline;padding:16px 0;border-top:1px solid var(--ruleSoft)">
           <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">Contra</span>
-          <span style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(20px,2.4vw,34px);line-height:1.05;word-break:break-word"><a href="https://contra.com/zubarevagbhg_pdg7vons" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--rule)">contra.com/zubarevagbhg</a></span>
+          <span style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(20px,2.4vw,34px);line-height:1.05;word-break:break-word"><a href="https://contra.com/zubarevagbhg_pdg7vons" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--rule)">Contra profile →</a></span>
         </div>
       <div style="border-top:1px solid var(--ink)"></div>
     </div>
@@ -1704,7 +1688,7 @@ a caption explaining how to feel about it. Make it add up, show it, stop.</code>
   </div>
 
   <footer style="border-top:1px solid var(--ink);padding:18px var(--edge);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono2);font-size:12px;color:var(--mute)">
-    <span>Irina Zubareva — Structured Archive, POC v0.1</span><span>Set in Barlow Condensed · IBM Plex Mono · IBM Plex Sans</span>
+    <span>Irina Zubareva — Structured Archive</span><span>Set in Barlow Condensed · IBM Plex Mono · IBM Plex Sans</span>
   </footer>
 </section>
 
@@ -1861,7 +1845,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
   </main>
 
   <footer style="border-top:1px solid var(--ink);padding:18px var(--edge);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono2);font-size:12px;color:var(--mute)">
-    <span>Irina Zubareva — Structured Archive, POC v0.1</span><span>Resume 2026 · Paris, France</span>
+    <span>Irina Zubareva — Structured Archive</span><span>Resume 2026 · Paris, France</span>
   </footer>
 </section>
 
@@ -1904,7 +1888,6 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
             <li style="font-family:var(--mono2);font-size:11px;padding:3px 7px;border:1px solid var(--rule);color:var(--ink2)">Product Design</li>
             <li style="font-family:var(--mono2);font-size:11px;padding:3px 7px;border:1px solid var(--rule);color:var(--ink2)">UX Design</li>
             <li style="font-family:var(--mono2);font-size:11px;padding:3px 7px;border:1px solid var(--rule);color:var(--ink2)">PWA</li>
-            <li style="font-family:var(--mono2);font-size:11px;padding:3px 7px;border:1px solid var(--rule);color:var(--ink2)">No-Code Build</li>
             <li style="font-family:var(--mono2);font-size:11px;padding:3px 7px;border:1px solid var(--rule);color:var(--ink2)">Fitness &amp; Wellness</li>
           </ul>
         </dd>
@@ -1946,7 +1929,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <div style="display:flex;flex-direction:column;gap:14px;max-width:64ch">
             <p style="margin:0;color:var(--ink2)">You type what you ate the way you would tell a friend. The AI turns that into calories and macros, shows its guess, and waits. You fix anything that is off, then log it.</p>
-            <p style="margin:0;color:var(--ink2)">The whole product was built by directing an AI coding agent against strict specs, with the design decisions kept on my side of the table. It is live now as a progressive web app with 40+ daily users.</p>
+            <p style="margin:0;color:var(--ink2)">The whole product was built by directing an AI coding agent against strict specs, with the design decisions kept on my side of the table. It is live now as a progressive web app with 40+ users.</p>
           </div>
           <figure style="margin:4px 0 0;max-width:560px">
             <video src="assets/cf-hero.mp4" autoplay loop muted playsinline controls preload="auto" aria-label="CalorieFlow walkthrough of the core loop: type a meal, review the estimate, log it."></video>
