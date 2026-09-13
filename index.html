@@ -39,6 +39,8 @@ figure img,figure video{max-width:100%;height:auto;display:block}
 @media (max-width: 520px) { [data-works-grid] { grid-template-columns: minmax(0, 1fr) !important; } }
 aside[data-dossier-aside] > details > summary { display: none; }
 aside[data-dossier-aside] > details > summary::-webkit-details-marker { display: none; }
+aside[data-dossier-aside] > details > summary [data-fold-icon]::after { content: "+"; }
+aside[data-dossier-aside] > details[open] > summary [data-fold-icon]::after { content: "\2212"; }
 @media (max-width: 900px) {
   aside[data-dossier-aside] {
     position: static !important;
@@ -47,7 +49,7 @@ aside[data-dossier-aside] > details > summary::-webkit-details-marker { display:
     flex: 1 1 100% !important;
     padding-top: 20px !important;
   }
-  aside[data-dossier-aside] > details > summary { display: block; }
+  aside[data-dossier-aside] > details > summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 }
 </style>
 </head>
@@ -371,7 +373,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
     <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
-      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:12px 14px;border:1px solid var(--ink);background:var(--paper2);list-style:none">Dossier details &amp; sections<span data-fold-icon aria-hidden="true" style="font-family:var(--disp);font-size:16px;line-height:1"></span></summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display: flex; border: 1px solid var(--rule); gap: 10px; border-width: 0px"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">UX/UI audit and interactive prototype</dd>
@@ -534,7 +536,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
     <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
-      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:12px 14px;border:1px solid var(--ink);background:var(--paper2);list-style:none">Dossier details &amp; sections<span data-fold-icon aria-hidden="true" style="font-family:var(--disp);font-size:16px;line-height:1"></span></summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer, discovery through delivery</dd>
@@ -852,7 +854,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
     <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
-      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:12px 14px;border:1px solid var(--ink);background:var(--paper2);list-style:none">Dossier details &amp; sections<span data-fold-icon aria-hidden="true" style="font-family:var(--disp);font-size:16px;line-height:1"></span></summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer (freelance) — redesign of major functional areas: user journeys, UX, UI, parts of the design system and UI kit, clickable prototypes, and design follow-through during development</dd>
@@ -1054,7 +1056,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
     <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
-      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:12px 14px;border:1px solid var(--ink);background:var(--paper2);list-style:none">Dossier details &amp; sections<span data-fold-icon aria-hidden="true" style="font-family:var(--disp);font-size:16px;line-height:1"></span></summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer — the entire experience designed from a written brief, with no existing screens or design legacy to build on: information architecture, all flows, and the interface system from zero</dd>
@@ -1244,7 +1246,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
     <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
-      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:12px 14px;border:1px solid var(--ink);background:var(--paper2);list-style:none">Dossier details &amp; sections<span data-fold-icon aria-hidden="true" style="font-family:var(--disp);font-size:16px;line-height:1"></span></summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">My Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Full-stack developer, UX researcher, and project manager</dd>
@@ -1530,7 +1532,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
     <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
-      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:12px 14px;border:1px solid var(--ink);background:var(--paper2);list-style:none">Dossier details &amp; sections<span data-fold-icon aria-hidden="true" style="font-family:var(--disp);font-size:16px;line-height:1"></span></summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Delivered</dt><dd style="margin:0 0 12px;color:var(--ink)">wireframes, UI, an interactive prototype, a design system and graphic supports</dd>
@@ -1872,7 +1874,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
     <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
-      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:12px 14px;border:1px solid var(--ink);background:var(--paper2);list-style:none">Dossier details &amp; sections<span data-fold-icon aria-hidden="true" style="font-family:var(--disp);font-size:16px;line-height:1"></span></summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display: flex; border: 1px solid var(--rule); gap: 10px; border-width: 0px"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex: 1; height: 22px; color: #F0EDE9; background-color: #F0EDE9; border-width: 1px; border-style: solid; border-color: #D9D6D1"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product designer &amp; builder, solo</dd>
@@ -2110,7 +2112,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
     <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
-      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:10px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none">Dossier details &amp; sections</summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:12px 14px;border:1px solid var(--ink);background:var(--paper2);list-style:none">Dossier details &amp; sections<span data-fold-icon aria-hidden="true" style="font-family:var(--disp);font-size:16px;line-height:1"></span></summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
       <div style="display: flex; border: 1px solid var(--rule); border-width: 0px; gap: 10px"><span style="flex: 1; height: 22px; background-color: #83679C"></span><span style="flex: 1; height: 22px; background-color: #DFDEE1"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer &amp; Product Owner</dd>
@@ -2368,8 +2370,14 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
   });
 
   // ---- collapse dossier sidebar into a <details> on narrow viewports ----
+  // Only react when the narrow/wide breakpoint actually flips — mobile browsers
+  // fire 'resize' on scroll (address bar collapsing), which was force-closing
+  // a manually-opened accordion mid-scroll even though the width never changed.
+  var dossierAsideNarrow = null;
   function foldDossierAside(){
     var narrow = window.matchMedia('(max-width: 900px)').matches;
+    if (narrow === dossierAsideNarrow) return;
+    dossierAsideNarrow = narrow;
     document.querySelectorAll('aside[data-dossier-aside] > details').forEach(function(d){ d.open = !narrow; });
   }
   foldDossierAside();
