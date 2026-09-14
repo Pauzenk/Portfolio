@@ -526,6 +526,21 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">04</b></div>
   </header>
 
+  <div id="adeo-gate" style="display:none;position:fixed;inset:0;z-index:8000;background:rgba(236,237,232,.97);align-items:center;justify-content:center;padding:24px">
+    <div style="width:100%;max-width:420px;border:1px solid var(--ink);background:var(--paper);padding:36px 32px">
+      <span style="display:inline-block;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9A1F23;border:1px solid #9A1F23;padding:3px 8px;margin-bottom:18px">NDA</span>
+      <h2 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.95;font-size:clamp(28px,4vw,40px);margin:0 0 12px;letter-spacing:-.005em">This dossier is under NDA</h2>
+      <p style="margin:0 0 24px;color:var(--ink2);font-size:14px;line-height:1.5">The ADEO case study covers confidential client work and isn't open for public viewing. Enter the access password to continue.</p>
+      <form id="adeo-gate-form" autocomplete="off" style="display:flex;flex-direction:column;gap:12px">
+        <input type="password" id="adeo-gate-input" placeholder="Password" autocomplete="off" style="font-family:var(--mono2);font-size:14px;padding:11px 12px;border:1px solid var(--ink);background:var(--paper);color:var(--ink)">
+        <button type="submit" style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;padding:11px 12px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer">Unlock</button>
+      </form>
+      <p id="adeo-gate-error" style="display:none;margin:12px 0 0;color:#9A1F23;font-family:var(--mono2);font-size:12px">Incorrect password — try again.</p>
+      <p style="margin:20px 0 0;font-family:var(--mono2);font-size:11px;color:var(--mute)"><a href="#/works" style="text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--rule)">← Back to works</a></p>
+    </div>
+  </div>
+
+  <div id="adeo-locked-content">
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
     <div style="flex:0 1 200px;font-family:var(--mono2);font-size:12px;color:var(--mute)"><a href="#/works">← Back to works</a></div>
     <div style="flex:1 1 480px;min-width:0">
@@ -828,6 +843,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
         </span>
       </a>
     </main>
+  </div>
   </div>
 </section>
 
@@ -2389,6 +2405,46 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
       if (v.duration && v.currentTime > v.duration - 0.35) { v.currentTime = 0; v.play().catch(function(){}); }
     });
   });
+
+  // ---- ADEO dossier: NDA password gate ----
+  // Client-side only: this hides the page behind a password prompt, it does
+  // not secure the content — the markup and password still ship in the page
+  // source. Treat it as a polite "this is under NDA" barrier, not real access control.
+  (function(){
+    var PASSWORD = 'ADEO2025';
+    var STORAGE_KEY = 'adeo-unlocked';
+    var gate = document.getElementById('adeo-gate');
+    var locked = document.getElementById('adeo-locked-content');
+    var form = document.getElementById('adeo-gate-form');
+    var input = document.getElementById('adeo-gate-input');
+    var error = document.getElementById('adeo-gate-error');
+    if (!gate || !locked || !form || !input || !error) return;
+    function isUnlocked(){
+      try { return sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) { return false; }
+    }
+    function render(){
+      var onAdeo = document.getElementById('p-adeo').classList.contains('on');
+      var show = onAdeo && !isUnlocked();
+      gate.style.display = show ? 'flex' : 'none';
+      locked.style.display = show ? 'none' : '';
+      if (show) setTimeout(function(){ input.focus(); }, 0);
+    }
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (input.value === PASSWORD) {
+        try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+        error.style.display = 'none';
+        input.value = '';
+        render();
+      } else {
+        error.style.display = 'block';
+        input.value = '';
+        input.focus();
+      }
+    });
+    window.addEventListener('hashchange', render);
+    render();
+  })();
 })();
 </script>
 </body>
