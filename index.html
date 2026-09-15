@@ -64,6 +64,14 @@ aside[data-dossier-aside] > details[open] > summary [data-fold-icon]::after { co
   }
   aside[data-dossier-aside] > details > summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 }
+
+/* Cursive text (Caveat) "written by hand" reveal, one word at a time, replays every time it re-enters view */
+.hw-cursive > * { display: inline-block; clip-path: inset(0 100% -0.3em 0); transition: clip-path 1.3s cubic-bezier(.4,0,.2,1); }
+.hw-cursive.hw-on > * { clip-path: inset(0 0 -0.3em 0); }
+.hw-cursive.hw-reset > * { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .hw-cursive > * { clip-path: none !important; transition: none !important; }
+}
 </style>
 </head>
 <body>
@@ -87,13 +95,13 @@ aside[data-dossier-aside] > details[open] > summary [data-fold-icon]::after { co
 WHERE THE
 WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw, 112px); letter-spacing: -0.005em; text-wrap-mode: initial; font-family: var(--disp);">IS THE PRODUCT.</span></h1>
       <div style="display:flex;flex-wrap:wrap;gap:22px var(--gutter);margin-top:22px">
-        <div style="flex:1 1 380px;margin:0;max-width:52ch;color:var(--ink2)"><div>An index of what I've built. Each entry opens as a dossier: role, timeline, status,&nbsp;<span style="color: var(--ink2); font-family: var(--body);">and the decisions that shaped the product.</span></div></div><div style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute)">
+        <div style="flex:1 1 380px;margin:0;max-width:52ch;color:var(--ink2)"><div>An index of what I've built. Each entry opens as a dossier: role, timeline, status,&nbsp;<span style="color: var(--ink2); font-family: var(--body);">and the decisions that shaped the product.</span></div></div><div class="hw-cursive" style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute)">
         <span>Title</span><b style="font-weight:500;color:var(--ink2)">Senior Product Designer</b>
         <span>Field</span><b style="font-weight:500;color:var(--ink2)">B2B SaaS · complex workflows, data and AI</b>
         <span>Years</span><b style="font-weight:500;color:var(--ink2)">10+ · engineering background</b>
         <span>Base</span><b style="font-weight:500;color:var(--ink2)">Paris, France</b>
       </div>
-        
+
       </div>
     </div>
 
@@ -1740,7 +1748,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
     <div style="display:flex;flex-wrap:wrap;gap:32px var(--gutter);align-items:flex-end">
       <h1 style="font-family: var(--disp); font-weight: 700; text-transform: uppercase; line-height: .95; letter-spacing: -.005em; text-wrap: balance; font-size: clamp(40px,5.6vw,84px); margin: 0; max-width: 16ch; color: #1D1B1B">ENGINEER FIRST.
 DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw, 112px); letter-spacing: -0.005em; text-wrap-mode: initial; font-family: var(--disp);"></span></h1>
-      <div style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute)">
+      <div class="hw-cursive" style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute)">
         <span>Title</span><b style="font-weight:500;color:var(--ink2)">Senior Product Designer</b>
         <span>Field</span><b style="font-weight:500;color:var(--ink2)">B2B SaaS · complex workflows, data and AI</b>
         <span>Years</span><b style="font-weight:500;color:var(--ink2)">10+ · engineering background</b>
@@ -2049,7 +2057,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
               <p style="margin:0;color:var(--ink2);max-width:58ch">I did not write the code. I wrote the specs, tightly, and directed a coding agent to build against them. The specs were where design happened: states, edge cases, copy, what a warning may and may not do.</p>
               <p style="margin:0;color:var(--ink2);max-width:58ch">The prompts were the real deliverable. Four habits kept them honest.</p>
             </div>
-            <dl style="flex:1 1 220px;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0;font-family:var(--mono);font-size:17px;align-content:start">
+            <dl class="hw-cursive" style="flex:1 1 220px;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0;font-family:var(--mono);font-size:17px;align-content:start">
               <dt style="color:var(--mute)">Input</dt><dd style="margin:0;color:var(--ink)">Strict written specs</dd>
               <dt style="color:var(--mute)">Builder</dt><dd style="margin:0;color:var(--ink)">AI coding agent</dd>
               <dt style="color:var(--mute)">Review</dt><dd style="margin:0;color:var(--ink)">Designer, every change</dd>
@@ -2457,6 +2465,35 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
     });
     window.addEventListener('hashchange', render);
     render();
+  })();
+
+  // ---- cursive (Caveat) text: write-on reveal, one word at a time, replays every time it re-enters view ----
+  (function(){
+    var groups = document.querySelectorAll('.hw-cursive');
+    if (!groups.length) return;
+    groups.forEach(function(el){
+      Array.prototype.forEach.call(el.children, function(child, i){
+        child.style.transitionDelay = (i * 260) + 'ms';
+      });
+    });
+    if (!('IntersectionObserver' in window)) {
+      groups.forEach(function(el){ el.classList.add('hw-on'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var el = entry.target;
+        if (entry.isIntersecting) {
+          el.classList.remove('hw-reset');
+          el.classList.add('hw-on');
+        } else {
+          // Reset instantly (no un-writing animation) so it's ready to replay next time it scrolls into view.
+          el.classList.remove('hw-on');
+          el.classList.add('hw-reset');
+        }
+      });
+    }, { threshold: 0.4 });
+    groups.forEach(function(el){ io.observe(el); });
   })();
 })();
 </script>
