@@ -65,9 +65,10 @@ aside[data-dossier-aside] > details[open] > summary [data-fold-icon]::after { co
   aside[data-dossier-aside] > details > summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 }
 
-/* Cursive text (Caveat) "written by hand" reveal, one word at a time, on scroll into view */
-.hw-cursive > * { display: inline-block; clip-path: inset(0 100% -0.3em 0); transition: clip-path .5s cubic-bezier(.4,0,.2,1); }
+/* Cursive text (Caveat) "written by hand" reveal, one word at a time, replays every time it re-enters view */
+.hw-cursive > * { display: inline-block; clip-path: inset(0 100% -0.3em 0); transition: clip-path 1.3s cubic-bezier(.4,0,.2,1); }
 .hw-cursive.hw-on > * { clip-path: inset(0 0 -0.3em 0); }
+.hw-cursive.hw-reset > * { transition: none; }
 @media (prefers-reduced-motion: reduce) {
   .hw-cursive > * { clip-path: none !important; transition: none !important; }
 }
@@ -2466,13 +2467,13 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
     render();
   })();
 
-  // ---- cursive (Caveat) text: write-on reveal, one word at a time, when scrolled into view ----
+  // ---- cursive (Caveat) text: write-on reveal, one word at a time, replays every time it re-enters view ----
   (function(){
     var groups = document.querySelectorAll('.hw-cursive');
     if (!groups.length) return;
     groups.forEach(function(el){
       Array.prototype.forEach.call(el.children, function(child, i){
-        child.style.transitionDelay = (i * 90) + 'ms';
+        child.style.transitionDelay = (i * 260) + 'ms';
       });
     });
     if (!('IntersectionObserver' in window)) {
@@ -2481,9 +2482,14 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
     }
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
+        var el = entry.target;
         if (entry.isIntersecting) {
-          entry.target.classList.add('hw-on');
-          io.unobserve(entry.target);
+          el.classList.remove('hw-reset');
+          el.classList.add('hw-on');
+        } else {
+          // Reset instantly (no un-writing animation) so it's ready to replay next time it scrolls into view.
+          el.classList.remove('hw-on');
+          el.classList.add('hw-reset');
         }
       });
     }, { threshold: 0.4 });
