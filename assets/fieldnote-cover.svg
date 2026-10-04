@@ -1,0 +1,32 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fieldnote Synthesis: a four-stage pipeline above, a bounded agent with three tools inside a fence below.">
+  <rect width="800" height="600" fill="#E4DDF1"/>
+  <g font-family="'IBM Plex Mono',Menlo,monospace" font-size="15" fill="#2B1D4D">
+    <text x="48" y="62" letter-spacing="2.4" font-size="14">01 — PIPELINE · WORKFLOW</text>
+    <g fill="none" stroke="#2B1D4D" stroke-width="2">
+      <rect x="48" y="90" width="140" height="84"/><rect x="230" y="90" width="140" height="84"/>
+      <rect x="412" y="90" width="140" height="84"/><rect x="594" y="90" width="158" height="84"/>
+      <path d="M188 132h34M214 124l8 8-8 8M370 132h34M396 124l8 8-8 8M552 132h34M578 124l8 8-8 8"/>
+    </g>
+    <text x="62" y="122" font-size="13" fill="#5B3F99">CALL 1</text><text x="62" y="152">moments</text>
+    <text x="244" y="122" font-size="13" fill="#5B3F99">CALL 2</text><text x="244" y="152">insights</text>
+    <text x="426" y="122" font-size="13" fill="#5B3F99">CALL 3</text><text x="426" y="152">opportunities</text>
+    <text x="608" y="122" font-size="13" fill="#5B3F99">CALL 4</text><text x="608" y="152">solutions</text>
+    <text x="48" y="206" font-size="13" fill="#6F6488">no tools · no source link</text>
+    <path d="M48 246H752" stroke="#2B1D4D" stroke-width="1" stroke-dasharray="4 6"/>
+    <text x="48" y="292" letter-spacing="2.4" font-size="14">02 — BOUNDED AGENT · TOOL USE</text>
+    <rect x="48" y="314" width="704" height="236" fill="none" stroke="#5B3F99" stroke-width="2" stroke-dasharray="10 7"/>
+    <text x="64" y="340" font-size="12" fill="#5B3F99" letter-spacing="1.2">FENCE: 12 TURNS · 24 TOOL CALLS · 1 REVIEW · 1 REVISION</text>
+    <circle cx="400" cy="440" r="54" fill="#5B3F99"/>
+    <text x="400" y="446" text-anchor="middle" fill="#F4F0FA" font-size="15" letter-spacing="1.5">MODEL</text>
+    <g fill="#F4F0FA" stroke="#2B1D4D" stroke-width="2">
+      <rect x="84" y="370" width="190" height="46"/><rect x="84" y="460" width="190" height="46"/><rect x="526" y="414" width="190" height="46"/>
+    </g>
+    <path d="M274 393L348 420M274 483L348 458M454 440h72" fill="none" stroke="#2B1D4D" stroke-width="2"/>
+    <text x="100" y="398">inspect_chunk</text><text x="100" y="488">request_review</text><text x="542" y="442">submit_report</text>
+    <g fill="#5B3F99">
+      <rect x="526" y="486" width="22" height="14"/><rect x="552" y="486" width="22" height="14"/><rect x="578" y="486" width="22" height="14"/><rect x="604" y="486" width="22" height="14"/><rect x="630" y="486" width="22" height="14"/>
+    </g>
+    <g fill="none" stroke="#5B3F99" stroke-width="1.5"><rect x="656" y="486" width="22" height="14"/><rect x="682" y="486" width="22" height="14"/></g>
+    <text x="526" y="524" font-size="12" fill="#6F6488">chunk coverage 5 / 7</text>
+  </g>
+</svg>
