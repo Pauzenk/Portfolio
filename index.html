@@ -50,6 +50,7 @@ figure img,figure video{max-width:100%;height:auto;display:block}
   nav[data-mainnav] a { padding: 4px 0; font-size: 13px; }
 }
 @media (max-width: 520px) { [data-works-grid] { grid-template-columns: minmax(0, 1fr) !important; } }
+@media (max-width: 900px) { [data-recent-extra] { display: none !important; } }
 aside[data-dossier-aside] > details > summary { display: none; }
 aside[data-dossier-aside] > details > summary::-webkit-details-marker { display: none; }
 aside[data-dossier-aside] > details > summary [data-fold-icon]::after { content: "+"; }
@@ -104,6 +105,20 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <span style="font-family: var(--mono2); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mute);">Recent works</span>
         </div>
         <div data-works-grid style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gutter)">
+          <a href="#/fieldnote" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
+            <div style="aspect-ratio:4/3;background:#FAFAF7;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
+              <img src="assets/fieldnote-cover.webp" alt="Fieldnote Synthesis: a fixed six-step pipeline with a validation gate between every pair of steps and a progress bar above; below, an agent choosing among seven tools around the model inside a 60-turn cap, showing elapsed time and a tool-call count instead of a progress bar." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block">
+            </div>
+            <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+                <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">Fieldnote Synthesis</h3>
+                <span style="font-family:var(--mono2);font-size:12px;color:#5B3F99">01 / Agent</span>
+              </div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Designer &amp; builder, solo &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#5B3F99">Personal build</i></div>
+              <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">Research synthesis where every claim can be traced to a timestamp.</p>
+            </div>
+          </a>
+
           <a href="#/calorieflow" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
             <div style="aspect-ratio:4/3;background:#C4E7DD;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
               <video src="assets/card-calorieflow.mp4" autoplay loop muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
@@ -111,7 +126,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">CalorieFlow</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#0F5C55">01 / PWA</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#0F5C55">02 / PWA</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; builder, solo &nbsp;·&nbsp; May 2026 – ongoing &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#0F5C55">Live</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">An AI-first nutrition app: describe a meal in plain words, correct the estimate, log it. Built by directing a coding agent from strict specs.</p>
@@ -125,7 +140,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">Open Feedback</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#83679C">02 / Platform</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#83679C">03 / Platform</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; product owner &nbsp;·&nbsp; 2021 – 2024 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#83679C">Shipped</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">A credibility-analysis platform for journalists, scientists and fact-checkers to tell reliable sources from misinformation, at scale.</p>
@@ -139,23 +154,38 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">JARVIS²</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#2C7A4B">03 / Agent</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#2C7A4B">04 / Agent</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">UX/UI audit and interactive prototype &nbsp;·&nbsp; JARVIS² (Smart RPA Agent) &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#2C7A4B">Prototype</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">Operator interface for an AI agent that runs your ERP. It looks at the screen like a human operator, recognises forms visually, and clicks.</p>
             </div>
           </a>
-          <a href="#/adeo" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
+
+          <a data-recent-extra href="#/adeo" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
             <div style="aspect-ratio:4/3;background:#0F6E7C;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
               <img src="assets/adeo-cover.png" alt="PMDM — Product Digital Platform, ADEO Services." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
             </div>
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">ADEO</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#0F6E7C">04 / Platform</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#0F6E7C">05 / Platform</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product Designer, discovery through delivery &nbsp;·&nbsp; MIM · PLD V2 · SP &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#0F6E7C">4 Business Units</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">A product data ecosystem used across multiple Business Units in a large retail environment. The platform supported the complete product lifecycle — from product data creation and enrichment to governance, operational monitoring, and distribution across channels.</p>
+            </div>
+          </a>
+
+          <a data-recent-extra href="#/suez" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
+            <div style="aspect-ratio:4/3;background:#1D4E62;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
+              <img src="assets/suez-cover.avif" alt="SUEZ" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+            <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+                <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">SUEZ</h3>
+                <span style="font-family:var(--mono2);font-size:12px;color:#1D4E62">06 / Dashboards</span>
+              </div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product Designer (freelance) &nbsp;·&nbsp; December 2020 – May 2021 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#1D4E62">Shipped</i></div>
+              <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">Three users, one water network: from the internal supervision tool to the client dashboards, a tangled legacy turned into ergonomic, role-appropriate interfaces.</p>
             </div>
           </a>
         </div>
@@ -190,14 +220,15 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">Contents</span>
         </div>
         <ol style="list-style:none;margin:0;padding:0;font-family:var(--mono2);font-size:12px">
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">01</span><a href="#/calorieflow">CalorieFlow — AI calorie tracker, designed and built solo, 40+ users</a><span style="color:var(--mute)">live</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">02</span><a href="#/openfeedback">Open Feedback — disinformation database for the European Commission</a><span style="color:var(--mute)">shipped</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">03</span><a href="#/jarvis">JARVIS² — operator interface for a local RPA agent on legacy ERP</a><span style="color:var(--mute)">prototype</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">04</span><a href="#/adeo">ADEO — product data platforms, time-to-market 45 → 15 days</a><span style="color:var(--mute)">shipped</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">05</span><a href="#/suez">SUEZ — water monitoring, three role-based interfaces</a><span style="color:var(--mute)">shipped</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">06</span><a href="#/ubitik">My Project Companion — white-label app, 9 languages</a><span style="color:var(--mute)">live</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">07</span><a href="#/allpokemon">AllPokemon — AI team-building platform that grew from a browser into an AI team builder, 0 → 100 MAU</a><span style="color:var(--mute)">live</span></li>
-          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">08</span><a href="#/asapp">ASAPP — panic button security app for commercial users in England: wireframes, UI, prototype, design system</a><span style="color:var(--mute)">live</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">01</span><a href="#/fieldnote">Fieldnote Synthesis — dossier, 8 sections</a><span style="color:var(--mute)">personal build</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">02</span><a href="#/calorieflow">CalorieFlow — AI calorie tracker, designed and built solo, 40+ users</a><span style="color:var(--mute)">live</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">03</span><a href="#/openfeedback">Open Feedback — disinformation database for the European Commission</a><span style="color:var(--mute)">shipped</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">04</span><a href="#/jarvis">JARVIS² — operator interface for a local RPA agent on legacy ERP</a><span style="color:var(--mute)">prototype</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">05</span><a href="#/adeo">ADEO — product data platforms, time-to-market 45 → 15 days</a><span style="color:var(--mute)">shipped</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">06</span><a href="#/suez">SUEZ — water monitoring, three role-based interfaces</a><span style="color:var(--mute)">shipped</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">07</span><a href="#/ubitik">My Project Companion — white-label app, 9 languages</a><span style="color:var(--mute)">live</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">08</span><a href="#/allpokemon">AllPokemon — AI team-building platform that grew from a browser into an AI team builder, 0 → 100 MAU</a><span style="color:var(--mute)">live</span></li>
+          <li style="display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--ruleSoft)"><span style="color:var(--mute)">09</span><a href="#/asapp">ASAPP — panic button security app for commercial users in England: wireframes, UI, prototype, design system</a><span style="color:var(--mute)">live</span></li>
         </ol>
       </div>
 
@@ -235,22 +266,35 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
-    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)"><b style="font-weight:500;color:var(--ink2)">8 projects</b></div>
+    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)"><b style="font-weight:500;color:var(--ink2)">9 projects</b></div>
   </header>
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
     <div style="flex:0 1 200px;font-family:var(--mono2);font-size:12px;color:var(--mute)"><a href="#/">← Back to index</a></div>
     <div style="flex:1 1 480px;min-width:0">
       <h1 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(56px,9vw,132px);line-height:.88;margin:0;letter-spacing:-.01em">Works</h1>
-      <div style="margin-top:10px;font-family:var(--mono2);font-size:12px;color:var(--mute)">Eight entries &nbsp;·&nbsp; all eight filed &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">2015 – 2026</b></div>
+      <div style="margin-top:10px;font-family:var(--mono2);font-size:12px;color:var(--mute)">Nine entries &nbsp;·&nbsp; all nine filed &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">2015 – 2026</b></div>
     </div>
   </div>
 
   <main style="padding:40px var(--edge) 72px;display:flex;flex-direction:column;gap:20px">
     <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:10px">
-      <span style="font-family:var(--disp);font-weight:700;font-size:30px;line-height:.9">01–08</span>
+      <span style="font-family:var(--disp);font-weight:700;font-size:30px;line-height:.9">01–09</span>
       <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">All works</span>
     </div>
     <div data-works-grid style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gutter)">
+          <a href="#/fieldnote" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
+            <div style="aspect-ratio:4/3;background:#FAFAF7;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
+              <img src="assets/fieldnote-cover.webp" alt="Fieldnote Synthesis: a fixed six-step pipeline with a validation gate between every pair of steps and a progress bar above; below, an agent choosing among seven tools around the model inside a 60-turn cap, showing elapsed time and a tool-call count instead of a progress bar." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block">
+            </div>
+            <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+                <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">Fieldnote Synthesis</h3>
+                <span style="font-family:var(--mono2);font-size:12px;color:#5B3F99">01 / Agent</span>
+              </div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Designer &amp; builder, solo &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#5B3F99">Personal build</i></div>
+              <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">Research synthesis where every claim can be traced to a timestamp.</p>
+            </div>
+          </a>
           <a href="#/calorieflow" style="display:block;border:1px solid var(--rule);background:var(--paper);min-width:0" class="hov-border">
             <div style="aspect-ratio:4/3;background:#C4E7DD;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)">
               <video src="assets/card-calorieflow.mp4" autoplay loop muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
@@ -258,7 +302,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">CalorieFlow</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#0F5C55">01 / PWA</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#0F5C55">02 / PWA</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; builder, solo &nbsp;·&nbsp; May 2026 – ongoing &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#0F5C55">Live</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">An AI-first nutrition app: describe a meal in plain words, correct the estimate, log it. Built by directing a coding agent from strict specs.</p>
@@ -271,7 +315,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">Open Feedback</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#83679C">02 / Platform</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#83679C">03 / Platform</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; product owner &nbsp;·&nbsp; 2021 – 2024 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#83679C">Shipped</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">A credibility-analysis platform for journalists, scientists and fact-checkers to tell reliable sources from misinformation, at scale.</p>
@@ -284,7 +328,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">JARVIS²</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#2C7A4B">03 / Agent</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#2C7A4B">04 / Agent</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">UX/UI audit and interactive prototype &nbsp;·&nbsp; JARVIS² (Smart RPA Agent) &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#2C7A4B">Prototype</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">Operator interface for an AI agent that runs your ERP. It looks at the screen like a human operator, recognises forms visually, and clicks.</p>
@@ -297,7 +341,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">ADEO</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#0F6E7C">04 / Platform</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#0F6E7C">05 / Platform</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product Designer, discovery through delivery &nbsp;·&nbsp; MIM · PLD V2 · SP &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#0F6E7C">4 Business Units</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">A product data ecosystem used across multiple Business Units in a large retail environment. The platform supported the complete product lifecycle — from product data creation and enrichment to governance, operational monitoring, and distribution across channels.</p>
@@ -310,7 +354,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">SUEZ</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#1D4E62">05 / Dashboards</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#1D4E62">06 / Dashboards</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product Designer (freelance) &nbsp;·&nbsp; December 2020 – May 2021 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#1D4E62">Shipped</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">Three users, one water network: from the internal supervision tool to the client dashboards, a tangled legacy turned into ergonomic, role-appropriate interfaces.</p>
@@ -323,7 +367,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">My Project Companion</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#2F3BC4">06 / App</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#2F3BC4">07 / App</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product Designer &nbsp;·&nbsp; UBITIK, 2020–2022 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#2F3BC4">Still live</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">End-to-end product design of a B2B2C mobile app connecting families building a home with their constructeur — designed from a brief in 2020, still live and adopted by home builders across France.</p>
@@ -336,7 +380,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">AllPokemon</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#B4232B">07 / Platform</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#B4232B">08 / Platform</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Full-stack developer, UX researcher, and project manager &nbsp;·&nbsp; Posted Dec 7, 2023 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#B4232B">0 → 100 MAU</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">A comprehensive Pokémon team-building platform that evolved from browsing Pokemon to an AI-powered team-creation tool.</p>
@@ -349,7 +393,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <div style="padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">ASAPP</h3>
-                <span style="font-family:var(--mono2);font-size:12px;color:#C2542A">08 / App</span>
+                <span style="font-family:var(--mono2);font-size:12px;color:#C2542A">09 / App</span>
               </div>
               <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product Designer · Design Systems Specialist &nbsp;·&nbsp; Posted Jan 20, 2024 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#C2542A">England</i></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">Panic Button for Commercial Users in England, it's a security app. I delivered wireframes, UI, an interactive prototype, a design system and graphic supports.</p>
@@ -359,8 +403,217 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
   </main>
 
   <footer style="border-top:1px solid var(--ink);padding:18px var(--edge);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono2);font-size:12px;color:var(--mute)">
-    <span>Irina Zubareva — Structured Archive</span><span>08 entries · 08 filed</span>
+    <span>Irina Zubareva — Structured Archive</span><span>09 entries · 09 filed</span>
   </footer>
+</section>
+
+<section class="page" id="p-fieldnote" data-screen-label="Fieldnote Synthesis dossier" style="--dt:#5B3F99;--dtPale:#E4DDF1;--dtInk:#2B1D4D">
+  <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
+    <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
+    <button type="button" data-navtoggle aria-label="Menu" style="display:none;order:2;margin-left:auto;background:none;border:1px solid var(--ink);color:var(--ink);font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;cursor:pointer">Menu</button>
+    <nav data-mainnav style="flex:1 1 260px;display:flex;gap:28px;font-family:var(--mono2);font-size:12px">
+      <a href="#/" style="color:var(--mute)">Index</a>
+      <a href="#/works" style="color:var(--mute)">Works</a>
+      <a href="#/about" style="color:var(--mute)">About</a>
+      <a href="#/contact" style="color:var(--mute)">Contact</a>
+    </nav>
+    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">01</b></div>
+  </header>
+
+  <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
+    <div style="flex:0 1 200px;font-family:var(--mono2);font-size:12px;color:var(--mute)"><a href="#/works">← Back to works</a></div>
+    <div style="flex:1 1 480px;min-width:0">
+      <h1 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(44px,6.6vw,96px);line-height:.9;margin:0;letter-spacing:-.01em">Fieldnote Synthesis: research synthesis where every claim can be traced to a timestamp</h1>
+      <div style="margin-top:12px;font-family:var(--mono2);font-size:12px;color:var(--mute)">Role: designed and built end to end &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">Personal build</b></div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
+    <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
+      <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:12px 14px;border:1px solid var(--ink);background:var(--paper2);list-style:none">Dossier details &amp; sections<span data-fold-icon aria-hidden="true" style="font-family:var(--disp);font-size:16px;line-height:1"></span></summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
+      <div style="display:flex;border:1px solid var(--rule)"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex:1;height:22px;background:var(--dtPale)"></span></div>
+      <dl style="margin:0;font-family:var(--mono2);font-size:12px">
+        <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Designer &amp; builder, solo</dd>
+        <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Type</dt><dd style="margin:0 0 12px;color:var(--ink)">Personal build</dd>
+        <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Stack</dt><dd style="margin:0 0 12px;color:var(--ink)">React + TypeScript · shadcn/ui · design tokens · Anthropic + Whisper in Netlify Functions</dd>
+        <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Tags</dt>
+        <dd style="margin:0;color:var(--ink)">
+          <ul style="display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0;padding:0;list-style:none">
+            <li style="font-family:var(--mono2);font-size:11px;padding:3px 7px;border:1px solid var(--rule);color:var(--ink2)">AI Product Design</li>
+            <li style="font-family:var(--mono2);font-size:11px;padding:3px 7px;border:1px solid var(--rule);color:var(--ink2)">Agent architecture</li>
+            <li style="font-family:var(--mono2);font-size:11px;padding:3px 7px;border:1px solid var(--rule);color:var(--ink2)">UX Research</li>
+            <li style="font-family:var(--mono2);font-size:11px;padding:3px 7px;border:1px solid var(--rule);color:var(--ink2)">Traceability</li>
+          </ul>
+        </dd>
+      </dl>
+      <div>
+        <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">Sections</span>
+        <ol style="list-style:none;margin:8px 0 0;padding:0;font-family:var(--mono2);font-size:12px">
+          <li><a href="#fcover" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">—</b>Cover</a></li>
+          <li><a href="#f01" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">01</b>What it is</a></li>
+          <li><a href="#f02" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">02</b>My role</a></li>
+          <li><a href="#f03" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">03</b>The two architectures</a></li>
+          <li><a href="#f04" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">04</b>The challenge</a></li>
+          <li><a href="#f05" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">05</b>Approach</a></li>
+          <li><a href="#f06" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">06</b>Key decisions</a></li>
+          <li><a href="#f07" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">07</b>What broke</a></li>
+          <li><a href="#f08" style="display:grid;grid-template-columns:28px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--ruleSoft);color:var(--mute)"><b style="font-weight:500;color:var(--dt)">08</b>Impact</a></li>
+        </ol>
+      </div>
+      </div></details>
+    </aside>
+
+    <main style="flex:1 1 520px;min-width:0;padding-top:32px;display:flex;flex-direction:column">
+      <div id="fcover" style="border-top:1px solid var(--ink);padding-top:22px;margin-bottom:6px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+          <h2 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:22px;margin:0;color:var(--ink)">Cover</h2>
+          <span style="font-family:var(--mono2);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em">Pipeline above · agent below</span>
+        </div>
+        <figure style="margin:0">
+          <img src="assets/fieldnote-cover.webp" alt="Fieldnote Synthesis: a fixed six-step pipeline with a validation gate between every pair of steps and a progress bar above; below, an agent choosing among seven tools around the model inside a 60-turn cap, showing elapsed time and a tool-call count instead of a progress bar." style="border:1px solid var(--rule)">
+        </figure>
+      </div>
+
+      <section id="f01" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
+        <div style="flex:0 0 140px">
+          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">01</span>
+          <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">What it is</span>
+        </div>
+        <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;color:var(--ink2);max-width:58ch">A personal build. It takes one research interview — a YouTube link with captions, or an uploaded recording up to two hours — and produces insights, opportunities, solutions and business advice, following a fixed methodology:</p>
+          <p style="margin:0;font-family:var(--mono2);font-size:12px;color:var(--dtInk);max-width:58ch">transcript → elements → facts → findings → insights → opportunities → solutions + business advice</p>
+          <p style="margin:0;color:var(--ink2);max-width:58ch">The value proposition is not speed. It is that every claim on screen stays attached to the verbatim quote and timestamp it came from. A claim with nothing behind it never reaches the screen — it is dropped, and the drop is counted.</p>
+          <figure style="margin:6px 0 0">
+            <img src="assets/fieldnote-insights.webp" alt="The insights screen: one insight full-width, with its eight-field grid, a quantified impact marked as not in this interview, and the timestamped quote behind it." style="border:1px solid var(--rule)">
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">One insight at a time. Every claim carries the quotes and timestamps it rests on.</figcaption>
+          </figure>
+          <p style="margin:0;color:var(--ink2);max-width:58ch">The same interview runs through two architectures — a fixed pipeline and a tool-using agent — so the difference between a deterministic chain and a model choosing its own order is visible in how the run behaves.</p>
+        </div>
+      </section>
+
+      <section id="f02" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
+        <div style="flex:0 0 140px">
+          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">02</span>
+          <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">My role</span>
+        </div>
+        <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;color:var(--ink2);max-width:58ch">Personal project, designed and built end to end: the methodology, the evidence rules, the two architectures, the design system, the code. React + TypeScript, shadcn/ui as a generator (copied in, not a dependency), design tokens as the single source of truth, Anthropic + Whisper behind Netlify Functions.</p>
+          <figure style="margin:6px 0 0">
+            <img src="assets/fieldnote-start.webp" alt="The start screen: YouTube link and Upload a file tabs, the Pipeline and Agent architecture cards, and a right column defining quote, insight, opportunity, solution and business advice." style="border:1px solid var(--rule)">
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">One input, one choice: run the same interview as a pipeline or as an agent.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="f03" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
+        <div style="flex:0 0 140px">
+          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">03</span>
+          <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">The two architectures</span>
+        </div>
+        <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;color:var(--ink2);max-width:58ch">Both take the same input, expose the same event interface, and pass through the same validation gate.</p>
+          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Pipeline.</b> Fixed steps in fixed order. Predictable: the steps are a schedule, the same every run. It shows a progress bar, because it has a total.</p>
+          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Agent.</b> The same operations exposed as seven tools — read the transcript, extract facts, group findings, write one insight, derive an opportunity, draft a solution, check evidence — and it chooses its own order and repetition. Capped at 60 turns so a loop that never converges ends the run instead of running forever. Its steps are decisions, not a schedule, so a different run can take a different route.</p>
+          <p style="margin:0;color:var(--ink2);max-width:58ch">One rule, stated as a prohibition: no UI component may check which architecture is running. The agent gets elapsed time and a tool-call count instead of a progress bar — a percentage of an unknown number of steps is a fabrication. Even that is decided by the presence of a total, not by the architecture's name.</p>
+          <figure style="margin:6px 0 0">
+            <img src="assets/fieldnote-runs.webp" alt="Two run-in-progress views side by side: the pipeline in the light theme with a progress bar at 1 of 6 steps, and the agent in the dark theme with elapsed time, a tool-call count and a checklist of completed tool calls." style="border:1px solid var(--rule)">
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">Same interview, same UI. The pipeline has a total, so it gets a progress bar. The agent doesn't, so it doesn't.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="f04" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
+        <div style="flex:0 0 140px">
+          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">04</span>
+          <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">The challenge</span>
+        </div>
+        <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;color:var(--ink2);max-width:58ch">AI synthesis tools fail in one predictable way: they invent. A quote gets tidied, a number gets estimated, a claim floats free of its source. The design question was how to make traceability a property of the system instead of a promise about it — and how to design around what the model must refuse to produce, not just what it produces.</p>
+        </div>
+      </section>
+
+      <section id="f05" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
+        <div style="flex:0 0 140px">
+          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">05</span>
+          <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">Approach</span>
+        </div>
+        <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">No quote, no claim.</b> A validation gate runs between every pair of steps, not once at the end. Anything without evidence behind it is dropped, with a reason from a fixed vocabulary. The gate never repairs: one malformed insight must not lose the four good ones beside it.</p>
+          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Missing beats invented.</b> A number not in the transcript is never estimated or filled in from model knowledge. The field renders as missing and says where to get the figure. Absence has its own component.</p>
+          <figure style="margin:6px 0 0">
+            <img src="assets/fieldnote-missing.webp" alt="The insight field grid — who, where, what, why, when, consequence — with quantified impact marked Not in this interview and a sentence saying where to get the number." style="border:1px solid var(--rule)">
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">A number the interview doesn't hold is never estimated. The field says so, and says where to get it.</figcaption>
+          </figure>
+          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Show less because the system did more.</b> Elements, facts and findings are computed, stored — and never shown. They exist only to gate what sits above them. The user sees quotes, insights, opportunities, solutions.</p>
+        </div>
+      </section>
+
+      <section id="f06" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
+        <div style="flex:0 0 140px">
+          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">06</span>
+          <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">Key decisions</span>
+        </div>
+        <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Quotes are never editable.</b> Insights can be edited, rejected, accepted; the quote under them cannot. If a quote is wrong, the transcript is wrong.</p>
+          <figure style="margin:6px 0 0">
+            <img src="assets/fieldnote-transcript.webp" alt="Fieldnote transcript screen: full transcript on the left with the quoted line highlighted, Quotes used column on the right" style="border:1px solid var(--rule)">
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">The full transcript stays visible — a transcript that hides parts of itself is not a transcript. Quoted lines are highlighted; the quote text is the link.</figcaption>
+          </figure>
+          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Reject means delete, in two steps</b> — and everything that rested on the item stays, flagged "Needs review". The app does not pretend the dependent work vanished.</p>
+          <figure style="margin:6px 0 0">
+            <img src="assets/fieldnote-reject.webp" alt="Fieldnote reject warning: Reject means delete, naming the insight and the opportunity and solution that will be flagged Needs review" style="border:1px solid var(--rule)">
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">Delete is honest about its blast radius. Dependent work stays, flagged for review.</figcaption>
+          </figure>
+          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">The chat is scoped like the chain.</b> Each mode has a chat about the open run, and it answers from the run's evidence only — insights, quotes, solutions. Not the transcript. A context that could reach past its own layer is a context where a claim can be re-invented at a level its evidence no longer reaches. Asked to estimate a market size, it answers with what this interview supports and names what it doesn't.</p>
+          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Evidence wears one color.</b> In the design system, blue exists only for evidence — timestamps, quote links, a finished step. Errors and missing figures share one color that sits deliberately outside the brand palette: both are the app refusing to pretend.</p>
+        </div>
+      </section>
+
+      <section id="f07" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
+        <div style="flex:0 0 140px">
+          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">07</span>
+          <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">What broke</span>
+        </div>
+        <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Long recordings.</b> The serverless gateway answers a synchronous call for about 30 seconds — measured, not assumed. Long interviews blew through it. Six rounds of fixes tried to fit the work inside the window by splitting calls into smaller batches. It kept almost working: some steps overran on input, one overran on output, and the two don't look alike from the size of a request. One step couldn't be split at all — findings is the step that groups, and splitting the sorting breaks the sorting; the answer there was batch-then-merge: group each batch, then a second small call merges the piles that met the same pattern twice. And the agent has nothing to split — it chooses its own tool-call sizes. So the window itself had to go: every model call now runs as a background job the browser polls, with each completed step persisted before the next begins.</p>
+          <figure style="margin:6px 0 0">
+            <img src="assets/fieldnote-before-after.webp" alt="Before: one long synchronous call hits the 30s wall and saves nothing. After: a background job with polling persists each step until results are ready" style="border:1px solid var(--rule)">
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">The fix wasn't smaller calls — it was removing the wall. Every model call became a background job; a closed tab loses at most one step.</figcaption>
+          </figure>
+          <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">The verbatim check that was too verbatim.</b> The rule originally required a quote to equal a whole transcript line. Once lines grew to several sentences, the model quoted the one sentence a fact rested on — and every fact failed. One run produced 101 facts and dropped all 101: six green steps and an empty report from a transcript that was entirely fine. The rule now is that the quote appears inside the line, character for character. Selecting a sentence from a paragraph is not a loosening of the rule; it is what quoting is.</p>
+          <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">One lesson from the repo, kept because it cost real money: at one point an unmeasured "10-second ceiling" was written into the docs as a constraint, and the code was re-tuned to fit it — aborting calls the server was still working on. A number nobody measured does not become a constraint by being written down.</p>
+        </div>
+      </section>
+
+      <section id="f08" style="display:flex;flex-wrap:wrap;gap:var(--gutter);padding:28px 0 40px;border-top:1px solid var(--rule)">
+        <div style="flex:0 0 140px">
+          <span style="font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">08</span>
+          <span style="display:block;margin-top:8px;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);max-width:14ch">Impact</span>
+        </div>
+        <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;color:var(--ink2);max-width:58ch">This is a personal build. No users, no adoption numbers — and I won't invent any. That restraint is the product's own rule applied to its case study.</p>
+          <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">What it demonstrates:</span>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;max-width:58ch">
+            <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Traceability as the product, not a feature — enforced by a gate between every two steps, so it is a property, not a promise.</span></li>
+            <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>Designing for absence: what the model must refuse to produce needs components, states and copy of its own.</span></li>
+            <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--ink2)"><span style="color:var(--dt)">·</span><span>A pipeline and an agent are different tools, not better and worse. The design work is deciding what the model may touch, how many moves it gets, and who checks it.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <div style="padding:36px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)">
+        <p style="font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.95;font-size:clamp(34px,5vw,72px);margin:0;max-width:24ch;text-wrap:balance">No quote, no claim. <em style="font-style:normal;color:var(--dt)">Missing beats invented.</em> Show less because the system did more.</p>
+      </div>
+
+      <a href="#/calorieflow" style="display:flex;flex-wrap:wrap;align-items:center;gap:16px var(--gutter);padding:30px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--ink);text-decoration:none;color:var(--ink)" class="hov-pale">
+        <span style="flex:0 0 140px;font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">→</span>
+        <span style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">Next entry</span>
+          <span style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(28px,3.4vw,46px);line-height:1;color:var(--ink)">CalorieFlow</span>
+        </span>
+      </a>
+    </main>
+  </div>
 </section>
 
 <section class="page" id="p-jarvis" data-screen-label="JARVIS dossier" style="--dt:#2C7A4B;--dtPale:#D3E7D9;--dtInk:#123322">
@@ -373,7 +626,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
-    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">03</b></div>
+    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">04</b></div>
   </header>
 
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
@@ -536,7 +789,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
-    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">04</b></div>
+    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">05</b></div>
   </header>
 
   <div id="adeo-gate" style="display:none;position:fixed;inset:0;z-index:8000;background:rgba(236,237,232,.97);align-items:center;justify-content:center;padding:24px">
@@ -870,7 +1123,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
-    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">05</b></div>
+    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">06</b></div>
   </header>
 
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
@@ -1072,7 +1325,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
-    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">06</b></div>
+    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">07</b></div>
   </header>
 
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
@@ -1262,7 +1515,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
-    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">07</b></div>
+    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">08</b></div>
   </header>
 
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
@@ -1548,7 +1801,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
-    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">08</b></div>
+    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">09</b></div>
   </header>
 
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
@@ -1642,11 +1895,11 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
         </div>
       </section>
 
-      <a href="#/calorieflow" style="display:flex;flex-wrap:wrap;align-items:center;gap:16px var(--gutter);padding:30px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--ink);text-decoration:none;color:var(--ink)" class="hov-pale">
+      <a href="#/fieldnote" style="display:flex;flex-wrap:wrap;align-items:center;gap:16px var(--gutter);padding:30px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--ink);text-decoration:none;color:var(--ink)" class="hov-pale">
         <span style="flex:0 0 140px;font-family:var(--disp);font-weight:700;font-size:64px;line-height:.9;color:var(--dt)">→</span>
         <span style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:6px">
           <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">Next entry</span>
-          <span style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(28px,3.4vw,46px);line-height:1;color:var(--ink)">CalorieFlow</span>
+          <span style="font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(28px,3.4vw,46px);line-height:1;color:var(--ink)">Fieldnote Synthesis</span>
         </span>
       </a>
     </main>
@@ -1890,7 +2143,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
-    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">01</b></div>
+    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">02</b></div>
   </header>
 
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
@@ -2128,7 +2381,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
     </nav>
-    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">02</b></div>
+    <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">03</b></div>
   </header>
 
   <div style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:flex-end;padding:36px var(--edge) 28px;border-bottom:1px solid var(--ink)">
@@ -2352,9 +2605,9 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
 
 <script>
 (function(){
-  var slugToId = {'':'home','home':'home','works':'works','jarvis':'jarvis','adeo':'adeo','suez':'suez','ubitik':'ubitik','allpokemon':'allpokemon','asapp':'asapp','contact':'contact','about':'about','calorieflow':'calorieflow','openfeedback':'openfeedback'};
+  var slugToId = {'':'home','home':'home','works':'works','fieldnote':'fieldnote','jarvis':'jarvis','adeo':'adeo','suez':'suez','ubitik':'ubitik','allpokemon':'allpokemon','asapp':'asapp','contact':'contact','about':'about','calorieflow':'calorieflow','openfeedback':'openfeedback'};
   var titles = {
-    home:'Zubareva Archive', works:'Work — Zubareva Archive', jarvis:'JARVIS\u00b2 — Zubareva Archive',
+    home:'Zubareva Archive', fieldnote:'Fieldnote Synthesis — Zubareva Archive', works:'Work — Zubareva Archive', jarvis:'JARVIS\u00b2 — Zubareva Archive',
     adeo:'ADEO — Zubareva Archive', suez:'SUEZ — Zubareva Archive', ubitik:'My Project Companion — Zubareva Archive',
     allpokemon:'AllPokemon — Zubareva Archive', asapp:'ASAPP — Zubareva Archive', contact:'Contact — Zubareva Archive',
     about:'About — Zubareva Archive', calorieflow:'CalorieFlow — Zubareva Archive', openfeedback:'Open Feedback — Zubareva Archive'
