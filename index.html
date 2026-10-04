@@ -1191,8 +1191,8 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <p style="margin:0;color:var(--ink2);max-width:58ch">I designed and built both versions. The first proved the idea but could not grow; the rebuild fixed how people find it and how AI fits into building.</p>
           <figure style="margin:6px 0 0">
             <div style="display:flex;flex-wrap:wrap;gap:12px">
-              <img src="assets/allpokemon-v2-builder.png" alt="The 2023 no-code team builder built with Framer and Bubble." style="flex:1 1 260px;min-width:0;border:1px solid var(--rule)">
-              <img src="assets/allpokemon-builder-current.webp" alt="The current Team Builder: Pokémon search, format chips for Champions M-C, SV Reg I, SV OU and SV UU, default level 50, six empty slots numbered 01 to 06, an Import a team link, a Build with AI bubble and a dock reading 0/6 Pokémon, choose at least 4 to continue." style="flex:1 1 260px;min-width:0;border:1px solid var(--rule)">
+              <img src="assets/allpokemon-v1-remix.webp" alt="The first version: an AI Remix panel with experience level, game style and team composition options beside the Team Builder: Create, Edit, Remix page." style="flex:1 1 260px;min-width:0;border:1px solid var(--rule)">
+              <img src="assets/allpokemon-builder-chat.webp" alt="The rebuild: the AI team builder chat with a generated team beside editable roster cards." style="flex:1 1 260px;min-width:0;border:1px solid var(--rule)">
             </div>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">Same product, two stacks: 2023 no-code and the 2026 rebuild.</figcaption>
           </figure>
@@ -1209,8 +1209,12 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <p style="margin:0;color:var(--ink2);max-width:58ch">A Pokémon team is up to six Pokémon, and each needs four moves, an ability, a held item, a nature and stat allocations. The team also needs roles that cover each other’s weaknesses. For a newer player that is dozens of unfamiliar decisions.</p>
           <p style="margin:0;color:var(--ink2);max-width:58ch">The first version started from search data: individual Pokémon had high search volume and existing team builders felt dated. The plan was to rank for long-tail Pokémon queries on Google and send those visitors into the team builder. The landing site ran on Framer, the app on a Bubble subdomain. It grew from a Pokédex into a competitive builder with PokePaste import, then added AI team suggestions.</p>
           <figure style="margin:6px 0 0">
-            <img src="assets/allpokemon-journey.webp" alt="Four steps of the journey: 01 search for a Pokémon and land on its page, here Pelipper; 02 open the AI team builder, pick Champions M-C and type Create a rain team around Pelipper; 03 the AI returns six Pokémon with a role for each; 04 the saved team page with Share and Copy Showdown buttons." style="border:1px solid var(--rule)">
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">The rebuilt flow in four steps: search, describe the team, get a full suggestion, then customize and save.</figcaption>
+            <img src="assets/allpokemon-v2-builder.png" alt="First-version team builder with PokePaste import and full stat and move detail per Pokémon." style="border:1px solid var(--rule)">
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">The no-code version, 2023–2025: the competitive builder with PokePaste import.</figcaption>
+          </figure>
+          <figure style="margin:6px 0 0">
+            <img src="assets/allpokemon-v3-ai.png" alt="First-version team builder with an AI remix panel." style="border:1px solid var(--rule)">
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">Its last stage: AI team suggestions, built with Buildship.</figcaption>
           </figure>
         </div>
       </section>
@@ -1258,6 +1262,10 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">The AI proposes; the roster stays the source of truth.</figcaption>
           </figure>
           <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Six numbered empty slots as the starting point.</b> The builder shows the shape of a team before anything is in it, with search, format, import and AI entry points around it. Details like moves, items and stats live in a per-Pokémon editor: a resizable side panel on desktop, an overlay on mobile.</p>
+          <figure style="margin:6px 0 0">
+            <img src="assets/allpokemon-builder-current.webp" alt="The current Team Builder: Pokémon search, format chips for Champions M-C, SV Reg I, SV OU and SV UU, default level 50, six empty slots numbered 01 to 06, an Import a team link, a Build with AI bubble and a dock reading 0/6 Pokémon, choose at least 4 to continue." style="border:1px solid var(--rule)">
+            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">Structure first, detail on demand: six numbered slots, with search, format, import and AI around them.</figcaption>
+          </figure>
           <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Imports a player confirms.</b> Screenshot recognition can misread a team, so imports go through review and format confirmation before reaching the roster. Champions data stays separate instead of being converted from Scarlet/Violet stats.</p>
         </div>
       </section>
