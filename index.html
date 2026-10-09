@@ -699,10 +699,20 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">An agent that acts on a live accounting database is not a chatbot. The user has to see what it is about to do, stop it, and understand what happened after. That is the whole interface.</p>
           <p style="margin:0;border-left:2px solid var(--dt);background:var(--dtPale);color:var(--dtInk);padding:12px 14px;font-family:var(--mono2);font-size:12px;line-height:1.6;max-width:58ch">The first version told the user everything except the things that mattered. Every one of the eight steps got its own chat message, so the screen read as a log; the same tap that opened a document also sent an invoice to a counterparty, with no distinction between the two; and the reports screen led with a success rate, a streak counter and a health bar for the agent. What it never showed was which database the agent was working in, how autonomous it currently was, or what had been rolled back after a failure. The redesign moved all of that to the surface and pushed the celebration out.</p>
-          <figure style="flex:1 1 340px;min-width:280px;margin:0">
-            <img src="assets/jarvis-before-after.png" alt="Before and after of the agent chat screen.">
-            <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Before and after: a chat log with a message per step, rebuilt as a task view with past steps collapsed and risk labelled.</figcaption>
-          </figure>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px var(--gutter)">
+            <figure style="margin:0">
+              <img src="assets/jarvis-before-tasks.webp" alt="First version, tasks screen: a health counter of 93, a step progress bar, task cards each with the same Run button, and scheduled automations." loading="lazy">
+              <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Before — Tasks: opening a document and emailing a client get the same Run button.</figcaption>
+            </figure>
+            <figure style="margin:0">
+              <img src="assets/jarvis-before-chat.webp" alt="First version, chat screen: one timestamped message per step, embedded 1C screenshots, and a Yes, open it prompt." loading="lazy">
+              <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Before — Chat: a message for every step, so the task reads as a log.</figcaption>
+            </figure>
+            <figure style="margin:0">
+              <img src="assets/jarvis-before-reports.webp" alt="First version, reports dashboard: success rate, focus time, activity chart, work quality and a latest achievements panel with a trophy." loading="lazy">
+              <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Before — Reports: success rate, streaks and trophies, but no database, no autonomy level, no rollbacks.</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
