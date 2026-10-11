@@ -1198,11 +1198,12 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
         </div>
         <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;color:var(--ink2);max-width:58ch">AllPokemon is a competitive Pokémon team builder. Players build a six-member team by hand, generate one through AI chat, or import one, then edit every Pokémon and save or share it.</p>
+          <p style="margin:0;color:var(--ink2);max-width:58ch">Try it: <a href="https://teambuilder.allpokemon.info/" target="_blank" rel="noopener" style="color:var(--dt);text-decoration:underline">teambuilder.allpokemon.info</a></p>
           <p style="margin:0;color:var(--ink2);max-width:58ch">I designed and built both versions. The first proved the idea but could not grow; the rebuild fixed how people find it and how AI fits into building.</p>
           <figure style="margin:6px 0 0">
             <div style="display:flex;flex-wrap:wrap;gap:12px">
               <img src="assets/allpokemon-v1-remix.webp" alt="The first version: an AI Remix panel with experience level, game style and team composition options beside the Team Builder: Create, Edit, Remix page." style="flex:1 1 260px;min-width:0;border:1px solid var(--rule)">
-              <img src="assets/allpokemon-builder-chat.webp" alt="The rebuild: the AI team builder chat with a generated team beside editable roster cards." style="flex:1 1 260px;min-width:0;border:1px solid var(--rule)">
+              <img src="assets/allpokemon-builder-team.webp" alt="The rebuilt AI team builder: the chat panel with the prompt Create a balanced team with good type coverage and six suggested Pokémon, beside a filled roster in the Champions M-C format with ability, item, moves, stats and an AI explanation on each card." style="flex:1 1 260px;min-width:0;border:1px solid var(--rule)">
             </div>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">Same product, two stacks: 2023 no-code and the 2026 rebuild.</figcaption>
           </figure>
@@ -1264,12 +1265,12 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
           <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Move the landing pages to Astro.</b> The SEO plan was right; the stack was blocking it. Astro serves fast static pages Google can rank, and the app moved to React with a Node.js backend and PostgreSQL. Tradeoff: two months of rebuild instead of new features.</p>
           <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Chat and builder edit the same team.</b> The AI chat opens beside the roster. “Replace this Pokémon without changing the rest of my team” acts on the current team and returns a proposed change. Generated teams arrive as structured data the player edits like any hand-built member. Getting this right needed a structured pipeline with guardrails; Mastra organised the AI agent’s steps so I could iterate on them quickly.</p>
           <figure style="margin:6px 0 0">
-            <img src="assets/allpokemon-builder-chat.webp" alt="The AI team builder chat panel beside the roster: a generated team listed with roles, Toxapex expanded with ability, item and moves plus Replace, Change Moves, Change Ability and Change Item actions, a View in Builder button, and roster cards for Rotom-Wash and Excadrill with Select in chat, Swap and Edit links." style="border:1px solid var(--rule)">
+            <img src="assets/allpokemon-builder-team.webp" alt="The rebuilt AI team builder: the chat panel with the prompt Create a balanced team with good type coverage and six suggested Pokémon, beside a filled roster in the Champions M-C format with ability, item, moves, stats and an AI explanation on each card." style="border:1px solid var(--rule)">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">The AI proposes; the roster stays the source of truth.</figcaption>
           </figure>
           <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Six numbered empty slots as the starting point.</b> The builder shows the shape of a team before anything is in it, with search, format, import and AI entry points around it. Details like moves, items and stats live in a per-Pokémon editor: a resizable side panel on desktop, an overlay on mobile.</p>
           <figure style="margin:6px 0 0">
-            <img src="assets/allpokemon-builder-current.webp" alt="The current Team Builder: Pokémon search, format chips for Champions M-C, SV Reg I, SV OU and SV UU, default level 50, six empty slots numbered 01 to 06, an Import a team link, a Build with AI bubble and a dock reading 0/6 Pokémon, choose at least 4 to continue." style="border:1px solid var(--rule)">
+            <img src="assets/allpokemon-builder-empty.webp" alt="The rebuilt Pokémon Team Builder: search, format chips for Champions M-C, SV Reg I, SV OU and SV UU, default level 50, six empty numbered slots, an Import from Showdown link, a Build with AI bubble and a 0/6 save bar." style="border:1px solid var(--rule)">
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">Structure first, detail on demand: six numbered slots, with search, format, import and AI around them.</figcaption>
           </figure>
           <p style="margin:0;color:var(--ink2);max-width:58ch"><b style="font-weight:600;color:var(--ink)">Imports a player confirms.</b> Screenshot recognition can misread a team, so imports go through review and format confirmation before reaching the roster. Champions data stays separate instead of being converted from Scarlet/Violet stats.</p>
@@ -1291,7 +1292,12 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
             <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;color:var(--ink2)"><b style="font-family:var(--mono2);font-size:12px;font-weight:500;color:var(--dt);padding-top:3px">05</b><span>They sign up to save, publish a team page and copy the team to Pokémon Showdown.</span></li>
           </ol>
           <figure style="margin:6px 0 0">
-            <img src="assets/allpokemon-journey.webp" alt="Four steps of the journey: 01 search for a Pokémon and land on its page, here Pelipper; 02 open the AI team builder, pick Champions M-C and type Create a rain team around Pelipper; 03 the AI returns six Pokémon with a role for each; 04 the saved team page with Share and Copy Showdown buttons." style="border:1px solid var(--rule)">
+            <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start" data-journey-row>
+              <img src="assets/allpokemon-journey-m1.webp" alt="Mobile Team Builder: Pokémon search, format chips for Champions M-C, SV Reg I, SV OU and SV UU, empty numbered slots, a Build with AI bubble and a 0/6 save bar." style="flex:1 1 calc(25% - 9px);min-width:120px;max-width:calc(50% - 6px);border:1px solid var(--rule)">
+              <img src="assets/allpokemon-journey-m2.webp" alt="Mobile Pokémon search open for slot 1: a paged list of 1,398 Pokémon starting with Bulbasaur, Ivysaur and Venusaur, each with type tags and Click to add to slot 1." style="flex:1 1 calc(25% - 9px);min-width:120px;max-width:calc(50% - 6px);border:1px solid var(--rule)">
+              <img src="assets/allpokemon-journey-m3.webp" alt="Mobile AI team builder: a generated team with Primarina, Gholdengo, Dragapult and Archaludon, a Why this team works section, and Save, Cancel and Regenerate buttons." style="flex:1 1 calc(25% - 9px);min-width:120px;max-width:calc(50% - 6px);border:1px solid var(--rule)">
+              <img src="assets/allpokemon-journey-m4.webp" alt="Mobile saved team page by Theo: a description, Share and Copy Showdown buttons, and links to more teams by the same author." style="flex:1 1 calc(25% - 9px);min-width:120px;max-width:calc(50% - 6px);border:1px solid var(--rule)">
+            </div>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:9px;line-height:1.5">From a search result to a team the player owns.</figcaption>
           </figure>
         </div>
