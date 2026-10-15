@@ -21,18 +21,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Caveat:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
 <style>
-:root{--paper:#F7F7F7;--paper2:#E3E5DF;--ink:#1B1D1C;--ink2:#3F423F;--mute:#6F736E;--rule:#C6C9C1;--ruleSoft:#D8DAD3;--pale:#DFDEE1;--accent:#527AFA;--danger:#9A1F23;color-scheme:light}
-:root[data-theme=dark]{--paper:#131514;--paper2:#1C1F1D;--ink:#ECEDE8;--ink2:#C4C7C0;--mute:#8F938D;--rule:#3B3F3B;--ruleSoft:#2A2D2A;--pale:#232624;--accent:#527AFA;--danger:#F0787C;color-scheme:dark}
+:root{--paper:#F7F7F7;--paper2:#E3E5DF;--ink:#1B1D1C;--ink2:#3F423F;--mute:#6F736E;--rule:#C6C9C1;--ruleSoft:#D8DAD3;--pale:#DFDEE1;--accent:#3B62AB;--danger:#9A1F23;--block:#DAE9C6;--dawn:#FFF6F2;color-scheme:light}
+:root[data-theme=dark]{--paper:#111111;--paper2:#1A1A1A;--ink:#FFF6F2;--ink2:#D2CDCA;--mute:#94908E;--rule:#3A3A3A;--ruleSoft:#262626;--pale:#222222;--accent:#527AFA;--danger:#F0787C;--block:#DAE9C6;color-scheme:dark}
+/* Dawn Green blocks: same light panel in both themes, with their own dark text and Deep Blue accent */
+[data-block]{background:var(--block);padding:18px 20px 20px;--ink:#1B1D1C;--ink2:#2F3A2A;--mute:#55634C;--rule:#A9BE90;--ruleSoft:#C2D4AC;--accent:#3B62AB;color:var(--ink2)}
+[data-block] > div:first-child[style*="border-top"]{border-top:0!important;padding-top:0!important}
+[data-block] a:hover{color:var(--accent)}
 /* dossier tints: lighter brand colour, dark tinted panels, light panel text */
-[data-theme=dark] #p-fieldnote{--dt:#8F7CBA!important;--dtPale:color-mix(in srgb,#5B3F99 28%,#131514)!important;--dtInk:color-mix(in srgb,#8F7CBA 35%,#ECEDE8)!important}
-[data-theme=dark] #p-jarvis{--dt:#56956F!important;--dtPale:color-mix(in srgb,#2C7A4B 28%,#131514)!important;--dtInk:color-mix(in srgb,#56956F 35%,#ECEDE8)!important}
-[data-theme=dark] #p-adeo{--dt:#49919B!important;--dtPale:color-mix(in srgb,#0F6E7C 28%,#131514)!important;--dtInk:color-mix(in srgb,#49919B 35%,#ECEDE8)!important}
-[data-theme=dark] #p-allpokemon{--dt:#CC696F!important;--dtPale:color-mix(in srgb,#B4232B 28%,#131514)!important;--dtInk:color-mix(in srgb,#CC696F 35%,#ECEDE8)!important}
-[data-theme=dark] #p-suez{--dt:#6E8E9B!important;--dtPale:color-mix(in srgb,#1D4E62 28%,#131514)!important;--dtInk:color-mix(in srgb,#6E8E9B 35%,#ECEDE8)!important}
-[data-theme=dark] #p-ubitik{--dt:#767ED8!important;--dtPale:color-mix(in srgb,#2F3BC4 28%,#131514)!important;--dtInk:color-mix(in srgb,#767ED8 35%,#ECEDE8)!important}
-[data-theme=dark] #p-asapp{--dt:#CB6C48!important;--dtPale:color-mix(in srgb,#C2542A 28%,#131514)!important;--dtInk:color-mix(in srgb,#CB6C48 35%,#ECEDE8)!important}
-[data-theme=dark] #p-calorieflow{--dt:#5C908B!important;--dtPale:color-mix(in srgb,#0F5C55 28%,#131514)!important;--dtInk:color-mix(in srgb,#5C908B 35%,#ECEDE8)!important}
-[data-theme=dark] #p-openfeedback{--dt:#977FAC!important;--dtPale:color-mix(in srgb,#83679C 28%,#131514)!important;--dtInk:color-mix(in srgb,#977FAC 35%,#ECEDE8)!important}
+[data-theme=dark] #p-fieldnote{--dt:#8F7CBA!important;--dtPale:color-mix(in srgb,#5B3F99 28%,#111111)!important;--dtInk:color-mix(in srgb,#8F7CBA 35%,#ECEDE8)!important}
+[data-theme=dark] #p-jarvis{--dt:#56956F!important;--dtPale:color-mix(in srgb,#2C7A4B 28%,#111111)!important;--dtInk:color-mix(in srgb,#56956F 35%,#ECEDE8)!important}
+[data-theme=dark] #p-adeo{--dt:#49919B!important;--dtPale:color-mix(in srgb,#0F6E7C 28%,#111111)!important;--dtInk:color-mix(in srgb,#49919B 35%,#ECEDE8)!important}
+[data-theme=dark] #p-allpokemon{--dt:#CC696F!important;--dtPale:color-mix(in srgb,#B4232B 28%,#111111)!important;--dtInk:color-mix(in srgb,#CC696F 35%,#ECEDE8)!important}
+[data-theme=dark] #p-suez{--dt:#6E8E9B!important;--dtPale:color-mix(in srgb,#1D4E62 28%,#111111)!important;--dtInk:color-mix(in srgb,#6E8E9B 35%,#ECEDE8)!important}
+[data-theme=dark] #p-ubitik{--dt:#767ED8!important;--dtPale:color-mix(in srgb,#2F3BC4 28%,#111111)!important;--dtInk:color-mix(in srgb,#767ED8 35%,#ECEDE8)!important}
+[data-theme=dark] #p-asapp{--dt:#CB6C48!important;--dtPale:color-mix(in srgb,#C2542A 28%,#111111)!important;--dtInk:color-mix(in srgb,#CB6C48 35%,#ECEDE8)!important}
+[data-theme=dark] #p-calorieflow{--dt:#5C908B!important;--dtPale:color-mix(in srgb,#0F5C55 28%,#111111)!important;--dtInk:color-mix(in srgb,#5C908B 35%,#ECEDE8)!important}
+[data-theme=dark] #p-openfeedback{--dt:#977FAC!important;--dtPale:color-mix(in srgb,#83679C 28%,#111111)!important;--dtInk:color-mix(in srgb,#977FAC 35%,#ECEDE8)!important}
 /* project colours on work cards */
 [data-theme=dark] [style*="color:#0F5C55\"],[data-theme=dark] [style*="color:#0F5C55;"]{color:#5C908B!important}
 [data-theme=dark] [style*="color:#0F6E7C\"],[data-theme=dark] [style*="color:#0F6E7C;"]{color:#49919B!important}
@@ -114,7 +118,7 @@ aside[data-dossier-aside] > details[open] > summary [data-fold-icon]::after { co
 WHERE THE
 <span style="color: var(--accent)">WORKFLOW</span>&nbsp;<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 112px); letter-spacing: -0.005em; text-wrap-mode: initial; font-family: var(--disp);">IS THE PRODUCT.</span></h1>
       <div style="display:flex;flex-wrap:wrap;gap:22px var(--gutter);margin-top:22px">
-        <div style="flex:1 1 380px;margin:0;max-width:52ch;color:var(--ink2)"><div>An index of what I've built. Each entry opens as a dossier: role, timeline, status,&nbsp;<span style="color: var(--ink2); font-family: var(--body);">and the decisions that shaped the product.</span></div></div><div style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute)">
+        <div style="flex:1 1 380px;margin:0;max-width:52ch;color:var(--ink2)"><div>An index of what I've built. Each entry opens as a dossier: role, timeline, status,&nbsp;<span style="color: var(--ink2); font-family: var(--body);">and the decisions that shaped the product.</span></div></div><div data-block style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute);align-content:start">
         <span>Title</span><b style="font-weight:500;color:var(--ink2)">Senior Product Designer</b>
         <span>Field</span><b style="font-weight:500;color:var(--ink2)">B2B SaaS · complex workflows, data and AI</b>
         <span>Years</span><b style="font-weight:500;color:var(--ink2)">10+ · engineering background</b>
@@ -218,7 +222,7 @@ WHERE THE
         <a href="#/works" style="align-self: flex-start; margin-top: 4px; display: none; gap: 10px; align-items: center; font-family: var(--mono2); font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 3px">Check all works <span style="font-family:var(--disp);font-size:16px">→</span></a>
       </div>
 
-      <aside style="flex:1 1 280px;display:flex;flex-direction:column;gap:14px;min-width:0">
+      <aside data-block style="flex:1 1 280px;display:flex;flex-direction:column;gap:14px;min-width:0;align-self:flex-start">
         <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:10px">
           <span style="font-family:var(--disp);font-weight:700;font-size:30px;line-height:.9">§</span>
           <span style="font-family: var(--mono2); font-size: 11px; text-transform: uppercase; letter-spacing: .12em; display: none">Filing conventions</span><a href="#/works" style="align-self:flex-start;margin-top:4px;display:inline-flex;gap:10px;align-items:center;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:3px"><span style="font-family: var(--disp); font-size: 16px;"><span style="color: var(--ink2); font-family: &quot;IBM Plex Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 15px; letter-spacing: normal; text-transform: none;">Check all works&nbsp;</span>→</span></a>
@@ -258,7 +262,7 @@ WHERE THE
         </ol>
       </div>
 
-      <div style="flex:1 1 260px;display:flex;flex-direction:column;gap:14px;min-width:0">
+      <div data-block style="flex:1 1 260px;align-self:flex-start;display:flex;flex-direction:column;gap:14px;min-width:0">
         <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:10px">
           <span style="font-family:var(--disp);font-weight:700;font-size:30px;line-height:.9">04</span>
           <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">Contact</span>
@@ -1994,7 +1998,7 @@ WHERE THE
     <div style="display:flex;flex-wrap:wrap;gap:32px var(--gutter);align-items:flex-end">
       <h1 style="font-family: var(--disp); font-weight: 700; text-transform: uppercase; line-height: .95; letter-spacing: -.005em; text-wrap: balance; font-size: clamp(40px,5.6vw,84px); margin: 0; max-width: 16ch; color: var(--ink)">ENGINEER FIRST.
 DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 112px); letter-spacing: -0.005em; text-wrap-mode: initial; font-family: var(--disp);"></span></h1>
-      <div style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute)">
+      <div data-block style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute);align-content:start">
         <span>Title</span><b style="font-weight:500;color:var(--ink2)">Senior Product Designer</b>
         <span>Field</span><b style="font-weight:500;color:var(--ink2)">B2B SaaS · complex workflows, data and AI</b>
         <span>Years</span><b style="font-weight:500;color:var(--ink2)">10+ · engineering background</b>
@@ -2027,7 +2031,7 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
     </div>
 
     <div style="display:flex;flex-wrap:wrap;gap:44px var(--gutter);align-items:flex-end">
-      <div id="contact" style="flex:1 1 260px;min-width:0">
+      <div id="contact" data-block style="flex:1 1 260px;min-width:0;align-self:flex-start">
         <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding:10px 0 4px;margin-bottom:10px">
           <span style="font-family:var(--disp);font-weight:700;font-size:30px;line-height:.9">@</span>
           <span style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute)">Contact</span>
