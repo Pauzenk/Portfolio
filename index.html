@@ -23,13 +23,11 @@
 <style>
 :root{--paper:#F7F7F7;--paper2:#FFF6F2;--ink:#0F0F0F;--ink2:#3A3A3A;--mute:#6E6E6E;--rule:#CFCFCF;--ruleSoft:#E6E6E6;--pale:#FFF6F2;--accent:#3B62AB;--danger:#9A1F23;--block:#DAE9C6;--dawn:#FFF6F2;color-scheme:light}
 :root[data-theme=dark]{--paper:#0F0F0F;--paper2:#1A1A1A;--ink:#FFFFFF;--ink2:#D4D4D4;--mute:#949494;--rule:#363636;--ruleSoft:#242424;--pale:#1E1E1E;--accent:#527AFA;--danger:#F0787C;--block:#DAE9C6;color-scheme:dark}
-/* Dawn Green touches: text selection, the current page in the nav, contents-row hovers */
-::selection{background:var(--block);color:#0F0F0F}
-nav[data-mainnav] a[style*="color:var(--ink)"]{background:linear-gradient(transparent 55%,var(--block) 55%);padding:0 2px}
-ol > li:has(> a):hover{background:var(--block);--ink:#0F0F0F;--mute:#55634C;color:var(--ink)}
-:root[data-theme=dark] nav[data-mainnav] a[style*="color:var(--ink)"]{background:none;color:var(--block)!important;padding:0}
-:root[data-theme=dark] ol > li:has(> a):hover{background:none}
-:root[data-theme=dark] ol > li:has(> a):hover a{color:var(--block)}
+/* Ink touches (text colour, inverted): text selection, the current page in the nav, contents-row hovers */
+::selection{background:var(--ink);color:var(--paper)}
+nav[data-mainnav] a[style*="color:var(--ink)"]{background:var(--ink);color:var(--paper)!important;padding:1px 6px;margin:-1px -6px}
+:root{--invBg:var(--ink);--invFg:var(--paper)}
+ol > li:has(> a):hover{background:var(--invBg);--ink:var(--invFg);--mute:color-mix(in srgb,var(--invFg) 65%,transparent);color:var(--invFg)}
 /* case studies use the main theme: accent for their colour, a light accent tint for panels */
 .page[style*="--dt"]{--dt:var(--accent)!important;--dtPale:color-mix(in srgb,var(--accent) 11%,var(--paper))!important;--dtInk:var(--ink)!important}
 :root[data-theme=dark] .page[style*="--dt"]{--dtPale:color-mix(in srgb,var(--accent) 18%,var(--paper))!important}
@@ -118,7 +116,7 @@ button:active{transform:scale(.96)}
   ol > li:has(> a){transition:background-color .2s var(--ease),padding .25s var(--ease)}
   ol > li:has(> a):hover{padding-left:6px}
   ol > li > a{transition:color .2s,padding .25s var(--ease)}
-  aside ol > li > a:hover{padding-left:6px;color:var(--accent)!important}
+  aside ol > li > a:hover{padding-left:6px}
 
   /* arrows nudge toward where they point */
   a[href="#/works"] > span{display:inline-block;transition:transform .25s var(--ease)}
