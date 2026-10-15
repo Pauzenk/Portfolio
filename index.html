@@ -17,12 +17,37 @@
 <meta name="twitter:title" content="Irina Zubareva — Senior Product Designer">
 <meta name="twitter:description" content="An index of B2B SaaS, data platform and AI product work: role, timeline, status, and the decisions that shaped each product.">
 <meta name="twitter:image" content="https://zubarevaportfolio.netlify.app/assets/social-preview.png">
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Caveat:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
 <style>
-body{margin:0;background:#F7F7F7;-webkit-font-smoothing:antialiased}
+:root{--paper:#F7F7F7;--paper2:#E3E5DF;--ink:#1B1D1C;--ink2:#3F423F;--mute:#6F736E;--rule:#C6C9C1;--ruleSoft:#D8DAD3;--pale:#DFDEE1;--accent:#527AFA;--danger:#9A1F23;color-scheme:light}
+:root[data-theme=dark]{--paper:#131514;--paper2:#1C1F1D;--ink:#ECEDE8;--ink2:#C4C7C0;--mute:#8F938D;--rule:#3B3F3B;--ruleSoft:#2A2D2A;--pale:#232624;--accent:#527AFA;--danger:#F0787C;color-scheme:dark}
+/* dossier tints: lighter brand colour, dark tinted panels, light panel text */
+[data-theme=dark] #p-fieldnote{--dt:#8F7CBA!important;--dtPale:color-mix(in srgb,#5B3F99 28%,#131514)!important;--dtInk:color-mix(in srgb,#8F7CBA 35%,#ECEDE8)!important}
+[data-theme=dark] #p-jarvis{--dt:#56956F!important;--dtPale:color-mix(in srgb,#2C7A4B 28%,#131514)!important;--dtInk:color-mix(in srgb,#56956F 35%,#ECEDE8)!important}
+[data-theme=dark] #p-adeo{--dt:#49919B!important;--dtPale:color-mix(in srgb,#0F6E7C 28%,#131514)!important;--dtInk:color-mix(in srgb,#49919B 35%,#ECEDE8)!important}
+[data-theme=dark] #p-allpokemon{--dt:#CC696F!important;--dtPale:color-mix(in srgb,#B4232B 28%,#131514)!important;--dtInk:color-mix(in srgb,#CC696F 35%,#ECEDE8)!important}
+[data-theme=dark] #p-suez{--dt:#6E8E9B!important;--dtPale:color-mix(in srgb,#1D4E62 28%,#131514)!important;--dtInk:color-mix(in srgb,#6E8E9B 35%,#ECEDE8)!important}
+[data-theme=dark] #p-ubitik{--dt:#767ED8!important;--dtPale:color-mix(in srgb,#2F3BC4 28%,#131514)!important;--dtInk:color-mix(in srgb,#767ED8 35%,#ECEDE8)!important}
+[data-theme=dark] #p-asapp{--dt:#CB6C48!important;--dtPale:color-mix(in srgb,#C2542A 28%,#131514)!important;--dtInk:color-mix(in srgb,#CB6C48 35%,#ECEDE8)!important}
+[data-theme=dark] #p-calorieflow{--dt:#5C908B!important;--dtPale:color-mix(in srgb,#0F5C55 28%,#131514)!important;--dtInk:color-mix(in srgb,#5C908B 35%,#ECEDE8)!important}
+[data-theme=dark] #p-openfeedback{--dt:#977FAC!important;--dtPale:color-mix(in srgb,#83679C 28%,#131514)!important;--dtInk:color-mix(in srgb,#977FAC 35%,#ECEDE8)!important}
+/* project colours on work cards */
+[data-theme=dark] [style*="color:#0F5C55\"],[data-theme=dark] [style*="color:#0F5C55;"]{color:#5C908B!important}
+[data-theme=dark] [style*="color:#0F6E7C\"],[data-theme=dark] [style*="color:#0F6E7C;"]{color:#49919B!important}
+[data-theme=dark] [style*="color:#1D4E62\"],[data-theme=dark] [style*="color:#1D4E62;"]{color:#6E8E9B!important}
+[data-theme=dark] [style*="color:#2C7A4B\"],[data-theme=dark] [style*="color:#2C7A4B;"]{color:#56956F!important}
+[data-theme=dark] [style*="color:#2F3BC4\"],[data-theme=dark] [style*="color:#2F3BC4;"]{color:#767ED8!important}
+[data-theme=dark] [style*="color:#5B3F99\"],[data-theme=dark] [style*="color:#5B3F99;"]{color:#8F7CBA!important}
+[data-theme=dark] [style*="color:#83679C\"],[data-theme=dark] [style*="color:#83679C;"]{color:#977FAC!important}
+[data-theme=dark] [style*="color:#B4232B\"],[data-theme=dark] [style*="color:#B4232B;"]{color:#CC696F!important}
+[data-theme=dark] [style*="color:#C2542A\"],[data-theme=dark] [style*="color:#C2542A;"]{color:#CB6C48!important}
+</style>
+<style>
+body{margin:0;background:var(--paper);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-a:hover{color:#1B1D1C}
+a:hover{color:var(--ink)}
 *{box-sizing:border-box}
 </style>
 
@@ -30,7 +55,7 @@ a:hover{color:#1B1D1C}
 .page{display:none}
 .page.on{display:block}
 .hov-border:hover{border-color:var(--ink)}
-.hov-pale:hover{background:#DFDEE1}
+.hov-pale:hover{background:var(--pale)}
 figure img,figure video{max-width:100%;height:auto;display:block}
 #lightbox{position:fixed;inset:0;z-index:9000;background:rgba(27,29,28,.92);display:none;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:8px;cursor:zoom-out}
 #lightbox.on{display:flex}
@@ -68,7 +93,7 @@ aside[data-dossier-aside] > details[open] > summary [data-fold-icon]::after { co
 </style>
 </head>
 <body>
-<div style="--paper:#F7F7F7;--paper2:#E3E5DF;--ink:#1B1D1C;--ink2:#3F423F;--mute:#6F736E;--rule:#C6C9C1;--ruleSoft:#D8DAD3;--disp:'Barlow Condensed','Arial Narrow',Impact,sans-serif;--mono:'Caveat','Segoe Script',cursive;--mono2:'IBM Plex Mono',Menlo,Consolas,monospace;--body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;--edge:clamp(20px,4vw,56px);--gutter:clamp(16px,2.2vw,28px);background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;min-height:100vh">
+<div style="--disp:'Barlow Condensed','Arial Narrow',Impact,sans-serif;--mono:'Caveat','Segoe Script',cursive;--mono2:'IBM Plex Mono',Menlo,Consolas,monospace;--body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;--edge:clamp(20px,4vw,56px);--gutter:clamp(16px,2.2vw,28px);background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;min-height:100vh">
 <section class="page" id="p-home" data-screen-label="Index">
   <header style="display:flex;flex-wrap:wrap;gap:14px var(--gutter);align-items:baseline;justify-content:space-between;padding:22px var(--edge);border-bottom:1px solid var(--ink)">
     <div style="flex:1 1 260px;font-family:var(--mono2);font-size:12px"><span style="font-weight:500;color:var(--ink)">Irina Zubareva</span><span style="color:var(--mute)">&nbsp;— Senior Product Designer</span></div>
@@ -78,15 +103,16 @@ aside[data-dossier-aside] > details[open] > summary [data-fold-icon]::after { co
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Paris, FR &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">2026</b></div>
   </header>
 
   <main style="display:flex;flex-direction:column;gap:56px;padding:40px var(--edge) 72px">
     <div>
-      <h1 style="font-family: var(--disp); font-weight: 700; text-transform: uppercase; line-height: .95; letter-spacing: -.005em; text-wrap: balance; font-size: clamp(44px,7.4vw,112px); margin: 0; max-width: 16ch; color: #1D1B1B">I DESIGN PRODUCTS
+      <h1 style="font-family: var(--disp); font-weight: 700; text-transform: uppercase; line-height: .95; letter-spacing: -.005em; text-wrap: balance; font-size: clamp(44px,7.4vw,112px); margin: 0; max-width: 16ch; color: var(--ink)">I DESIGN PRODUCTS
 WHERE THE
-WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw, 112px); letter-spacing: -0.005em; text-wrap-mode: initial; font-family: var(--disp);">IS THE PRODUCT.</span></h1>
+<span style="color: var(--accent)">WORKFLOW</span>&nbsp;<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 112px); letter-spacing: -0.005em; text-wrap-mode: initial; font-family: var(--disp);">IS THE PRODUCT.</span></h1>
       <div style="display:flex;flex-wrap:wrap;gap:22px var(--gutter);margin-top:22px">
         <div style="flex:1 1 380px;margin:0;max-width:52ch;color:var(--ink2)"><div>An index of what I've built. Each entry opens as a dossier: role, timeline, status,&nbsp;<span style="color: var(--ink2); font-family: var(--body);">and the decisions that shaped the product.</span></div></div><div style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute)">
         <span>Title</span><b style="font-weight:500;color:var(--ink2)">Senior Product Designer</b>
@@ -195,7 +221,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <aside style="flex:1 1 280px;display:flex;flex-direction:column;gap:14px;min-width:0">
         <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:10px">
           <span style="font-family:var(--disp);font-weight:700;font-size:30px;line-height:.9">§</span>
-          <span style="font-family: var(--mono2); font-size: 11px; text-transform: uppercase; letter-spacing: .12em; display: none">Filing conventions</span><a href="#/works" style="align-self:flex-start;margin-top:4px;display:inline-flex;gap:10px;align-items:center;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:3px"><span style="font-family: var(--disp); font-size: 16px;"><span style="color: rgb(63, 66, 63); font-family: &quot;IBM Plex Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 15px; letter-spacing: normal; text-transform: none;">Check all works&nbsp;</span>→</span></a>
+          <span style="font-family: var(--mono2); font-size: 11px; text-transform: uppercase; letter-spacing: .12em; display: none">Filing conventions</span><a href="#/works" style="align-self:flex-start;margin-top:4px;display:inline-flex;gap:10px;align-items:center;font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:3px"><span style="font-family: var(--disp); font-size: 16px;"><span style="color: var(--ink2); font-family: &quot;IBM Plex Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 15px; letter-spacing: normal; text-transform: none;">Check all works&nbsp;</span>→</span></a>
         </div>
         
         <p style="margin:0;color:var(--ink2);max-width:48ch">I design and ship in the same loop: flows in Figma, prototypes in code, builds with LLMs. Most dossiers here include what broke and what I'd redo.</p>
@@ -265,6 +291,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/works" style="color:var(--ink)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)"><b style="font-weight:500;color:var(--ink2)">9 projects</b></div>
   </header>
@@ -416,6 +443,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">01</b></div>
   </header>
@@ -626,6 +654,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">04</b></div>
   </header>
@@ -799,20 +828,21 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">05</b></div>
   </header>
 
-  <div id="adeo-gate" style="display:none;position:fixed;inset:0;z-index:8000;background:rgba(247,247,247,.97);align-items:center;justify-content:center;padding:24px">
+  <div id="adeo-gate" style="display:none;position:fixed;inset:0;z-index:8000;background:color-mix(in srgb,var(--paper) 97%,transparent);align-items:center;justify-content:center;padding:24px">
     <div style="width:100%;max-width:420px;border:1px solid var(--ink);background:var(--paper);padding:36px 32px">
-      <span style="display:inline-block;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9A1F23;border:1px solid #9A1F23;padding:3px 8px;margin-bottom:18px">NDA</span>
+      <span style="display:inline-block;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:3px 8px;margin-bottom:18px">NDA</span>
       <h2 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.95;font-size:clamp(28px,4vw,40px);margin:0 0 12px;letter-spacing:-.005em">This dossier is under NDA</h2>
       <p style="margin:0 0 24px;color:var(--ink2);font-size:14px;line-height:1.5">The ADEO case study covers confidential client work and isn't open for public viewing. Enter the access password to continue.</p>
       <form id="adeo-gate-form" autocomplete="off" style="display:flex;flex-direction:column;gap:12px">
         <input type="password" id="adeo-gate-input" placeholder="Password" autocomplete="off" style="font-family:var(--mono2);font-size:14px;padding:11px 12px;border:1px solid var(--ink);background:var(--paper);color:var(--ink)">
         <button type="submit" style="font-family:var(--mono2);font-size:11px;text-transform:uppercase;letter-spacing:.12em;padding:11px 12px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer">Unlock</button>
       </form>
-      <p id="adeo-gate-error" style="display:none;margin:12px 0 0;color:#9A1F23;font-family:var(--mono2);font-size:12px">Incorrect password — try again.</p>
+      <p id="adeo-gate-error" style="display:none;margin:12px 0 0;color:var(--danger);font-family:var(--mono2);font-size:12px">Incorrect password — try again.</p>
       <p style="margin:20px 0 0;font-family:var(--mono2);font-size:11px;color:var(--mute)"><a href="#/works" style="text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--rule)">← Back to works</a></p>
     </div>
   </div>
@@ -1133,6 +1163,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">06</b></div>
   </header>
@@ -1373,6 +1404,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">07</b></div>
   </header>
@@ -1575,6 +1607,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">08</b></div>
   </header>
@@ -1765,6 +1798,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">09</b></div>
   </header>
@@ -1880,6 +1914,7 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--ink)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Paris, FR &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">2026</b></div>
   </header>
@@ -1950,14 +1985,15 @@ WORKFLOW&nbsp;<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--ink)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Resume &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">2026</b></div>
   </header>
 
   <main style="display:flex;flex-direction:column;gap:64px;padding:48px var(--edge) 72px">
     <div style="display:flex;flex-wrap:wrap;gap:32px var(--gutter);align-items:flex-end">
-      <h1 style="font-family: var(--disp); font-weight: 700; text-transform: uppercase; line-height: .95; letter-spacing: -.005em; text-wrap: balance; font-size: clamp(40px,5.6vw,84px); margin: 0; max-width: 16ch; color: #1D1B1B">ENGINEER FIRST.
-DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4vw, 112px); letter-spacing: -0.005em; text-wrap-mode: initial; font-family: var(--disp);"></span></h1>
+      <h1 style="font-family: var(--disp); font-weight: 700; text-transform: uppercase; line-height: .95; letter-spacing: -.005em; text-wrap: balance; font-size: clamp(40px,5.6vw,84px); margin: 0; max-width: 16ch; color: var(--ink)">ENGINEER FIRST.
+DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 112px); letter-spacing: -0.005em; text-wrap-mode: initial; font-family: var(--disp);"></span></h1>
       <div style="flex:1 1 280px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:17px;color:var(--mute)">
         <span>Title</span><b style="font-weight:500;color:var(--ink2)">Senior Product Designer</b>
         <span>Field</span><b style="font-weight:500;color:var(--ink2)">B2B SaaS · complex workflows, data and AI</b>
@@ -2003,7 +2039,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
           <dt style="color:var(--mute)">Portfolio</dt><dd style="margin:0;color:var(--ink);word-break:break-word"><a href="https://contra.com/zubarevagbhg_pdg7vons" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--rule)">contra.com/zubarevagbhg</a></dd>
         </dl>
       </div>
-      <p style="flex:1 1 420px;font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.95;font-size:clamp(32px,4.2vw,60px);margin:0;max-width:20ch;text-wrap:balance">Messy data, regulated flows, thousands of daily users. <em style="font-style: normal; color: #9A3B1F">Bring the hard ones.</em></p>
+      <p style="flex:1 1 420px;font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.95;font-size:clamp(32px,4.2vw,60px);margin:0;max-width:20ch;text-wrap:balance">Messy data, regulated flows, thousands of daily users. <em style="font-style: normal; color: var(--accent)">Bring the hard ones.</em></p>
     </div>
 
     <aside style="display:flex;flex-wrap:wrap;gap:40px var(--gutter)">
@@ -2107,6 +2143,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">02</b></div>
   </header>
@@ -2345,6 +2382,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">03</b></div>
   </header>
@@ -2422,7 +2460,7 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
             <p style="margin:0;color:var(--ink2);max-width:58ch">The job was to turn that into a structured system: identify reliable sources, surface misinformation, and support the decision at the end of it.</p>
           </div>
           <figure style="flex:1 1 240px;min-width:0;margin:0">
-            <div style="border: 1px solid var(--dt); color: var(--dtInk); font-family: var(--mono2); font-size: 12px; padding: 12px; display: grid; grid-template-columns: auto 1fr; gap: 10px; background-color: #DFDEE1"><span style="color:var(--dt)">!</span><span>No dedicated tool. Manual verification across fragmented sources, no shared structure.</span></div>
+            <div style="border: 1px solid var(--dt); color: var(--dtInk); font-family: var(--mono2); font-size: 12px; padding: 12px; display: grid; grid-template-columns: auto 1fr; gap: 10px; background-color: var(--pale)"><span style="color:var(--dt)">!</span><span>No dedicated tool. Manual verification across fragmented sources, no shared structure.</span></div>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The starting condition the platform had to replace.</figcaption>
           </figure>
         </div>
@@ -2603,6 +2641,30 @@ DESIGNER SINCE.<span style="color: rgb(154, 31, 35); font-size: clamp(44px, 7.4v
   });
   overlay.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLightbox(); });
+
+  // ---- light / dark theme toggle (starts from system preference, remembers the visitor's choice) ----
+  function syncThemeButtons(){
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.querySelectorAll('[data-themetoggle]').forEach(function(b){
+      b.querySelector('[data-theme-label]').textContent = dark ? 'Light' : 'Dark';
+      b.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    });
+  }
+  syncThemeButtons();
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-themetoggle]') : null;
+    if (!b) return;
+    var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (err) {}
+    syncThemeButtons();
+  });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+    var saved; try { saved = localStorage.getItem('theme'); } catch (err) {}
+    if (saved === 'light' || saved === 'dark') return;
+    document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+    syncThemeButtons();
+  });
 
   // ---- mobile nav toggle ----
   document.addEventListener('click', function(e){
