@@ -142,22 +142,8 @@ button:active{transform:scale(.96)}
 }
 </style>
 <style>
-/* ---- folder concept: header nav tabs + project file cabinet ---- */
+/* ---- folder concept: home recent works as a project file cabinet ---- */
 :root{--line:1.5px}
-/* header: nav links are tabs standing on the header's bottom rule */
-@media (min-width: 701px){
-  header:has(> nav[data-mainnav]){padding-bottom:0!important;align-items:flex-end!important}
-  header > div:first-child, header > div:last-child{padding-bottom:22px}
-  nav[data-mainnav]{align-self:flex-end;gap:2px!important;margin-bottom:-1px}
-  nav[data-mainnav] a{position:relative;display:inline-block;padding:9px 20px 8px!important;margin:0!important;background:none!important;color:var(--mute)!important;z-index:0;transition:transform .25s var(--ease),color .2s}
-  nav[data-mainnav] a::before{content:"";position:absolute;inset:0;z-index:-1;border:var(--line) solid var(--ink);border-bottom:0;border-radius:9px 9px 0 0;background:var(--paper);transform:perspective(40px) rotateX(9deg);transform-origin:bottom;transition:background-color .25s var(--ease)}
-  nav[data-mainnav] a:hover{transform:translateY(-3px);color:var(--ink)!important}
-  nav[data-mainnav] a[style*="color:var(--ink)"]{color:var(--paper)!important}
-  nav[data-mainnav] a[style*="color:var(--ink)"]::before{background:var(--ink)}
-  nav[data-mainnav] a[style*="color:var(--ink)"]:hover{transform:none}
-  nav[data-mainnav] [data-themetoggle]{align-self:center;margin-bottom:6px}
-}
-
 /* project cabinet */
 .cab{--tabH:34px;position:relative;font-family:var(--mono2)}
 .cab-tabs{position:relative;padding-top:var(--tabH)}
@@ -167,7 +153,9 @@ button:active{transform:scale(.96)}
 .cab-t::before{content:"";position:absolute;inset:0;z-index:-1;border:var(--line) solid var(--ink);border-bottom:0;border-radius:10px 10px 0 0;background:var(--paper);transform:perspective(46px) rotateX(10deg);transform-origin:bottom;transition:background-color .25s var(--ease)}
 .cab-right .cab-t{left:auto;right:var(--r)}
 .cab-t b{font-weight:400;color:var(--mute)}
-.cab-f:hover .cab-t, .cab-f:focus-visible .cab-t{transform:translateY(-4px)}
+.cab-f{transition:transform .3s var(--ease)}
+.cab-f:hover, .cab-f:focus-visible{transform:translateY(-6px)}
+.cab-f[aria-selected="true"]:hover{transform:none}
 .cab-f[aria-selected="true"] .cab-t{color:var(--paper)}
 .cab-f[aria-selected="true"] .cab-t::before{background:var(--ink)}
 .cab-f[aria-selected="true"] .cab-t b{color:color-mix(in srgb,var(--paper) 70%,transparent)}
@@ -178,8 +166,8 @@ button:active{transform:scale(.96)}
 .cab-body.swap > *:nth-child(2){animation-delay:.06s}
 @keyframes cabIn{from{opacity:0;transform:translateY(10px)}}
 .cab-img{display:block;aspect-ratio:4/3;border:var(--line) solid var(--ink);border-radius:8px;overflow:hidden;position:relative}
-.cab-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
-.cab-img:hover img{transform:scale(1.04)}
+.cab-img img,.cab-img video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.cab-img:hover img,.cab-img:hover video{transform:scale(1.04)}
 .cab-info{display:flex;flex-direction:column;gap:12px;min-width:0}
 .cab-no{font-size:12px;color:var(--mute);display:flex;justify-content:space-between;border-bottom:1px dashed var(--rule);padding-bottom:8px}
 .cab-info h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(30px,3.4vw,46px);line-height:.95;margin:0}
@@ -194,7 +182,7 @@ button:active{transform:scale(.96)}
   .cab-t{gap:12px;padding:7px 16px 6px;font-size:12px}
   .cab-body{grid-template-columns:minmax(0,1fr);padding:16px}
 }
-@media (prefers-reduced-motion: reduce){.cab-body.swap > *{animation:none}.cab-t,nav[data-mainnav] a{transition:none}}
+@media (prefers-reduced-motion: reduce){.cab-body.swap > *{animation:none}.cab-f{transition:none}}
 </style>
 </head>
 <body>
@@ -2777,14 +2765,14 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
 
   // ---- folder cabinet: rebuild each work grid as stacked folder tabs + an open folder ----
   function buildCabinet(grid){
-    var cards = Array.prototype.slice.call(grid.querySelectorAll(':scope > a.hov-border'));
+    var cards = Array.prototype.slice.call(grid.querySelectorAll(':scope > a.hov-border')).slice(0, 4);
     if (cards.length < 2) return;
     var items = cards.map(function(a, i){
-      var img = a.querySelector('img'), label = a.querySelector('h3 + span');
+      var img = a.querySelector('img, video'), label = a.querySelector('h3 + span');
       var meta = a.querySelector('div > div:nth-child(2)'), desc = a.querySelector('p');
       return { href: a.getAttribute('href'), title: a.querySelector('h3').textContent.trim(),
         kind: label ? label.textContent.replace(/^\s*\d+\s*\/\s*/, '').trim() : '',
-        img: img ? img.getAttribute('src') : '', alt: img ? img.getAttribute('alt') : '',
+        media: img,
         imgBg: img ? img.parentElement.style.background : '',
         meta: meta ? meta.innerHTML : '', desc: desc ? desc.textContent.trim() : '',
         no: ('00' + (i + 1)).slice(-3) };
@@ -2798,7 +2786,7 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
     // back folders first, front folder (001) last, like a drawer seen from above
     var order = items.slice().reverse();
     // alternate tabs left and right, stepping inward, so labels never run off the edge
-    var pos = ['0%', '4%', '10%', '14%', '20%', '24%', '6%', '10%', '16%'];
+    var pos = ['0%', '6%', '14%', '20%'];
     order.forEach(function(it, k){
       var b = document.createElement('button');
       b.type = 'button'; b.className = 'cab-f'; b.setAttribute('role', 'tab');
@@ -2806,7 +2794,6 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
       if (k % 2) b.classList.add('cab-right');
       b.innerHTML = '<span class="cab-t"><b>' + it.no + '</b>' + it.title + '</span>';
       b.addEventListener('click', function(){ show(it, b); });
-      b.addEventListener('mouseenter', function(){ if (matchMedia('(hover: hover)').matches) show(it, b); });
       b._item = it;
       tabs.appendChild(b);
     });
@@ -2814,10 +2801,11 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
       if (btn.getAttribute('aria-selected') === 'true') return;
       tabs.querySelectorAll('.cab-f').forEach(function(x){ x.setAttribute('aria-selected', x === btn ? 'true' : 'false'); x.tabIndex = x === btn ? 0 : -1; });
       body.innerHTML =
-        '<a class="cab-img" href="' + it.href + '" style="background:' + it.imgBg + '"><img src="' + it.img + '" alt="' + (it.alt || '').replace(/"/g, '&quot;') + '"></a>' +
+        '<a class="cab-img" href="' + it.href + '" style="background:' + it.imgBg + '"></a>' +
         '<div class="cab-info"><div class="cab-no"><span>' + it.no + ' / ' + it.kind + '</span><span>' + order.length + ' files</span></div>' +
         '<h3>' + it.title + '</h3><div class="cab-meta">' + it.meta + '</div><p class="cab-desc">' + it.desc + '</p>' +
         '<a class="cab-open" href="' + it.href + '">Open folder <span>→</span></a></div>';
+      if (it.media) { var m = it.media.cloneNode(true); m.removeAttribute('style'); body.querySelector('.cab-img').appendChild(m); if (m.play) { m.muted = true; m.play().catch(function(){}); } }
       body.classList.remove('swap'); void body.offsetWidth; body.classList.add('swap');
     }
     tabs.addEventListener('keydown', function(e){
@@ -2831,7 +2819,8 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
     grid.style.display = 'none'; grid.parentNode.insertBefore(cab, grid);
     var front = tabs.lastChild; show(front._item, front);
   }
-  document.querySelectorAll('[data-works-grid]').forEach(buildCabinet);
+  var homeGrid = document.querySelector('#p-home [data-works-grid]');
+  if (homeGrid) buildCabinet(homeGrid);
 
   // ---- scroll reveal: cards, figures and section heads fade up as they enter ----
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
