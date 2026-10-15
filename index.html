@@ -30,16 +30,9 @@ ol > li:has(> a):hover{background:var(--block);--ink:#0F0F0F;--mute:#55634C;colo
 :root[data-theme=dark] nav[data-mainnav] a[style*="color:var(--ink)"]{background:none;color:var(--block)!important;padding:0}
 :root[data-theme=dark] ol > li:has(> a):hover{background:none}
 :root[data-theme=dark] ol > li:has(> a):hover a{color:var(--block)}
-/* dossier tints: lighter brand colour, dark tinted panels, light panel text */
-[data-theme=dark] #p-fieldnote{--dt:#8F7CBA!important;--dtPale:color-mix(in srgb,#5B3F99 28%,#0F0F0F)!important;--dtInk:color-mix(in srgb,#8F7CBA 35%,#ECEDE8)!important}
-[data-theme=dark] #p-jarvis{--dt:#56956F!important;--dtPale:color-mix(in srgb,#2C7A4B 28%,#0F0F0F)!important;--dtInk:color-mix(in srgb,#56956F 35%,#ECEDE8)!important}
-[data-theme=dark] #p-adeo{--dt:#49919B!important;--dtPale:color-mix(in srgb,#0F6E7C 28%,#0F0F0F)!important;--dtInk:color-mix(in srgb,#49919B 35%,#ECEDE8)!important}
-[data-theme=dark] #p-allpokemon{--dt:#CC696F!important;--dtPale:color-mix(in srgb,#B4232B 28%,#0F0F0F)!important;--dtInk:color-mix(in srgb,#CC696F 35%,#ECEDE8)!important}
-[data-theme=dark] #p-suez{--dt:#6E8E9B!important;--dtPale:color-mix(in srgb,#1D4E62 28%,#0F0F0F)!important;--dtInk:color-mix(in srgb,#6E8E9B 35%,#ECEDE8)!important}
-[data-theme=dark] #p-ubitik{--dt:#767ED8!important;--dtPale:color-mix(in srgb,#2F3BC4 28%,#0F0F0F)!important;--dtInk:color-mix(in srgb,#767ED8 35%,#ECEDE8)!important}
-[data-theme=dark] #p-asapp{--dt:#CB6C48!important;--dtPale:color-mix(in srgb,#C2542A 28%,#0F0F0F)!important;--dtInk:color-mix(in srgb,#CB6C48 35%,#ECEDE8)!important}
-[data-theme=dark] #p-calorieflow{--dt:#5C908B!important;--dtPale:color-mix(in srgb,#0F5C55 28%,#0F0F0F)!important;--dtInk:color-mix(in srgb,#5C908B 35%,#ECEDE8)!important}
-[data-theme=dark] #p-openfeedback{--dt:#977FAC!important;--dtPale:color-mix(in srgb,#83679C 28%,#0F0F0F)!important;--dtInk:color-mix(in srgb,#977FAC 35%,#ECEDE8)!important}
+/* case studies use the main theme: accent for their colour, a light accent tint for panels */
+.page[style*="--dt"]{--dt:var(--accent)!important;--dtPale:color-mix(in srgb,var(--accent) 11%,var(--paper))!important;--dtInk:var(--ink)!important}
+:root[data-theme=dark] .page[style*="--dt"]{--dtPale:color-mix(in srgb,var(--accent) 18%,var(--paper))!important}
 /* project colours on work cards */
 [data-theme=dark] [style*="color:#0F5C55\"],[data-theme=dark] [style*="color:#0F5C55;"]{color:#5C908B!important}
 [data-theme=dark] [style*="color:#0F6E7C\"],[data-theme=dark] [style*="color:#0F6E7C;"]{color:#49919B!important}
@@ -98,6 +91,58 @@ aside[data-dossier-aside] > details[open] > summary [data-fold-icon]::after { co
   aside[data-dossier-aside] > details > summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 }
 </style>
+<style>
+/* ---- motion: hovers, micro-interactions, page and scroll animations ---- */
+:root{--ease:cubic-bezier(.2,.7,.2,1)}
+a,button{transition:color .2s var(--ease),border-color .2s var(--ease),background-color .2s var(--ease),opacity .2s}
+button:active{transform:scale(.96)}
+@media (prefers-reduced-motion: no-preference){
+  .page.on{animation:pageIn .5s var(--ease) both}
+  @keyframes pageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  h1 span[style*="var(--accent)"]{animation:accentIn .9s .15s var(--ease) both}
+  @keyframes accentIn{from{opacity:0;filter:blur(6px)}to{opacity:1;filter:none}}
+
+  /* work cards lift, cover image eases in */
+  a.hov-border{transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .25s}
+  a.hov-border:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(15,15,15,.45)}
+  :root[data-theme=dark] a.hov-border:hover{box-shadow:0 14px 34px -16px rgba(0,0,0,.9)}
+  a.hov-border img{transition:transform .6s var(--ease)}
+  a.hov-border:hover img{transform:scale(1.04)}
+  a.hov-border:active{transform:translateY(-1px) scale(.995)}
+
+  /* nav: underline grows from the left */
+  nav[data-mainnav] a:not([style*="color:var(--ink)"]){background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s var(--ease),color .2s}
+  nav[data-mainnav] a:not([style*="color:var(--ink)"]):hover{background-size:100% 1px;color:var(--ink)!important}
+
+  /* list rows and sidebar links slide a little */
+  ol > li:has(> a){transition:background-color .2s var(--ease),padding .25s var(--ease)}
+  ol > li:has(> a):hover{padding-left:6px}
+  ol > li > a{transition:color .2s,padding .25s var(--ease)}
+  aside ol > li > a:hover{padding-left:6px;color:var(--accent)!important}
+
+  /* arrows nudge toward where they point */
+  a[href="#/works"] > span{display:inline-block;transition:transform .25s var(--ease)}
+  a[href="#/works"]:hover > span{transform:translateX(4px)}
+
+  /* figures invite a click to zoom */
+  figure img{transition:transform .5s var(--ease),filter .3s}
+  figure:hover img{transform:scale(1.012);filter:brightness(1.02)}
+  #lightbox.on{animation:fadeIn .25s ease both}
+  #lightbox.on img{animation:zoomIn .35s var(--ease) both}
+  @keyframes fadeIn{from{opacity:0}}
+  @keyframes zoomIn{from{opacity:0;transform:scale(.96)}}
+
+  /* theme switch: icon turns, colours cross-fade */
+  [data-theme-icon]{display:inline-block;transition:transform .5s var(--ease)}
+  :root[data-theme=dark] [data-theme-icon]{transform:rotate(180deg)}
+  html.theme-fade *, html.theme-fade *::before, html.theme-fade *::after{transition:background-color .45s ease,color .45s ease,border-color .45s ease!important}
+
+  /* scroll reveal */
+  html.js-reveal [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--rd,0s)}
+  html.js-reveal [data-reveal].in{opacity:1;transform:none}
+  html.js-reveal a.hov-border[data-reveal].in{transition:opacity .7s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease),border-color .25s;transition-delay:var(--rd,0s),0s,0s,0s}
+}
+</style>
 </head>
 <body>
 <div style="--disp:'Barlow Condensed','Arial Narrow',Impact,sans-serif;--mono:'Caveat','Segoe Script',cursive;--mono2:'IBM Plex Mono',Menlo,Consolas,monospace;--body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;--edge:clamp(20px,4vw,56px);--gutter:clamp(16px,2.2vw,28px);background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;min-height:100vh">
@@ -110,7 +155,7 @@ aside[data-dossier-aside] > details[open] > summary [data-fold-icon]::after { co
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Paris, FR &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">2026</b></div>
   </header>
@@ -298,7 +343,7 @@ WHERE THE
       <a href="#/works" style="color:var(--ink)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)"><b style="font-weight:500;color:var(--ink2)">9 projects</b></div>
   </header>
@@ -450,7 +495,7 @@ WHERE THE
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">01</b></div>
   </header>
@@ -661,7 +706,7 @@ WHERE THE
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">04</b></div>
   </header>
@@ -835,7 +880,7 @@ WHERE THE
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">05</b></div>
   </header>
@@ -1170,7 +1215,7 @@ WHERE THE
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">06</b></div>
   </header>
@@ -1411,7 +1456,7 @@ WHERE THE
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">07</b></div>
   </header>
@@ -1614,7 +1659,7 @@ WHERE THE
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">08</b></div>
   </header>
@@ -1805,7 +1850,7 @@ WHERE THE
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">09</b></div>
   </header>
@@ -1921,7 +1966,7 @@ WHERE THE
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--ink)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Paris, FR &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">2026</b></div>
   </header>
@@ -1992,7 +2037,7 @@ WHERE THE
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--ink)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Resume &nbsp;·&nbsp; <b style="font-weight:500;color:var(--ink2)">2026</b></div>
   </header>
@@ -2150,7 +2195,7 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">02</b></div>
   </header>
@@ -2166,7 +2211,7 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
     <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
       <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:12px 14px;border:1px solid var(--ink);background:var(--paper2);list-style:none">Dossier details &amp; sections<span data-fold-icon aria-hidden="true" style="font-family:var(--disp);font-size:16px;line-height:1"></span></summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
-      <div style="display: flex; border: 1px solid var(--rule); gap: 10px; border-width: 0px"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex: 1; height: 22px; color: #F0EDE9; background-color: #F0EDE9; border-width: 1px; border-style: solid; border-color: #D9D6D1"></span></div>
+      <div style="display: flex; border: 1px solid var(--rule); gap: 10px; border-width: 0px"><span style="flex:1;height:22px;background:var(--dt)"></span><span style="flex: 1; height: 22px; background-color: var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product designer &amp; builder, solo</dd>
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Timeline</dt><dd style="margin:0 0 12px;color:var(--ink)">May 2026 – ongoing</dd>
@@ -2354,11 +2399,11 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
             <p style="margin:0;color:var(--ink2);max-width:58ch">That next thing is a dashboard for nutritionists: manage clients, view their logs, track adherence, and adjust plans that push back to the app. B2B2C, with the consumer PWA as the distribution channel.</p>
           </div>
           <figure style="flex:1 1 260px;min-width:0;margin:0">
-            <div style="border:1px solid var(--rule);background:#F1EDE8;color:#3F423F;font-family:var(--mono2);font-size:11.5px;padding:14px;display:flex;flex-direction:column">
-              <div style="padding:9px 0;border-bottom:1px dashed #DCDAD2"><b style="display:block;font-weight:500;color:#A6641C;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Wedge</b>Consumer PWA — plain-language logging</div>
-              <div style="padding:9px 0;border-bottom:1px dashed #DCDAD2"><b style="display:block;font-weight:500;color:#A6641C;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Channel</b>Nutritionists bring their clients</div>
-              <div style="padding:9px 0;border-bottom:1px dashed #DCDAD2"><b style="display:block;font-weight:500;color:#A6641C;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Dashboard</b>Clients · logs · adherence · plan changes</div>
-              <div style="padding:9px 0"><b style="display:block;font-weight:500;color:#A6641C;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">State</b>In progress</div>
+            <div style="border:1px solid var(--rule);background:var(--dtPale);color:var(--dtInk);font-family:var(--mono2);font-size:11.5px;padding:14px;display:flex;flex-direction:column">
+              <div style="padding:9px 0;border-bottom:1px dashed var(--rule)"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Wedge</b>Consumer PWA — plain-language logging</div>
+              <div style="padding:9px 0;border-bottom:1px dashed var(--rule)"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Channel</b>Nutritionists bring their clients</div>
+              <div style="padding:9px 0;border-bottom:1px dashed var(--rule)"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">Dashboard</b>Clients · logs · adherence · plan changes</div>
+              <div style="padding:9px 0"><b style="display:block;font-weight:500;color:var(--dt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px">State</b>In progress</div>
             </div>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">Same product, two audiences: the tracker feeds the practice view.</figcaption>
           </figure>
@@ -2389,7 +2434,7 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
       <a href="#/works" style="color:var(--mute)">Works</a>
       <a href="#/about" style="color:var(--mute)">About</a>
       <a href="#/contact" style="color:var(--mute)">Contact</a>
-      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-label>Dark</span></button>
+      <button type="button" data-themetoggle aria-label="Switch to dark theme" style="margin-left:auto;background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer"><span data-theme-icon aria-hidden="true">&#9680;</span> <span data-theme-label>Dark</span></button>
     </nav>
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">03</b></div>
   </header>
@@ -2405,7 +2450,7 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
   <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--gutter);padding:0 var(--edge) 80px;overflow:visible">
     <aside data-dossier-aside style="flex:0 1 240px;min-width:200px;padding-top:32px;position:sticky;top:12px;align-self:flex-start;height:fit-content;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:22px">
       <details open><summary style="cursor:pointer;font-family:var(--mono2);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:12px 14px;border:1px solid var(--ink);background:var(--paper2);list-style:none">Dossier details &amp; sections<span data-fold-icon aria-hidden="true" style="font-family:var(--disp);font-size:16px;line-height:1"></span></summary><div style="display:flex;flex-direction:column;gap:22px;padding-top:18px">
-      <div style="display: flex; border: 1px solid var(--rule); border-width: 0px; gap: 10px"><span style="flex: 1; height: 22px; background-color: #83679C"></span><span style="flex: 1; height: 22px; background-color: #DFDEE1"></span></div>
+      <div style="display: flex; border: 1px solid var(--rule); border-width: 0px; gap: 10px"><span style="flex: 1; height: 22px; background-color: var(--dt)"></span><span style="flex: 1; height: 22px; background-color: var(--dtPale)"></span></div>
       <dl style="margin:0;font-family:var(--mono2);font-size:12px">
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Role</dt><dd style="margin:0 0 12px;color:var(--ink)">Product Designer &amp; Product Owner</dd>
         <dt style="font-family:var(--mono2);font-size:12px;color:var(--mute)">Timeline</dt><dd style="margin:0 0 12px;color:var(--ink)">2021 – 2024</dd>
@@ -2467,7 +2512,7 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
             <p style="margin:0;color:var(--ink2);max-width:58ch">The job was to turn that into a structured system: identify reliable sources, surface misinformation, and support the decision at the end of it.</p>
           </div>
           <figure style="flex:1 1 240px;min-width:0;margin:0">
-            <div style="border: 1px solid var(--dt); color: var(--dtInk); font-family: var(--mono2); font-size: 12px; padding: 12px; display: grid; grid-template-columns: auto 1fr; gap: 10px; background-color: var(--pale)"><span style="color:var(--dt)">!</span><span>No dedicated tool. Manual verification across fragmented sources, no shared structure.</span></div>
+            <div style="border: 1px solid var(--dt); color: var(--dtInk); font-family: var(--mono2); font-size: 12px; padding: 12px; display: grid; grid-template-columns: auto 1fr; gap: 10px; background-color: var(--dtPale)"><span style="color:var(--dt)">!</span><span>No dedicated tool. Manual verification across fragmented sources, no shared structure.</span></div>
             <figcaption style="font-family:var(--mono2);font-size:11px;color:var(--mute);margin-top:8px;line-height:1.5">The starting condition the platform had to replace.</figcaption>
           </figure>
         </div>
@@ -2662,7 +2707,11 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
     var b = e.target.closest ? e.target.closest('[data-themetoggle]') : null;
     if (!b) return;
     var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
+    var root = document.documentElement;
+    root.classList.add('theme-fade');
+    root.setAttribute('data-theme', next);
+    clearTimeout(window.__themeFade);
+    window.__themeFade = setTimeout(function(){ root.classList.remove('theme-fade'); }, 500);
     try { localStorage.setItem('theme', next); } catch (err) {}
     syncThemeButtons();
   });
@@ -2672,6 +2721,21 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
     document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
     syncThemeButtons();
   });
+
+  // ---- scroll reveal: cards, figures and section heads fade up as they enter ----
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js-reveal');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    document.querySelectorAll('.page a.hov-border, .page figure, .page h2').forEach(function(el){
+      if (el.closest('header')) return;
+      var sibs = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+      if (el.matches('a.hov-border')) el.style.setProperty('--rd', (Math.min(sibs, 5) * 0.07) + 's');
+      el.setAttribute('data-reveal', '');
+      io.observe(el);
+    });
+  }
 
   // ---- mobile nav toggle ----
   document.addEventListener('click', function(e){
