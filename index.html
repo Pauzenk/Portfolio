@@ -23,15 +23,11 @@
 <style>
 :root{--paper:#F7F7F7;--paper2:#FFF6F2;--ink:#0F0F0F;--ink2:#3A3A3A;--mute:#6E6E6E;--rule:#CFCFCF;--ruleSoft:#E6E6E6;--pale:#FFF6F2;--accent:#3B62AB;--danger:#9A1F23;--block:#DAE9C6;--dawn:#FFF6F2;color-scheme:light}
 :root[data-theme=dark]{--paper:#0F0F0F;--paper2:#1A1A1A;--ink:#FFFFFF;--ink2:#D4D4D4;--mute:#949494;--rule:#363636;--ruleSoft:#242424;--pale:#1E1E1E;--accent:#527AFA;--danger:#F0787C;--block:#DAE9C6;color-scheme:dark}
-/* Dawn Green touches: text selection, the current page in the nav, card and contents hovers */
+/* Dawn Green touches: text selection, the current page in the nav, contents-row hovers */
 ::selection{background:var(--block);color:#0F0F0F}
 nav[data-mainnav] a[style*="color:var(--ink)"]{background:linear-gradient(transparent 55%,var(--block) 55%);padding:0 2px}
-.hov-border:hover > div:last-child{background:var(--block)}
-.hov-border:hover > div:last-child{--ink:#0F0F0F;--ink2:#2F3A2A;--mute:#55634C;color:var(--ink)}
 ol > li:has(> a):hover{background:var(--block);--ink:#0F0F0F;--mute:#55634C;color:var(--ink)}
 :root[data-theme=dark] nav[data-mainnav] a[style*="color:var(--ink)"]{background:none;color:var(--block)!important;padding:0}
-:root[data-theme=dark] .hov-border:hover{border-color:var(--block)}
-:root[data-theme=dark] .hov-border:hover > div:last-child{background:none;--ink:#FFFFFF;--ink2:#D4D4D4;--mute:#949494}
 :root[data-theme=dark] ol > li:has(> a):hover{background:none}
 :root[data-theme=dark] ol > li:has(> a):hover a{color:var(--block)}
 /* dossier tints: lighter brand colour, dark tinted panels, light panel text */
