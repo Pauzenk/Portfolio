@@ -141,6 +141,49 @@ button:active{transform:scale(.96)}
   html.js-reveal a.hov-border[data-reveal].in{transition:opacity .7s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease),border-color .25s;transition-delay:var(--rd,0s),0s,0s,0s}
 }
 </style>
+<style>
+/* ---- folder concept: home recent works as a project file cabinet ---- */
+:root{--line:1.5px}
+/* project cabinet */
+.cab{--tabH:34px;position:relative;font-family:var(--mono2)}
+.cab-tabs{position:relative;padding-top:var(--tabH)}
+.cab-f{position:relative;display:block;width:100%;height:30px;margin-top:-6px;background:none;border:0;padding:0;cursor:pointer;color:var(--ink);font:inherit;text-align:left}
+.cab-f::before{content:"";position:absolute;left:0;right:0;top:0;bottom:-8px;border:var(--line) solid var(--ink);border-bottom:0;border-radius:12px 12px 0 0;background:var(--paper)}
+.cab-t{position:absolute;bottom:100%;margin-bottom:-1px;left:var(--x);max-width:calc(100% - var(--x, 0px) - var(--r, 0px));display:flex;gap:22px;align-items:center;white-space:nowrap;padding:7px 26px 6px;font-size:13px;z-index:1;transition:transform .3s var(--ease),color .2s}
+.cab-t::before{content:"";position:absolute;inset:0;z-index:-1;border:var(--line) solid var(--ink);border-bottom:0;border-radius:10px 10px 0 0;background:var(--paper);transform:perspective(46px) rotateX(10deg);transform-origin:bottom;transition:background-color .25s var(--ease)}
+.cab-right .cab-t{left:auto;right:var(--r)}
+.cab-t b{font-weight:400;color:var(--mute)}
+.cab-f{transition:transform .3s var(--ease)}
+.cab-f:hover, .cab-f:focus-visible{transform:translateY(-6px)}
+.cab-f[aria-selected="true"]:hover{transform:none}
+.cab-f[aria-selected="true"] .cab-t{color:var(--paper)}
+.cab-f[aria-selected="true"] .cab-t::before{background:var(--ink)}
+.cab-f[aria-selected="true"] .cab-t b{color:color-mix(in srgb,var(--paper) 70%,transparent)}
+.cab-f:focus-visible{outline:none}
+.cab-f:focus-visible .cab-t{text-decoration:underline}
+.cab-body{position:relative;margin-top:-6px;border:var(--line) solid var(--ink);border-radius:12px;background:var(--paper);padding:22px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px;min-height:300px}
+.cab-body.swap > *{animation:cabIn .45s var(--ease) both}
+.cab-body.swap > *:nth-child(2){animation-delay:.06s}
+@keyframes cabIn{from{opacity:0;transform:translateY(10px)}}
+.cab-img{display:block;aspect-ratio:4/3;border:var(--line) solid var(--ink);border-radius:8px;overflow:hidden;position:relative}
+.cab-img img,.cab-img video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.cab-img:hover img,.cab-img:hover video{transform:scale(1.04)}
+.cab-info{display:flex;flex-direction:column;gap:12px;min-width:0}
+.cab-no{font-size:12px;color:var(--mute);display:flex;justify-content:space-between;border-bottom:1px dashed var(--rule);padding-bottom:8px}
+.cab-info h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(30px,3.4vw,46px);line-height:.95;margin:0}
+.cab-meta{font-size:11.5px;color:var(--mute)}
+.cab-meta i{font-style:normal;color:var(--ink)}
+.cab-desc{margin:0;font-family:var(--body);font-size:15px;color:var(--ink2)}
+.cab-open{margin-top:auto;align-self:flex-start;font-size:11px;text-transform:uppercase;letter-spacing:.12em;padding:9px 14px;border:var(--line) solid var(--ink);border-radius:999px;transition:background-color .2s,color .2s}
+.cab-open:hover{background:var(--ink);color:var(--paper)!important}
+.cab-open span{display:inline-block;transition:transform .25s var(--ease)}
+.cab-open:hover span{transform:translateX(4px)}
+@media (max-width: 700px){
+  .cab-t{gap:12px;padding:7px 16px 6px;font-size:12px}
+  .cab-body{grid-template-columns:minmax(0,1fr);padding:16px}
+}
+@media (prefers-reduced-motion: reduce){.cab-body.swap > *{animation:none}.cab-f{transition:none}}
+</style>
 </head>
 <body>
 <div style="--disp:'Barlow Condensed','Arial Narrow',Impact,sans-serif;--mono:'Caveat','Segoe Script',cursive;--mono2:'IBM Plex Mono',Menlo,Consolas,monospace;--body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;--edge:clamp(20px,4vw,56px);--gutter:clamp(16px,2.2vw,28px);background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;min-height:100vh">
@@ -2719,6 +2762,65 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
     document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
     syncThemeButtons();
   });
+
+  // ---- folder cabinet: rebuild each work grid as stacked folder tabs + an open folder ----
+  function buildCabinet(grid){
+    var cards = Array.prototype.slice.call(grid.querySelectorAll(':scope > a.hov-border')).slice(0, 4);
+    if (cards.length < 2) return;
+    var items = cards.map(function(a, i){
+      var img = a.querySelector('img, video'), label = a.querySelector('h3 + span');
+      var meta = a.querySelector('div > div:nth-child(2)'), desc = a.querySelector('p');
+      return { href: a.getAttribute('href'), title: a.querySelector('h3').textContent.trim(),
+        kind: label ? label.textContent.replace(/^\s*\d+\s*\/\s*/, '').trim() : '',
+        media: img,
+        imgBg: img ? img.parentElement.style.background : '',
+        meta: meta ? meta.innerHTML : '', desc: desc ? desc.textContent.trim() : '',
+        no: ('00' + (i + 1)).slice(-3) };
+    });
+    var cab = document.createElement('div');
+    cab.className = 'cab';
+    var tabs = document.createElement('div');
+    tabs.className = 'cab-tabs'; tabs.setAttribute('role', 'tablist'); tabs.setAttribute('aria-label', 'Projects');
+    var body = document.createElement('div');
+    body.className = 'cab-body'; body.setAttribute('role', 'tabpanel');
+    // back folders first, front folder (001) last, like a drawer seen from above
+    var order = items.slice().reverse();
+    // alternate tabs left and right, stepping inward, so labels never run off the edge
+    var pos = ['0%', '6%', '14%', '20%'];
+    order.forEach(function(it, k){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'cab-f'; b.setAttribute('role', 'tab');
+      b.style.setProperty(k % 2 ? '--r' : '--x', pos[k % pos.length]); b.style.zIndex = k + 1;
+      if (k % 2) b.classList.add('cab-right');
+      b.innerHTML = '<span class="cab-t"><b>' + it.no + '</b>' + it.title + '</span>';
+      b.addEventListener('click', function(){ show(it, b); });
+      b._item = it;
+      tabs.appendChild(b);
+    });
+    function show(it, btn){
+      if (btn.getAttribute('aria-selected') === 'true') return;
+      tabs.querySelectorAll('.cab-f').forEach(function(x){ x.setAttribute('aria-selected', x === btn ? 'true' : 'false'); x.tabIndex = x === btn ? 0 : -1; });
+      body.innerHTML =
+        '<a class="cab-img" href="' + it.href + '" style="background:' + it.imgBg + '"></a>' +
+        '<div class="cab-info"><div class="cab-no"><span>' + it.no + ' / ' + it.kind + '</span><span>' + order.length + ' files</span></div>' +
+        '<h3>' + it.title + '</h3><div class="cab-meta">' + it.meta + '</div><p class="cab-desc">' + it.desc + '</p>' +
+        '<a class="cab-open" href="' + it.href + '">Open folder <span>→</span></a></div>';
+      if (it.media) { var m = it.media.cloneNode(true); m.removeAttribute('style'); body.querySelector('.cab-img').appendChild(m); if (m.play) { m.muted = true; m.play().catch(function(){}); } }
+      body.classList.remove('swap'); void body.offsetWidth; body.classList.add('swap');
+    }
+    tabs.addEventListener('keydown', function(e){
+      var list = Array.prototype.slice.call(tabs.querySelectorAll('.cab-f'));
+      var i = list.indexOf(document.activeElement); if (i < 0) return;
+      var j = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? i - 1 : -9;
+      if (j === -9) return; e.preventDefault();
+      j = (j + list.length) % list.length; list[j].focus(); show(list[j]._item, list[j]);
+    });
+    cab.appendChild(tabs); cab.appendChild(body);
+    grid.style.display = 'none'; grid.parentNode.insertBefore(cab, grid);
+    var front = tabs.lastChild; show(front._item, front);
+  }
+  var homeGrid = document.querySelector('#p-home [data-works-grid]');
+  if (homeGrid) buildCabinet(homeGrid);
 
   // ---- scroll reveal: cards, figures and section heads fade up as they enter ----
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
