@@ -31,16 +31,20 @@ ol > li:has(> a):hover{background:var(--invBg);--ink:var(--invFg);--mute:color-m
 /* case studies use the main theme: accent for their colour, a light accent tint for panels */
 .page[style*="--dt"]{--dt:var(--accent)!important;--dtPale:color-mix(in srgb,var(--accent) 11%,var(--paper))!important;--dtInk:var(--ink)!important}
 :root[data-theme=dark] .page[style*="--dt"]{--dtPale:color-mix(in srgb,var(--accent) 18%,var(--paper))!important}
+/* outbound Live/Prototype links on work cards */
+.card-ext{color:var(--accent);font-weight:500;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;cursor:pointer;white-space:nowrap;border-radius:2px;transition:text-decoration-thickness .15s,color .15s}
+.card-ext:hover,.card-ext:focus-visible{text-decoration-thickness:2px;outline:none}
+.card-ext:focus-visible{box-shadow:0 0 0 2px var(--accent)}
 /* project colours on work cards */
-[data-theme=dark] [style*="color:#0F5C55\"],[data-theme=dark] [style*="color:#0F5C55;"]{color:#5C908B!important}
-[data-theme=dark] [style*="color:#0F6E7C\"],[data-theme=dark] [style*="color:#0F6E7C;"]{color:#49919B!important}
-[data-theme=dark] [style*="color:#1D4E62\"],[data-theme=dark] [style*="color:#1D4E62;"]{color:#6E8E9B!important}
-[data-theme=dark] [style*="color:#2C7A4B\"],[data-theme=dark] [style*="color:#2C7A4B;"]{color:#56956F!important}
-[data-theme=dark] [style*="color:#2F3BC4\"],[data-theme=dark] [style*="color:#2F3BC4;"]{color:#767ED8!important}
-[data-theme=dark] [style*="color:#5B3F99\"],[data-theme=dark] [style*="color:#5B3F99;"]{color:#8F7CBA!important}
-[data-theme=dark] [style*="color:#83679C\"],[data-theme=dark] [style*="color:#83679C;"]{color:#977FAC!important}
-[data-theme=dark] [style*="color:#B4232B\"],[data-theme=dark] [style*="color:#B4232B;"]{color:#CC696F!important}
-[data-theme=dark] [style*="color:#C2542A\"],[data-theme=dark] [style*="color:#C2542A;"]{color:#CB6C48!important}
+[data-theme=dark] [style*="color:#0F5C55"]{color:#5C908B!important}
+[data-theme=dark] [style*="color:#0F6E7C"]{color:#49919B!important}
+[data-theme=dark] [style*="color:#1D4E62"]{color:#6E8E9B!important}
+[data-theme=dark] [style*="color:#2C7A4B"]{color:#56956F!important}
+[data-theme=dark] [style*="color:#2F3BC4"]{color:#767ED8!important}
+[data-theme=dark] [style*="color:#5B3F99"]{color:#8F7CBA!important}
+[data-theme=dark] [style*="color:#83679C"]{color:#977FAC!important}
+[data-theme=dark] [style*="color:#B4232B"]{color:#CC696F!important}
+[data-theme=dark] [style*="color:#C2542A"]{color:#CB6C48!important}
 </style>
 <style>
 body{margin:0;background:var(--paper);-webkit-font-smoothing:antialiased}
@@ -233,7 +237,7 @@ WHERE THE
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">Fieldnote Synthesis</h3>
                 <span style="font-family:var(--mono2);font-size:12px;color:#5B3F99">01 / Agent</span>
               </div>
-              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Designer &amp; builder, solo &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#5B3F99">Personal build</i></div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Designer &amp; builder, solo &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#5B3F99">Personal build</i> &nbsp;·&nbsp; <span class="card-ext" role="link" tabindex="0" data-href="https://fieldnote-synthesis.netlify.app/" aria-label="Live (opens in new tab)">Live<span aria-hidden="true">&nbsp;↗</span></span></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">Research synthesis where every claim can be traced to a timestamp.</p>
             </div>
           </a>
@@ -247,7 +251,7 @@ WHERE THE
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">CalorieFlow</h3>
                 <span style="font-family:var(--mono2);font-size:12px;color:#0F5C55">02 / PWA</span>
               </div>
-              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; builder, solo &nbsp;·&nbsp; May 2026 – ongoing &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#0F5C55">Live</i></div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; builder, solo &nbsp;·&nbsp; May 2026 – ongoing &nbsp;·&nbsp; <span class="card-ext" role="link" tabindex="0" data-href="https://caloriesflow.replit.app/" aria-label="Live (opens in new tab)">Live<span aria-hidden="true">&nbsp;↗</span></span></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">An AI-first nutrition app: describe a meal in plain words, correct the estimate, log it. Built by directing a coding agent from strict specs.</p>
             </div>
           </a>
@@ -275,7 +279,7 @@ WHERE THE
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">JARVIS²</h3>
                 <span style="font-family:var(--mono2);font-size:12px;color:#2C7A4B">04 / Agent</span>
               </div>
-              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">UX/UI audit and interactive prototype &nbsp;·&nbsp; JARVIS² (Smart RPA Agent) &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#2C7A4B">Prototype</i></div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">UX/UI audit and interactive prototype &nbsp;·&nbsp; JARVIS² (Smart RPA Agent) &nbsp;·&nbsp; <span class="card-ext" role="link" tabindex="0" data-href="https://claude.ai/artifact/ByKYa8pdVHP2zus4wPPuGN" aria-label="Prototype (opens in new tab)">Prototype<span aria-hidden="true">&nbsp;↗</span></span></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">Operator interface for an AI agent that runs your ERP. It looks at the screen like a human operator, recognises forms visually, and clicks.</p>
             </div>
           </a>
@@ -303,7 +307,7 @@ WHERE THE
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">AllPokemon</h3>
                 <span style="font-family:var(--mono2);font-size:12px;color:#B4232B">06 / Platform</span>
               </div>
-              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer and builder &nbsp;·&nbsp; Personal project, 2023–2026 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#B4232B">313 signups</i></div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer and builder &nbsp;·&nbsp; Personal project, 2023–2026 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#B4232B">313 signups</i> &nbsp;·&nbsp; <span class="card-ext" role="link" tabindex="0" data-href="https://teambuilder.allpokemon.info/" aria-label="Live (opens in new tab)">Live<span aria-hidden="true">&nbsp;↗</span></span></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">A competitive Pokémon team builder, rebuilt from no-code to Astro and React so Google could rank it, with an AI chat that edits the same team the player does.</p>
             </div>
           </a>
@@ -411,7 +415,7 @@ WHERE THE
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">Fieldnote Synthesis</h3>
                 <span style="font-family:var(--mono2);font-size:12px;color:#5B3F99">01 / Agent</span>
               </div>
-              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Designer &amp; builder, solo &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#5B3F99">Personal build</i></div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Designer &amp; builder, solo &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#5B3F99">Personal build</i> &nbsp;·&nbsp; <span class="card-ext" role="link" tabindex="0" data-href="https://fieldnote-synthesis.netlify.app/" aria-label="Live (opens in new tab)">Live<span aria-hidden="true">&nbsp;↗</span></span></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">Research synthesis where every claim can be traced to a timestamp.</p>
             </div>
           </a>
@@ -424,7 +428,7 @@ WHERE THE
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">CalorieFlow</h3>
                 <span style="font-family:var(--mono2);font-size:12px;color:#0F5C55">02 / PWA</span>
               </div>
-              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; builder, solo &nbsp;·&nbsp; May 2026 – ongoing &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#0F5C55">Live</i></div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer &amp; builder, solo &nbsp;·&nbsp; May 2026 – ongoing &nbsp;·&nbsp; <span class="card-ext" role="link" tabindex="0" data-href="https://caloriesflow.replit.app/" aria-label="Live (opens in new tab)">Live<span aria-hidden="true">&nbsp;↗</span></span></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">An AI-first nutrition app: describe a meal in plain words, correct the estimate, log it. Built by directing a coding agent from strict specs.</p>
             </div>
           </a>
@@ -450,7 +454,7 @@ WHERE THE
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">JARVIS²</h3>
                 <span style="font-family:var(--mono2);font-size:12px;color:#2C7A4B">04 / Agent</span>
               </div>
-              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">UX/UI audit and interactive prototype &nbsp;·&nbsp; JARVIS² (Smart RPA Agent) &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#2C7A4B">Prototype</i></div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">UX/UI audit and interactive prototype &nbsp;·&nbsp; JARVIS² (Smart RPA Agent) &nbsp;·&nbsp; <span class="card-ext" role="link" tabindex="0" data-href="https://claude.ai/artifact/ByKYa8pdVHP2zus4wPPuGN" aria-label="Prototype (opens in new tab)">Prototype<span aria-hidden="true">&nbsp;↗</span></span></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">Operator interface for an AI agent that runs your ERP. It looks at the screen like a human operator, recognises forms visually, and clicks.</p>
             </div>
           </a>
@@ -476,7 +480,7 @@ WHERE THE
                 <h3 style="font-family:var(--disp);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;margin:0">AllPokemon</h3>
                 <span style="font-family:var(--mono2);font-size:12px;color:#B4232B">06 / Platform</span>
               </div>
-              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer and builder &nbsp;·&nbsp; Personal project, 2023–2026 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#B4232B">313 signups</i></div>
+              <div style="font-family:var(--mono2);font-size:11.5px;color:var(--mute)">Product designer and builder &nbsp;·&nbsp; Personal project, 2023–2026 &nbsp;·&nbsp; <i style="font-style:normal;font-family:var(--mono2);font-size:11.5px;color:#B4232B">313 signups</i> &nbsp;·&nbsp; <span class="card-ext" role="link" tabindex="0" data-href="https://teambuilder.allpokemon.info/" aria-label="Live (opens in new tab)">Live<span aria-hidden="true">&nbsp;↗</span></span></div>
               <p style="margin:0;color:var(--ink2);font-size:14px;max-width:44ch">A competitive Pokémon team builder, rebuilt from no-code to Astro and React so Google could rank it, with an AI chat that edits the same team the player does.</p>
             </div>
           </a>
@@ -2819,6 +2823,16 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
     grid.style.display = 'none'; grid.parentNode.insertBefore(cab, grid);
     var front = tabs.lastChild; show(front._item, front);
   }
+  // Outbound Live/Prototype links inside work cards (cards are <a>, so no nested anchors)
+  function openExt(e){
+    var el = e.target.closest && e.target.closest('.card-ext[data-href]');
+    if (!el) return;
+    if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
+    e.preventDefault(); e.stopPropagation();
+    window.open(el.getAttribute('data-href'), '_blank', 'noopener');
+  }
+  document.addEventListener('click', openExt, true);
+  document.addEventListener('keydown', openExt, true);
   var homeGrid = document.querySelector('#p-home [data-works-grid]');
   if (homeGrid) buildCabinet(homeGrid);
 
