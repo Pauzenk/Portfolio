@@ -36,7 +36,7 @@ ol > li:has(> a):hover{background:var(--invBg);--ink:var(--invFg);--mute:color-m
 #p-calorieflow{--accent:#007673} :root[data-theme=dark] #p-calorieflow{--accent:#6BC3BF} [data-theme=dark] [style*="color:#007673"]{color:#6BC3BF!important}
 #p-openfeedback{--accent:#89497C} :root[data-theme=dark] #p-openfeedback{--accent:#D39DC7} [data-theme=dark] [style*="color:#89497C"]{color:#D39DC7!important}
 #p-jarvis{--accent:#855A00} :root[data-theme=dark] #p-jarvis{--accent:#CFAB72} [data-theme=dark] [style*="color:#855A00"]{color:#CFAB72!important}
-#p-adeo{--accent:#00718D} :root[data-theme=dark] #p-adeo{--accent:#6EBED5} [data-theme=dark] [style*="color:#00718D"]{color:#6EBED5!important}
+#p-adeo,#adeo-gate{--accent:#00718D} :root[data-theme=dark] #p-adeo,:root[data-theme=dark] #adeo-gate{--accent:#6EBED5} [data-theme=dark] [style*="color:#00718D"]{color:#6EBED5!important}
 #p-allpokemon{--accent:#984646} :root[data-theme=dark] #p-allpokemon{--accent:#E29C99} [data-theme=dark] [style*="color:#984646"]{color:#E29C99!important}
 #p-suez{--accent:#21689E} :root[data-theme=dark] #p-suez{--accent:#84B7E4} [data-theme=dark] [style*="color:#21689E"]{color:#84B7E4!important}
 #p-ubitik{--accent:#525CA1} :root[data-theme=dark] #p-ubitik{--accent:#A1ADE8} [data-theme=dark] [style*="color:#525CA1"]{color:#A1ADE8!important}
@@ -930,8 +930,8 @@ WHERE THE
     <div style="flex:0 1 auto;text-align:right;font-family:var(--mono2);font-size:12px;color:var(--mute)">Dossier &nbsp;<b style="font-weight:500;color:var(--ink2)">05</b></div>
   </header>
 
-  <div id="adeo-gate" style="display:none;position:fixed;inset:0;z-index:8000;background:color-mix(in srgb,var(--paper) 97%,transparent);align-items:center;justify-content:center;padding:24px">
-    <div style="width:100%;max-width:420px;border:1px solid var(--ink);background:var(--paper);padding:36px 32px">
+  <div id="adeo-gate" style="display:none;position:fixed;inset:0;z-index:8000;background:color-mix(in srgb,var(--paper) 97%,transparent);overflow-y:auto;padding:24px">
+    <div style="margin:auto;width:100%;max-width:420px;border:1px solid var(--ink);background:var(--paper);padding:36px 32px">
       <span style="display:inline-block;font-family:var(--mono2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:3px 8px;margin-bottom:18px">NDA</span>
       <h2 style="font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.95;font-size:clamp(28px,4vw,40px);margin:0 0 12px;letter-spacing:-.005em">This dossier is under NDA</h2>
       <p style="margin:0 0 24px;color:var(--ink2);font-size:14px;line-height:1.5">The ADEO case study covers confidential client work and isn't open for public viewing. Enter the access password to continue.</p>
@@ -2897,6 +2897,10 @@ DESIGNER SINCE.<span style="color: var(--accent); font-size: clamp(44px, 7.4vw, 
     var input = document.getElementById('adeo-gate-input');
     var error = document.getElementById('adeo-gate-error');
     if (!gate || !locked || !form || !input || !error) return;
+    // The page section animates in with a transform, which would make it the
+    // containing block for this fixed overlay and pin it to the top. Hang the
+    // overlay off <body> so it centres on the viewport.
+    document.body.appendChild(gate);
     function isUnlocked(){
       try { return sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) { return false; }
     }
